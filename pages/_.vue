@@ -11,6 +11,7 @@
 
 <script>
 const loadData = function({ api, cacheVersion, errorCallback, version, path }) {
+  console.log(api)
   return api
     .get(`cdn/stories/${path}`, {
       version: version,

@@ -1,8 +1,32 @@
-// @font-face
-//   font-family: ''
-//   src: url('~assets/fonts/') format('')
-//   font-weight: normal
-//   font-style: normal
+@font-face
+  font-family: 'DINBk' // Din bold
+  src: url('~assets/fonts/DINBk.woff2') format('woff2')
+  font-weight: normal
+  font-style: normal
+
+@font-face
+  font-family: 'DINBklt' // Din bold italic
+  src: url('~assets/fonts/DINBkIt.woff2') format('woff2')
+  font-weight: normal
+  font-style: normal
+
+@font-face
+  font-family: 'DINRg' // Din regular
+  src: url('~assets/fonts/DINRg.woff2') format('woff2')
+  font-weight: normal
+  font-style: normal
+
+@font-face
+  font-family: 'DINRglt' // Din regular italic
+  src: url('~assets/fonts/DINRgIt.woff2') format('woff2')
+  font-weight: normal
+  font-style: normal
+
+@font-face
+  font-family: 'MaelstromSans-Bold'
+  src: url('~assets/fonts/MaelstromSans-Bold.woff2') format('woff2')
+  font-weight: normal
+  font-style: normal
 
 body
   // https://css-tricks.com/snippets/css/fluid-typography/
@@ -16,7 +40,7 @@ h1, h2, h3, p
   hyphens: normal
 
 li, h1, h2, h3, p, a, a:link, a:visited, a:hover, a:active, span, input
-  font-family: Helvetica, Arial, sans-serif
+  font-family: 'DINBk', Helvetica, Arial, sans-serif
   font-size: 1em
   line-height: 1.5
   color: black
@@ -24,6 +48,15 @@ li, h1, h2, h3, p, a, a:link, a:visited, a:hover, a:active, span, input
   font-weight: normal
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
+
+h1, h2
+  font-size: 4em // 100pt
+h3
+  font-size: 3em // 75pt
+h4
+  font-size: 2em // 50pt
+p
+  font-size: 1em // 25pt
 
 a
   color: black
