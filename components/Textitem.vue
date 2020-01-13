@@ -8,18 +8,6 @@
 <script>
 export default {
   props: ["blok"],
-  // data() {
-  //   return {
-  //     fullscreen: false
-  //   }
-  // },
-  // methods: {
-  //   toggleFullscreen() {
-  //     if (this.blok.fullscreen) {
-  //       return (this.fullscreen = true)
-  //     }
-  //   }
-  // },
   mounted() {
     console.log("TEXTITEM", this.blok)
   }
