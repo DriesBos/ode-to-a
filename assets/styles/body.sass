@@ -63,6 +63,43 @@ section
     &.active
       min-height: 100vh
 
+.imagelistitem
+  ul
+    display: flex
+    flex-wrap: wrap
+    width: 100%
+    li
+      display: flex
+      flex-basis: 50%
+      height: 50vw
+      img
+        width: 80%
+        object-fit: contain
+      &:nth-child(1)
+        align-items: flex-start
+      &:nth-child(2)
+        justify-content: flex-end
+      &:nth-child(3)
+        align-items: flex-start
+      &:nth-child(4)
+        align-items: flex-end
+      &:nth-child(5)
+        align-items: flex-end
+      &:nth-child(6)
+        justify-content: flex-end
+      &:nth-child(7)
+        align-items: flex-end
+      &:nth-child(8)
+        justify-content: flex-start
+      &:nth-child(9)
+        justify-content: flex-start
+      &:nth-child(10)
+        justify-content: flex-start
+      &:nth-child(11)
+        align-items: flex-start
+      &:nth-child(12)
+        justify-content: flex-end
+
 .footerform
   position: relative
   z-index: 999
@@ -78,7 +115,6 @@ section
     align-items: flex-start
     input
       width: 100%
-      background: #1400ff
       border-bottom: 2px solid white
       color: white
       &::placeholder

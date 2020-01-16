@@ -50,7 +50,7 @@ export default {
         window.location.reload()
       }
     })
-    console.log(this.story)
+    // console.log(this.story)
   },
   asyncData(context) {
     // Check if we are in the editing mode

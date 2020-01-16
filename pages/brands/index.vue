@@ -63,7 +63,7 @@ export default {
   },
   mounted() {
     this.arrayLoop(this.stories)
-    console.log(this.brandpage[0])
+    // console.log(this.brandpage[0])
   }
 }
 </script>
