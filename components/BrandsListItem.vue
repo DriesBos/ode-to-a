@@ -1,7 +1,6 @@
 <template>
   <section>
-    <h1>{{ story.content.title }}</h1>
-    <p>{{ story.content.text }}</p>
+    <p>BRANDSLIST</p>
   </section>
 </template>
 
@@ -11,11 +10,10 @@ import storyblokLivePreview from "@/mixins/storyblokLivePreview"
 export default {
   mixins: [storyblokLivePreview],
   asyncData(context) {
-    let endpoint = `cdn/stories/blog/${context.params.slug}`
-
     return context.app.$storyapi
-      .get(endpoint, {
-        version: "draft"
+      .get("cdn/stories/", {
+        version: "draft",
+        starts_with: "brands"
       })
       .then(res => {
         return res.data
@@ -38,11 +36,9 @@ export default {
   },
   data() {
     return {
-      story: { content: {} }
+      stories: { content: {} }
     }
   },
-  mounted() {
-    console.log(this.story)
-  }
+  mounted() {}
 }
 </script>

@@ -8,8 +8,6 @@
 <script>
 export default {
   props: ["blok"],
-  mounted() {
-    console.log("TEXTITEM", this.blok)
-  }
+  mounted() {}
 }
 </script>

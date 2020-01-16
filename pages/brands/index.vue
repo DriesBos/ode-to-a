@@ -1,9 +1,8 @@
 <template>
   <section>
-    <p>Blog List</p>
     <ul>
       <!-- prettier-ignore -->
-      <li v-for="post in stories" :id="post.content.id" :key="post.content.id">
+      <li v-for="post in brands" :id="post.content.id" :key="post.content.id">
         <nuxt-link :to="post.full_slug" tag="div">
           <h2>{{ post.content.title }}</h2>
         </nuxt-link>
@@ -20,8 +19,7 @@ export default {
   asyncData(context) {
     return context.app.$storyapi
       .get("cdn/stories/", {
-        version: "draft",
-        starts_with: "blog"
+        version: "draft"
       })
       .then(res => {
         return res.data
@@ -44,11 +42,28 @@ export default {
   },
   data() {
     return {
-      stories: { content: {} }
+      stories: { content: {} },
+      brands: {},
+      brandpage: {}
+    }
+  },
+  methods: {
+    arrayLoop(array) {
+      this.brands = array.filter(function(el) {
+        if (el.content.component === "brand") {
+          return true
+        }
+      })
+      this.brandpage = array.filter(function(el) {
+        if (el.content.component === "pagebrands") {
+          return true
+        }
+      })
     }
   },
   mounted() {
-    console.log(this.stories)
+    this.arrayLoop(this.stories)
+    console.log(this.brandpage[0])
   }
 }
 </script>

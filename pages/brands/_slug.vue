@@ -1,22 +1,20 @@
 <template>
   <section>
-    <h1>{{ this.story.content.title }}</h1>
-    <markdown-item :input="this.story.content.text" />
+    <h1>{{ story.content.title }}</h1>
+    <p>{{ story.content.text }}</p>
   </section>
 </template>
 
 <script>
 import storyblokLivePreview from "@/mixins/storyblokLivePreview"
-import MarkdownItem from "@/components/MarkdownItem.vue"
 
 export default {
-  components: {
-    "markdown-item": MarkdownItem
-  },
   mixins: [storyblokLivePreview],
   asyncData(context) {
+    let endpoint = `cdn/stories/brands/${context.params.slug}`
+
     return context.app.$storyapi
-      .get("cdn/stories/about", {
+      .get(endpoint, {
         version: "draft"
       })
       .then(res => {

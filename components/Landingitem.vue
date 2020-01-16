@@ -7,8 +7,6 @@
 <script>
 export default {
   props: ["blok"],
-  mounted() {
-    console.log("LANDING", this.blok)
-  }
+  mounted() {}
 }
 </script>
