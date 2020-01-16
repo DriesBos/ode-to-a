@@ -33,13 +33,13 @@ body
   font-size: 17px
   font-size: calc(19px + (22 - 19) * ((100vw - 700px) / (1400 - 700)))
 
-h1, h2, h3, p
+h1, h2, h3, h4, p
   overflow-wrap: normal
   word-wrap: normal
   word-break: normal
   hyphens: normal
 
-li, h1, h2, h3, p, a, a:link, a:visited, a:hover, a:active, span, input
+li, h1, h2, h3, h4, p, a, a:link, a:visited, a:hover, a:active, span, input, button
   font-family: 'DINBk', Helvetica, Arial, sans-serif
   font-size: 1em
   line-height: 1.5
@@ -49,13 +49,13 @@ li, h1, h2, h3, p, a, a:link, a:visited, a:hover, a:active, span, input
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
 
-h1, h2
+h1, h2, input
   font-size: 4em // 100pt
 h3
   font-size: 3em // 75pt
-h4
+h4, button
   font-size: 2em // 50pt
-p
+p, h5
   font-size: 1em // 25pt
 
 a
@@ -67,6 +67,11 @@ strong
 
 em
   font-style: italic
+
+.footerform .markdown p
+  font-family: 'DINRg'
+  font-size: 2em
+  color: white
 
 .ellipsis
   overflow: hidden

@@ -5,6 +5,7 @@ header
   width: 100%
   height: 100vh
   pointer-events: none
+  z-index: 800
   // border: 1px solid green
   ul
     position: relative
@@ -61,3 +62,28 @@ section
     text-align: center
     &.active
       min-height: 100vh
+
+.footerform
+  position: relative
+  z-index: 999
+  display: flex
+  flex-direction: column
+  background: #1400ff
+  min-height: 100vh
+  justify-content: space-around
+  padding: var(--spacing-three)
+  form
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+    input
+      width: 100%
+      background: #1400ff
+      border-bottom: 2px solid white
+      color: white
+      &::placeholder
+        color: white
+    button
+      margin-top: var(--spacing-three)
+      color: white
+      cursor: pointer

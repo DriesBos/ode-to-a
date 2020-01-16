@@ -6,6 +6,7 @@ import MarkdownItem from "~/components/MarkdownItem.vue"
 import Page from "~/components/Page.vue"
 import PageBrands from "~/components/PageBrands.vue"
 import Textitem from "~/components/Textitem.vue"
+import FooterForm from "~/components/FooterForm.vue"
 
 Vue.component("brandslist", BrandsListItem)
 Vue.component("blok-landingitem", Landingitem)
@@ -13,3 +14,4 @@ Vue.component("markdown", MarkdownItem)
 Vue.component("blok-page", Page)
 Vue.component("blok-pagebrands", PageBrands)
 Vue.component("blok-textitem", Textitem)
+Vue.component("blok-footerform", FooterForm)
