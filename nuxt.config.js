@@ -52,11 +52,10 @@ module.exports = {
     [
       "storyblok-nuxt",
       {
-        accessToken: "njqtjEclHAQQImoZgtGTfQtt",
+        accessToken: process.env.PREVIEWKEY,
         cacheProvider: "memory"
       }
-    ],
-    ["@nuxtjs/dotenv"]
+    ]
   ],
   /*
    ** Build configuration
