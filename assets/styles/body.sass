@@ -104,7 +104,7 @@ section
         justify-content: flex-end
 
 .brandlistitem
-  font-size: 3em
+  font-size: 4em
   text-transform: uppercase
   display: flex
   justify-content: center
@@ -116,6 +116,7 @@ section
   padding-left: var(--spacing-one)
   padding-right: var(--spacing-one)
   min-height: 100vh
+  word-break: break-all
   &-Container
     width: 100%
   &-Title
@@ -125,11 +126,18 @@ section
   &-List
     display: flex
     flex-wrap: wrap
-    div p
-      display: inline
+    div
+      min-width: 10%
+      flex-shrink: 1
+      a
+        word-break: break-all
+        display: inline
+    div:last-child
+      span
+        display: none
 
 .listitem
-  font-size: 3em
+  font-size: 4em
   display: flex
   justify-content: center
   align-items: center
@@ -146,7 +154,7 @@ section
     font-family: "DINRg", Helvetica, Arial, sans-serif
     display: block
   &.smallsize
-    font-size: 1em
+    font-size: 2em
     p:first-child
       display: inline
   &.fullscreen

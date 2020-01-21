@@ -7,15 +7,15 @@
         </div>
         <!-- prettier-ignore -->
         <div class="brandlistitem-List">
-        <div
-          v-for="post in brands"
-          :id="post.content.id"
-          :key="post.content.id"
-        >
-          <nuxt-link :to="post.full_slug">
-            {{ post.content.title }}<span>&nbsp;—&nbsp;</span>
-          </nuxt-link>
-        </div>
+          <div
+            v-for="post in brands"
+            :id="post.content.id"
+            :key="post.content.id"
+          >
+            <nuxt-link :to="post.full_slug">
+              {{ post.content.title }}<span>&nbsp;—&nbsp;</span>
+            </nuxt-link>
+          </div>
         </div>
       </div>
     </div>
