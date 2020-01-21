@@ -1,6 +1,6 @@
 <template>
   <!-- prettier-ignore -->
-  <section v-editable="blok" class="textitem" :class="{ active: blok.fullscreen }">
+  <section v-editable="blok" class="textitem" :class="{ fullscreen: blok.fullscreen }">
     <markdown :input="blok.text" />
   </section>
 </template>
