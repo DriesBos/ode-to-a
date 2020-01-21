@@ -2,19 +2,18 @@
   <!-- prettier-ignore -->
   <section v-editable="blok" class="griditem">
     <component
-      :key="blok._uid"
-      v-for="blok in blok.columns"
-      :blok="blok"
       :is="blok.component | dashify"
+      v-for="blok in blok.columns"
+      :key="blok._uid"
+      :blok="blok"
     ></component>
   </section>
 </template>
 
 <script>
 export default {
-  props: ["blok"]
-  // mounted() {
-  //   console.log("GRIDITEM BLOK", this.blok)
-  // }
+  props: {
+    blok: Object
+  }
 }
 </script>

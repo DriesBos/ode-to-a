@@ -11,9 +11,8 @@
 
 <script>
 export default {
-  props: ["blok"]
-  // mounted() {
-  //   console.log("IMAGELIST BLOK", this.blok)
-  // }
+  props: {
+    blok: Object
+  }
 }
 </script>

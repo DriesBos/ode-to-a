@@ -7,7 +7,8 @@
 
 <script>
 export default {
-  props: ["blok"],
-  mounted() {}
+  props: {
+    blok: Object
+  }
 }
 </script>

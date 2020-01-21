@@ -38,7 +38,6 @@ export default {
     return {
       stories: { content: {} }
     }
-  },
-  mounted() {}
+  }
 }
 </script>
