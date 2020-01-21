@@ -1,13 +1,24 @@
 <template>
   <section>
-    <ul>
-      <!-- prettier-ignore -->
-      <li v-for="post in brands" :id="post.content.id" :key="post.content.id">
-        <nuxt-link :to="post.full_slug" tag="div">
-          <h2>{{ post.content.title }}</h2>
-        </nuxt-link>
-      </li>
-    </ul>
+    <div class="brandlistitem">
+      <div class="brandlistitem-Container">
+        <div class="brandlistitem-Title">
+          <p>Brands</p>
+        </div>
+        <!-- prettier-ignore -->
+        <div class="brandlistitem-List">
+        <div
+          v-for="post in brands"
+          :id="post.content.id"
+          :key="post.content.id"
+        >
+          <nuxt-link :to="post.full_slug">
+            {{ post.content.title }}<span>&nbsp;—&nbsp;</span>
+          </nuxt-link>
+        </div>
+        </div>
+      </div>
+    </div>
   </section>
 </template>
 
@@ -42,14 +53,15 @@ export default {
   },
   data() {
     return {
-      stories: { content: {} },
-      brands: {},
-      brandpage: {}
+      stories: {
+        content: {}
+      },
+      brands: {}
+      // brandpage: {}
     }
   },
   mounted() {
     this.arrayLoop(this.stories)
-    // console.log(this.brandpage[0])
   },
   methods: {
     arrayLoop(array) {
@@ -58,11 +70,11 @@ export default {
           return true
         }
       })
-      this.brandpage = array.filter(function(el) {
-        if (el.content.component === "pagebrands") {
-          return true
-        }
-      })
+      // this.brandpage = array.filter(function(el) {
+      //   if (el.content.component === "pagebrands") {
+      //     return true
+      //   }
+      // })
     }
   }
 }
