@@ -63,7 +63,7 @@ section
     padding-left: var(--spacing-one)
     padding-right: var(--spacing-one)
     text-align: center
-    &.active
+    &.fullscreen
       min-height: 100vh
 
 .imagelistitem
@@ -102,6 +102,30 @@ section
         align-items: flex-start
       &:nth-child(12)
         justify-content: flex-end
+
+.listitem
+  font-size: 3em
+  display: flex
+  justify-content: center
+  align-items: center
+  text-align: left
+  width: 100%
+  padding-top: var(--spacing-three)
+  padding-bottom: var(--spacing-three)
+  padding-left: var(--spacing-one)
+  padding-right: var(--spacing-one)
+  p
+    display: inline
+    text-transform: uppercase
+  p:first-child
+    font-family: "DINRg", Helvetica, Arial, sans-serif
+    display: block
+  &.smallsize
+    font-size: 1em
+    p:first-child
+      display: inline
+  &.fullscreen
+    min-height: 100vh
 
 .footerform
   position: relative
