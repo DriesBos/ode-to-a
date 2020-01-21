@@ -47,6 +47,10 @@ export default {
       brandpage: {}
     }
   },
+  mounted() {
+    this.arrayLoop(this.stories)
+    // console.log(this.brandpage[0])
+  },
   methods: {
     arrayLoop(array) {
       this.brands = array.filter(function(el) {
@@ -60,10 +64,6 @@ export default {
         }
       })
     }
-  },
-  mounted() {
-    this.arrayLoop(this.stories)
-    // console.log(this.brandpage[0])
   }
 }
 </script>
