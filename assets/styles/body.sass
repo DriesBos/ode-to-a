@@ -207,6 +207,19 @@ section
     font-size: 3em
     display: inline
     text-transform: uppercase
+  &-Graphic
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    display: flex
+    justify-content: flex-end
+    align-items: center
+    padding-top: var(--spacing-three)
+    padding-bottom: var(--spacing-three)
+    padding-left: var(--side-spacing)
+    padding-right: var(--side-spacing)
   &.smallsize
     h1, p
       font-size: 1em
@@ -215,16 +228,7 @@ section
   &.fullscreen
     min-height: 100vh
   svg
-    padding-top: var(--spacing-three)
-    padding-bottom: var(--spacing-three)
-    padding-left: var(--side-spacing)
-    padding-right: var(--side-spacing)
-    position: absolute
-    top: 0
-    left: 0
-    width: 100%
-    height: 100%
-    object-fit: contain
+    height: 90%
     color: currentColor
     stroke: currentColor
 
