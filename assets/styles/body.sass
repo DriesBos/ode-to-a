@@ -183,6 +183,7 @@ section
         display: none
 
 .listitem
+  position: relative
   display: flex
   justify-content: center
   align-items: center
@@ -208,6 +209,19 @@ section
       display: inline
   &.fullscreen
     min-height: 100vh
+  svg
+    padding-top: var(--spacing-three)
+    padding-bottom: var(--spacing-three)
+    padding-left: var(--side-spacing)
+    padding-right: var(--side-spacing)
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    object-fit: contain
+    color: currentColor
+    stroke: currentColor
 
 .footerform
   position: relative
