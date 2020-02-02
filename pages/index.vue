@@ -6,6 +6,7 @@
       :key="story.content._uid"
       :blok="story.content"
     ></component>
+    <blok-footerform />
   </div>
 </template>
 
@@ -43,6 +44,8 @@ export default {
       story: { content: {} }
     }
   },
-  mounted() {}
+  mounted() {
+    // console.log(this.story.content.body[7])
+  }
 }
 </script>
