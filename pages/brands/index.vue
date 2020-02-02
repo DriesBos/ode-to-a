@@ -85,7 +85,6 @@ export default {
   },
   mounted() {
     // this.arrayLoop(this.stories)
-    // console.log(this.story.content)
   }
   // methods: {
   //   arrayLoop(array) {

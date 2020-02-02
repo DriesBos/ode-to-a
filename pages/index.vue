@@ -58,8 +58,6 @@ export default {
       story: { content: {} }
     }
   },
-  mounted() {
-    // console.log(this.story.content)
-  }
+  mounted() {}
 }
 </script>
