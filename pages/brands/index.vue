@@ -1,6 +1,6 @@
 <template>
   <div class="view view-Brands">
-    <div class="landinggraphicitem">
+    <div class="landinggraphicitem right">
       <div class="landinggraphicitem-Container">
         <svg viewBox="0 0 758.5 723">
           <g data-name="Laag 2">

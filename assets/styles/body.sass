@@ -89,28 +89,33 @@ section
 .landinggraphicitem
   position: absolute
   display: flex
-  justify-content: center
-  align-items: center
+  justify-content: flex-end
   top: 0
   left: 0
   height: 100vh
   width: 100vw
   color: currentColor
   fill: currentColor
+  border: 1px solid purple
   padding-left: var(--side-spacing)
   padding-right: var(--side-spacing)
   padding-top: var(--side-spacing)
   padding-bottom: var(--side-spacing)
   &-Container
-    width: 100%
     height: 100%
   svg
-    width: 100%
     height: 100%
-    object-fit: contain
   svg, path
     color: currentColor
     fill: currentColor
+  &.left
+    justify-content: flex-start
+  &.center
+    justify-content: center
+    .landinggraphicitem-Container, svg
+      width: 100%
+  &.right
+    justify-content: flex-end
 
 .imagelistitem
   ul
