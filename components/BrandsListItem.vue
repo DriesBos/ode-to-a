@@ -1,6 +1,6 @@
 <template>
   <section>
-    <p>BRANDSLIST</p>
+    <p></p>
   </section>
 </template>
 

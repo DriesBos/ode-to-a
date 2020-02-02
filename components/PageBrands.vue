@@ -6,7 +6,6 @@
       :key="blok._uid"
       :blok="blok"
     ></component>
-    <brandslist />
     <component
       :is="blok.component | dashify"
       v-for="blok in blok.body_lower"
