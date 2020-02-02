@@ -6,7 +6,7 @@
     :class="{ smallsize: blok.small_type, fullscreen: blok.fullscreen }"
   >
     <div class="listitem-Container">
-      <p>{{ blok.title }}</p>
+      <h1>{{ blok.title }}</h1>
       <p>{{ blok.content }}</p>
     </div>
   </section>
