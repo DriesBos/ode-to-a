@@ -3,7 +3,7 @@
   <section v-editable="blok" class="imagelistitem">
     <ul>
       <li v-for="image in blok.image" :key="image">
-        <img :src="require('~/assets/images/landscape-1.jpg')" />
+        <!-- <img :src="require('~/assets/images/landscape-1.jpg')" /> -->
       </li>
     </ul>
   </section>

@@ -1,4 +1,6 @@
-header
+@import '~assets/styles/variables'
+
+.header
   position: fixed
   top: 0
   left: 0
@@ -6,14 +8,12 @@ header
   height: 100vh
   pointer-events: none
   z-index: 800
-  // border: 1px solid green
   ul
     position: relative
     margin: auto
     margin-top: 5vh
     width: 100% - 10%
     height: 100vh - 10vh
-    // border: 1px solid red
     display: flex
     justify-content: flex-end
     li
@@ -38,31 +38,39 @@ header
     li:nth-child(4)
       bottom: 0
       right: 0
-
   .nuxt-link-exact-active
     text-decoration: none
+
+.yellow, .view-Home
+  color: $color-yellow
+.blue, .view-Brands
+  color: $color-blue
+.red, .view-Art
+  color: $color-red
+.black
+  color: black
+.grey
+  color: grey
+.white, .view-People
+  color: white
 
 section
   max-width: 100%
   img
     max-width: 100%
-  .textitem
-    display: flex
-    justify-content: center
-    align-items: center
-    width: 100%
-    padding-top: var(--spacing-three)
-    padding-bottom: var(--spacing-three)
-    padding-left: var(--spacing-one)
-    padding-right: var(--spacing-one)
-    text-align: center
-    &.fullscreen
-      min-height: 100vh
 
-.test
-  height: 100vh
-  width: 100vw
-  background: green
+.textitem
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 100%
+  padding-top: var(--spacing-three)
+  padding-bottom: var(--spacing-three)
+  padding-left: var(--side-spacing)
+  padding-right: var(--side-spacing)
+  text-align: center
+  &.fullscreen
+    min-height: 100vh
 
 .landingitem
   width: 100vw
@@ -74,6 +82,32 @@ section
     width: 100%
     height: 100%
     object-fit: cover
+
+.landinggraphicitem
+  position: absolute
+  display: flex
+  justify-content: center
+  align-items: center
+  top: 0
+  left: 0
+  height: 100vh
+  width: 100vw
+  color: currentColor
+  fill: currentColor
+  padding-left: var(--side-spacing)
+  padding-right: var(--side-spacing)
+  padding-top: var(--side-spacing)
+  padding-bottom: var(--side-spacing)
+  &-Container
+    width: 100%
+    height: 100%
+  svg
+    width: 100%
+    height: 100%
+    object-fit: contain
+  svg, path
+    color: currentColor
+    fill: currentColor
 
 .imagelistitem
   ul
@@ -122,8 +156,8 @@ section
   width: 100%
   padding-top: var(--spacing-three)
   padding-bottom: var(--spacing-three)
-  padding-left: var(--spacing-one)
-  padding-right: var(--spacing-one)
+  padding-left: var(--side-spacing)
+  padding-right: var(--side-spacing)
   min-height: 100vh
   word-break: break-all
   &-Container
@@ -154,8 +188,8 @@ section
   width: 100%
   padding-top: var(--spacing-three)
   padding-bottom: var(--spacing-three)
-  padding-left: var(--spacing-one)
-  padding-right: var(--spacing-one)
+  padding-left: var(--side-spacing)
+  padding-right: var(--side-spacing)
   p
     display: inline
     text-transform: uppercase
@@ -178,17 +212,18 @@ section
   min-height: 100vh
   justify-content: space-around
   padding: var(--spacing-three)
+  color: white
   form
     display: flex
     flex-direction: column
     align-items: flex-start
     input
       width: 100%
-      border-bottom: 2px solid white
-      color: white
+      border-bottom: 2px solid currentColor
+      color: currentColor
       &::placeholder
-        color: white
+        color: currentColor
     button
       margin-top: var(--spacing-three)
-      color: white
+      color: currentColor
       cursor: pointer

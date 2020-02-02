@@ -1,9 +1,13 @@
 <template>
   <!-- prettier-ignore -->
-  <section v-editable="blok" class="listitem" :class="{ smallsize: blok.small_size, fullscreen: blok.fullscreen }">
+  <section
+    v-editable="blok"
+    class="listitem"
+    :class="{ smallsize: blok.small_type, fullscreen: blok.fullscreen }"
+  >
     <div class="listitem-Container">
-    <p>{{ blok.title }}</p>
-    <p>{{ blok.content }}</p> 
+      <p>{{ blok.title }}</p>
+      <p>{{ blok.content }}</p>
     </div>
   </section>
 </template>
@@ -12,6 +16,9 @@
 export default {
   props: {
     blok: Object
+  },
+  mounted() {
+    // console.log(this.blok)
   }
 }
 </script>

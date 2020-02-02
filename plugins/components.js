@@ -1,7 +1,8 @@
 import Vue from "vue"
 
 import BrandsListItem from "~/components/BrandsListItem.vue"
-import Landingitem from "~/components/Landingitem.vue"
+import LandingItem from "~/components/LandingItem.vue"
+import LandingGraphicItem from "~/components/LandingGraphicItem.vue"
 import MarkdownItem from "~/components/MarkdownItem.vue"
 import Page from "~/components/Page.vue"
 import PageBrands from "~/components/PageBrands.vue"
@@ -12,7 +13,8 @@ import ImageListItem from "~/components/ImageListItem.vue"
 import Listitem from "~/components/Listitem.vue"
 
 Vue.component("brandslist", BrandsListItem)
-Vue.component("blok-landingitem", Landingitem)
+Vue.component("blok-landingitem", LandingItem)
+Vue.component("blok-landinggraphicitem", LandingGraphicItem)
 Vue.component("markdown", MarkdownItem)
 Vue.component("blok-page", Page)
 Vue.component("blok-pagebrands", PageBrands)

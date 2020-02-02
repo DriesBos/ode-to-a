@@ -1,14 +1,19 @@
 <template>
-  <div class="view view-Home">
+  <div class="view view-People">
     <div class="landinggraphicitem">
       <div class="landinggraphicitem-Container">
-        <svg viewBox="0 0 1567.99 710">
+        <svg viewBox="0 0 709 756.51">
           <g data-name="Laag 2">
             <g data-name="Laag 1">
               <path
-                d="M630,472H403c-23,0-35,11-44,27L240,710H0L399,0,798,710h-4L674,498C665,482,653,472,630,472ZM530,243c-7-13-22-13-29,0L389,444c-7,13-2,24,13,24H631c15,0,20-11,13-24Z"
+                d="M355,533v2H261.5c-9.5,0-14.5,1.5-21,7L5,756.51v-3l154-140c5-5,4.5-9-.5-13.5L5,456.51v-145L240.5,526c6.5,5.5,11.5,7,21,7Z"
               />
-              <path d="M801,469h767v4H801Z" />
+              <path
+                d="M360,190c0,119.5-90,190-180,190S0,309.5,0,190,90,0,180,0,360,70.5,360,190ZM112,75.5v229c0,45.5,22,73.5,68,73.5s68-28,68-73.5V75.5C248,30,226,2,180,2S112,30,112,75.5Z"
+              />
+              <path
+                d="M594,24.51H709V222c0,103-76,157.5-170.5,157.5C444.5,379.51,380,325,380,222V24.51h2V220c0,93.5,47.5,133,106,133,63.5,0,106-39.5,106-133Z"
+              />
             </g>
           </g>
         </svg>
@@ -31,7 +36,7 @@ export default {
   mixins: [storyblokLivePreview],
   asyncData(context) {
     return context.app.$storyapi
-      .get("cdn/stories/home", {
+      .get("cdn/stories/people", {
         version: "draft"
       })
       .then(res => {
@@ -58,8 +63,6 @@ export default {
       story: { content: {} }
     }
   },
-  mounted() {
-    // console.log(this.story.content)
-  }
+  mounted() {}
 }
 </script>

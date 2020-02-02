@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header class="header">
     <nav>
       <ul>
         <nuxt-link to="/" tag="li">A —</nuxt-link>
