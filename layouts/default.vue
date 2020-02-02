@@ -1,7 +1,9 @@
 <template>
   <div>
     <the-header :class="headerColor" />
-    <nuxt />
+    <transition name="pages" mode="out-in">
+      <nuxt />
+    </transition>
   </div>
 </template>
 
