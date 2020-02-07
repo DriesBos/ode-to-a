@@ -1,7 +1,9 @@
 <template>
   <!-- prettier-ignore -->
   <div class="brandslistitemsingle">
-    <p>{{ blok.title }}<span class="dash">&nbsp;—&nbsp;</span></p>
+    <nuxt-link :to="blok.hyperlink.cached_url" tag="p">
+      {{ blok.title }}<span class="dash">&nbsp;—&nbsp;</span>
+    </nuxt-link>
     <div class="brandslistitemsingle-Image">
       <img :src="blok.image" />
     </div>
@@ -12,9 +14,6 @@
 export default {
   props: {
     blok: Object
-  },
-  mounted() {
-    // console.log(this.blok.hyperlink)
   }
 }
 </script>
