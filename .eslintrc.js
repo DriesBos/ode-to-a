@@ -25,6 +25,7 @@ module.exports = {
     "vue/max-attributes-per-line": "off",
     "prettier/prettier": ["error", { semi: false }],
     "vue/require-default-prop": "off",
-    "vue/no-v-html": "off"
+    "vue/no-v-html": "off",
+    "no-shadow": "off"
   }
 }

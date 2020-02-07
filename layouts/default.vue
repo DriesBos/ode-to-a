@@ -20,6 +20,14 @@ export default {
       pageColor: "yellow"
     }
   },
+  watch: {
+    $route() {
+      this.setpageColor()
+    }
+  },
+  mounted() {
+    this.setpageColor()
+  },
   methods: {
     setpageColor() {
       if (this.$route.path === "/") {
@@ -34,14 +42,6 @@ export default {
         this.pageColor = "black"
       }
     }
-  },
-  watch: {
-    $route() {
-      this.setpageColor()
-    }
-  },
-  mounted() {
-    this.setpageColor()
   }
 }
 </script>
