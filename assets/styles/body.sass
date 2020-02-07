@@ -189,62 +189,6 @@ section
       &:nth-child(12)
         justify-content: flex-end
 
-.brandslistitem
-  position: relative
-  display: flex
-  justify-content: center
-  align-items: center
-  text-align: left
-  width: 100%
-  min-height: 100vh
-  padding-top: var(--spacing-three)
-  padding-bottom: var(--spacing-three)
-  padding-left: var(--side-spacing)
-  padding-right: var(--side-spacing)
-  h1
-    font-size: 2em
-    font-family: "DINRg", Helvetica, Arial, sans-serif
-    text-transform: uppercase
-    display: block
-  p
-    font-size: 3em
-    display: inline
-    text-transform: uppercase
-    cursor: pointer
-    color: rgba($color-blue, 0)
-    -webkit-text-stroke: 1px rgba($color-blue, 1)
-    transition: color $transition-color, text-stroke $transition-color
-    &:hover
-      color: $color-blue
-      -webkit-text-stroke: 1px rgba($color-blue, 0)
-  &-Container
-    width: 100%
-    border
-
-.brandslistitemsingle
-  display: inline-block
-  &:last-child
-    .dash
-      display: none
-  &-Image
-    position: fixed
-    display: none
-    top: 0
-    left: 0
-    right: 0
-    bottom: 0
-    pointer-events: none
-    z-index: -1
-    img
-      width: 100%
-      height: 100%
-      object-fit: cover
-  p
-    cursor: pointer
-    display: inline-block
-  &:hover .brandslistitemsingle-Image
-    display: block
-
 .listitem
   position: relative
   display: flex
@@ -290,6 +234,72 @@ section
     height: 90%
     color: currentColor
     stroke: currentColor
+
+.brandslistitem
+  position: relative
+  display: flex
+  justify-content: center
+  align-items: center
+  text-align: left
+  width: 100%
+  min-height: 100vh
+  padding-top: var(--spacing-three)
+  padding-bottom: var(--spacing-three)
+  padding-left: var(--side-spacing)
+  padding-right: var(--side-spacing)
+  h1
+    font-size: 2em
+    font-family: "DINRg", Helvetica, Arial, sans-serif
+    text-transform: uppercase
+    display: block
+  p
+    font-size: 3em
+    display: inline
+    text-transform: uppercase
+    cursor: pointer
+    color: rgba($color-blue, 0)
+    -webkit-text-stroke: 1px rgba($color-blue, 1)
+    transition: color $transition-color, text-stroke $transition-color
+    &:hover
+      color: $color-blue
+      -webkit-text-stroke: 1px rgba($color-blue, 0)
+  &-Container
+    width: 100%
+    border
+
+.brandslistitemsingle
+  display: inline-block
+  word-break: break-word
+  overflow-wrap: break-word
+  hyphens: none
+  &:last-child
+    .dash
+      display: none
+  &-Image
+    position: fixed
+    display: none
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    pointer-events: none
+    z-index: -1
+    img
+      width: 100%
+      height: 100%
+      object-fit: cover
+  p
+    cursor: pointer
+    display: inline-block
+    overflow-wrap: break-word
+    hyphens: none
+  span
+    display: inline
+    word-break: break-word
+    overflow-wrap: break-word
+    hyphens: none
+  &:hover .brandslistitemsingle-Image
+    display: block
 
 .footerform
   position: relative
