@@ -133,25 +133,23 @@ section
   padding-top: var(--side-spacing)
   padding-bottom: var(--side-spacing)
   &-Container
+    display: flex
+    align-items: center
     height: 100%
     width: 100%
   svg
-    height: 100%
-    width: 100%
+    height: 82vmin
+    width: 82vmin
     max-width: 100%
     max-height: 100%
-    object-fit: contain
   svg, path
     color: currentColor
     fill: currentColor
-  &.left svg
-    // justify-content: flex-start
-    object-position: top right
-  &.center
+  &.left .landinggraphicitem-Container
+    justify-content: flex-start
+  &.center .landinggraphicitem-Container
     justify-content: center
-    .landinggraphicitem-Container, svg
-      width: 100%
-  &.right
+  &.right .landinggraphicitem-Container
     justify-content: flex-end
 
 .imagelistitem
