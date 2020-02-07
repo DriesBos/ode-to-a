@@ -25,22 +25,6 @@
       :key="story.content._uid"
       :blok="story.content"
     ></component>
-
-    <!-- <div class="brandlistitem">
-      <div class="brandlistitem-Container">
-        <div class="brandlistitem-Title">
-          <p>Brands</p>
-        </div>
-        <div class="brandlistitem-List">
-          <div v-for="post in brands" :id="post.content.id" :key="post.content.id">
-            <nuxt-link :to="post.full_slug">
-              {{ post.content.title }}
-              <span>&nbsp;—&nbsp;</span>
-            </nuxt-link>
-          </div>
-        </div>
-      </div>
-    </div>-->
   </div>
 </template>
 
