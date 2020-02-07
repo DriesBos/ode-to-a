@@ -236,11 +236,12 @@ section
   z-index: 999
   display: flex
   flex-direction: column
-  background: #1400ff
+  background: currentColor
   min-height: 100vh
   justify-content: space-around
   padding: var(--spacing-three)
-  color: white
+  h1, h2, p
+    color: white
   form
     display: flex
     flex-direction: column
@@ -248,10 +249,11 @@ section
     input
       width: 100%
       border-bottom: 2px solid currentColor
-      color: currentColor
+      color: white
       &::placeholder
         color: currentColor
     button
       margin-top: var(--spacing-three)
       color: currentColor
       cursor: pointer
+      color: white
