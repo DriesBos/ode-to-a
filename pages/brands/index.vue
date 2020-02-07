@@ -25,7 +25,6 @@
       :key="story.content._uid"
       :blok="story.content"
     ></component>
-    <!-- <blok-footerform /> -->
 
     <!-- <div class="brandlistitem">
       <div class="brandlistitem-Container">

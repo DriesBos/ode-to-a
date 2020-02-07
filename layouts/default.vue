@@ -1,9 +1,10 @@
 <template>
   <div>
-    <the-header :class="headerColor" />
+    <the-header :class="pageColor" />
     <transition name="pages" mode="out-in">
       <nuxt />
     </transition>
+    <blok-footerform :class="pageColor" />
   </div>
 </template>
 
@@ -16,31 +17,31 @@ export default {
   },
   data() {
     return {
-      headerColor: "yellow"
+      pageColor: "yellow"
     }
   },
   methods: {
-    setHeaderColor() {
+    setpageColor() {
       if (this.$route.path === "/") {
-        this.headerColor = "yellow"
+        this.pageColor = "yellow"
       } else if (this.$route.path === "/brands") {
-        this.headerColor = "blue"
+        this.pageColor = "blue"
       } else if (this.$route.path === "/people") {
-        this.headerColor = "white"
+        this.pageColor = "white"
       } else if (this.$route.path === "/art") {
-        this.headerColor = "red"
+        this.pageColor = "red"
       } else {
-        this.headerColor = "black"
+        this.pageColor = "black"
       }
     }
   },
   watch: {
     $route() {
-      this.setHeaderColor()
+      this.setpageColor()
     }
   },
   mounted() {
-    this.setHeaderColor()
+    this.setpageColor()
   }
 }
 </script>
