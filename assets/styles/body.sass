@@ -310,6 +310,7 @@ section
     .markdown p, input, button
       color: black
   form
+    margin-top: var(--spacing-two)
     display: flex
     flex-direction: column
     align-items: flex-start
@@ -317,8 +318,10 @@ section
       width: 100%
       border-bottom: 2px solid currentColor
       color: white
+      text-transform: uppercase
       &::placeholder
         color: currentColor
+        text-transform: uppercase
     button
       margin-top: var(--spacing-three)
       color: currentColor

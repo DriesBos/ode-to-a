@@ -1,7 +1,7 @@
 <template>
   <!-- prettier-ignore -->
   <div class="brandslistitemsingle">
-    <p>{{ blok.title }}<span class="dash"> — </span></p>
+    <p>{{ blok.title }}<span class="dash">&nbsp;—&nbsp;</span></p>
     <div class="brandslistitemsingle-Image">
       <img :src="blok.image" />
     </div>
