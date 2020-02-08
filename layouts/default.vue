@@ -1,6 +1,7 @@
 <template>
   <div>
     <the-header :class="pageColor" />
+    <the-textcarousel :class="pageColor" />
     <transition name="pages" mode="out-in">
       <nuxt />
     </transition>
@@ -9,11 +10,13 @@
 </template>
 
 <script>
-import TheHeader from "~/components/TheHeader.vue"
+import TheHeader from "~/components/TheHeader"
+import TheTextCarousel from "~/components/TheTextCarousel"
 
 export default {
   components: {
-    "the-header": TheHeader
+    "the-header": TheHeader,
+    "the-textcarousel": TheTextCarousel
   },
   data() {
     return {
