@@ -93,19 +93,6 @@ section
   img
     max-width: 100%
 
-.textitem
-  display: flex
-  justify-content: center
-  align-items: center
-  width: 100%
-  padding-top: var(--spacing-three)
-  padding-bottom: var(--spacing-three)
-  padding-left: var(--side-spacing)
-  padding-right: var(--side-spacing)
-  text-align: center
-  &.fullscreen
-    min-height: 100vh
-
 .landingitem
   width: 100vw
   height: 100vh
@@ -151,6 +138,19 @@ section
     justify-content: center
   &.right .landinggraphicitem-Container
     justify-content: flex-end
+
+.textitem
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 100%
+  padding-top: var(--spacing-three)
+  padding-bottom: var(--spacing-three)
+  padding-left: var(--side-spacing)
+  padding-right: var(--side-spacing)
+  text-align: center
+  &.fullscreen
+    min-height: 100vh
 
 .imagelistitem
   ul
@@ -300,6 +300,10 @@ section
     hyphens: none
   &:hover .brandslistitemsingle-Image
     display: block
+
+.artlistitem
+
+.artlistitemsingle
 
 .footerform
   position: relative
