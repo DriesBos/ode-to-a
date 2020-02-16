@@ -127,11 +127,6 @@ public/
 #
 # Recommended template: Node.gitignore
 
-# Nuxt build
-
- # Nuxt generate
-dist
-
 ### OSX ###
 # General
 

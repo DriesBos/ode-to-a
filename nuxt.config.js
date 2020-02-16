@@ -1,4 +1,5 @@
 const pkg = require("./package")
+const axios = require("axios")
 require("dotenv").config()
 
 module.exports = {
@@ -43,7 +44,8 @@ module.exports = {
    ** Nuxt.js modules
    */
   modules: [
-    ["@nuxtjs/pwa"],
+    "@nuxtjs/pwa",
+    "@nuxtjs/axios",
     // ["@nuxtjs/google-tag-manager", { id: process.env.GOOGLE_GTM }],
     [
       "@bazzite/nuxt-optimized-images",
@@ -52,7 +54,10 @@ module.exports = {
     [
       "storyblok-nuxt",
       {
-        accessToken: process.env.PREVIEWKEY,
+        accessToken:
+          process.env.NODE_ENV === "production" // Generate new token
+            ? process.env.PREVIEWKEY
+            : process.env.PREVIEWKEY,
         cacheProvider: "memory"
       }
     ]
@@ -60,7 +65,7 @@ module.exports = {
   generate: {
     routes: function(callback) {
       const token = process.env.PREVIEWKEY
-      const per_page = 1000
+      const per_page = 100
       const version = "published"
       let cache_version = 0
 
