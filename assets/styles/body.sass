@@ -14,7 +14,7 @@
     width: 100%
     height: 100%
     padding: 5vw
-  ul
+  .header-Desktop
     position: relative
     width: 100%
     height: 100%
@@ -43,6 +43,19 @@
     li:nth-child(4)
       bottom: 0
       right: 0
+  .header-BrandSingle li
+    position: absolute
+    cursor: pointer
+    text-transform: uppercase
+    line-height: 1
+    pointer-events: auto
+    color: currentcolor
+    top: 0
+    left: 0
+    padding: var(--spacing-three)
+    svg
+      transform: rotate(180deg)
+      height: 1em
   .nuxt-link-exact-active
     text-decoration: none
   &.yellow
@@ -89,7 +102,6 @@
 
 section
   max-width: 100%
-  // z-index: 200
   img
     max-width: 100%
 
@@ -312,6 +324,14 @@ section
       top: 0
       width: 100%
       height: 100%
+  &-InfoBlok
+    position: relative
+    width: 100%
+    height: 100vh
+    display: flex
+    justify-content: center
+    align-items: center
+    text-align: left
 
 .artlistitem
 

@@ -6,7 +6,26 @@
         <h1>{{ story.content.title }}</h1>
       </div>
     </div>
-    <p>{{ story.content.text }}</p>
+    <div class="textitem brandSingle-InfoBlok">
+      <div class="brandSingle-InfoBlok-Container">
+        <p class="font-regular">Project</p>
+        <h4>{{ story.content.subtitle_project }}</h4>
+        <div class="inline">
+          <p class="font-regular">Via</p>
+          <p>{{ story.content.subtitle_via }}</p>
+        </div>
+        <div class="inline">
+          <p class="font-regular">Created by</p>
+          <p>{{ story.content.subtitle_team }}</p>
+        </div>
+      </div>
+    </div>
+    <component
+      :is="blok.component | dashify"
+      v-for="blok in story.content.body"
+      :key="blok._uid"
+      :blok="blok"
+    ></component>
   </section>
 </template>
 
@@ -46,6 +65,8 @@ export default {
       story: { content: {} }
     }
   },
-  mounted() {}
+  mounted() {
+    console.log(this.story.content.body)
+  }
 }
 </script>
