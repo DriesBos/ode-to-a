@@ -2,11 +2,11 @@
   <section class="view view-BrandSingle">
     <div class="brandSingle-Landing">
       <img :src="story.content.cover_image" />
-      <div class="textitem brandSingle-Landing_Title">
+      <div class="brandSingle-Landing_Title">
         <h1>{{ story.content.title }}</h1>
       </div>
     </div>
-    <div class="textitem brandSingle-InfoBlok">
+    <div class="brandSingle-InfoBlok">
       <div class="brandSingle-InfoBlok-Container">
         <p class="font-regular">Project</p>
         <h4>{{ story.content.subtitle_project }}</h4>

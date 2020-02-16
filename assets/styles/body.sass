@@ -318,20 +318,29 @@ section
     position: relative
     width: 100%
     height: 100vh
-    &_Title
-      position: absolute
-      left: 0
-      top: 0
+    margin-bottom: 50vh
+    img
       width: 100%
       height: 100%
+      object-fit: cover
+    &_Title
+      position: absolute
+      bottom: 0
+      left: 0
+      text-transform: uppercase
+      padding: var(--spacing-three)
   &-InfoBlok
-    position: relative
-    width: 100%
-    height: 100vh
+    position: absolute
+    top: 100vh
+    right: 0
+    width: 50%
     display: flex
-    justify-content: center
-    align-items: center
+    justify-content: flex-start
+    align-items: flex-start
     text-align: left
+    padding-top: var(--spacing-three)
+    padding-right: var(--spacing-three)
+    padding-bottom: var(--spacing-three)
 
 .artlistitem
 
