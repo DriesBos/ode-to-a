@@ -37,7 +37,10 @@ export default {
     setpageColor() {
       if (this.$route.path === "/") {
         this.pageColor = "yellow"
-      } else if (this.$route.path === "/brands") {
+      } else if (
+        this.$route.path === "/brands" ||
+        this.$route.name === "brands-slug"
+      ) {
         this.pageColor = "blue"
       } else if (this.$route.path === "/people") {
         this.pageColor = "white"
