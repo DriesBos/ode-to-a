@@ -1,6 +1,11 @@
 <template>
-  <section>
-    <h1>{{ story.content.title }}</h1>
+  <section class="view view-BrandSingle">
+    <div class="brandSingle-Landing">
+      <img :src="story.content.cover_image" />
+      <div class="textitem brandSingle-Landing_Title">
+        <h1>{{ story.content.title }}</h1>
+      </div>
+    </div>
     <p>{{ story.content.text }}</p>
   </section>
 </template>
