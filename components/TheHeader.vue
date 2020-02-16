@@ -7,7 +7,7 @@
         <nuxt-link to="/people" tag="li">For People</nuxt-link>
         <nuxt-link to="/art" tag="li">For Art</nuxt-link>
       </ul>
-      <ul v-else class="header-BrandSingle">
+      <ul v-else class="header-Single">
         <nuxt-link to="/brands" tag="li">
           <svg viewBox="0 0 46.65 37.7">
             <g data-name="Laag 2">
@@ -33,7 +33,10 @@ export default {
   },
   watch: {
     $route() {
-      if (this.$route.name === "brands-slug") {
+      if (
+        this.$route.name === "brands-slug" ||
+        this.$route.name === "art-slug"
+      ) {
         this.showHeader = false
       } else {
         this.showHeader = true
@@ -45,7 +48,10 @@ export default {
   },
   methods: {
     routeCheck() {
-      if (this.$route.name === "brands-slug") {
+      if (
+        this.$route.name === "brands-slug" ||
+        this.$route.name === "art-slug"
+      ) {
         this.showHeader = false
       } else {
         this.showHeader = true

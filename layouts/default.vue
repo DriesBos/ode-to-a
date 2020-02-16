@@ -44,7 +44,10 @@ export default {
         this.pageColor = "blue"
       } else if (this.$route.path === "/people") {
         this.pageColor = "white"
-      } else if (this.$route.path === "/art") {
+      } else if (
+        this.$route.path === "/art" ||
+        this.$route.name === "art-slug"
+      ) {
         this.pageColor = "red"
       } else {
         this.pageColor = "black"

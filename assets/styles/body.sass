@@ -43,20 +43,18 @@
     li:nth-child(4)
       bottom: 0
       right: 0
-  .header-BrandSingle li
+  .header-Single li
     position: absolute
     cursor: pointer
     text-transform: uppercase
     line-height: 1
     pointer-events: auto
-    color: currentcolor
     top: 0
     left: 0
     padding: var(--spacing-three)
     svg
       transform: rotate(180deg)
       height: 1em
-      fill: $color-blue
   .nuxt-link-exact-active
     text-decoration: none
   &.yellow
@@ -73,6 +71,8 @@
       &.nuxt-link-exact-active
         color: $color-blue
         -webkit-text-stroke: 1px rgba($color-blue, 0)
+      svg
+        fill: $color-blue
   &.red
     li
       color: rgba($color-red, 0)
@@ -80,6 +80,8 @@
       &.nuxt-link-exact-active
         color: $color-red
         -webkit-text-stroke: 1px rgba($color-red, 0)
+      svg
+        fill: $color-red
   &.white
     li
       color: rgba(white, 0)
@@ -92,7 +94,7 @@
   color: $color-yellow
 .blue, .view-Brands, .view-BrandSingle
   color: $color-blue
-.red, .view-Art
+.red, .view-Art, .view-ArtSingle
   color: $color-red
 .black
   color: black
@@ -109,13 +111,24 @@ section
 .landingitem
   width: 100vw
   height: 100vh
-  position: sticky
-  top: 0
   z-index: -1
   img
     width: 100%
     height: 100%
     object-fit: cover
+  h1
+    position: absolute
+    left: 0
+    bottom: 0
+    padding: var(--spacing-three)
+    text-transform: uppercase
+.view-Brands .landingitem,
+.view-Art .landingitem
+  position: sticky
+  top: 0
+.view-Single .landingitem
+  position: relative
+  margin-bottom: 50vh
 
 .landinggraphicitem
   position: absolute
@@ -201,6 +214,29 @@ section
         align-items: flex-start
       &:nth-child(12)
         justify-content: flex-end
+
+.singleDetails
+  margin-bottom: 1em
+  &-Wrapper
+    position: absolute
+    top: 100vh
+    right: 0
+    width: 50%
+    padding-top: var(--spacing-three)
+    padding-right: var(--spacing-three)
+    padding-bottom: var(--spacing-three)
+    & section:first-child
+      p
+        font-size: 2em
+        display: block
+  h1, p
+    display: inline
+    line-height: 1
+  h1
+    font-family: "DINRg", Helvetica, Arial, sans-serif
+    text-transform: uppercase
+    font-size: 1em
+  &-InfoBlok
 
 .listitem
   position: relative
@@ -312,35 +348,6 @@ section
     hyphens: none
   &:hover .brandslistitemsingle-Image
     display: block
-
-.brandSingle
-  &-Landing
-    position: relative
-    width: 100%
-    height: 100vh
-    margin-bottom: 50vh
-    img
-      width: 100%
-      height: 100%
-      object-fit: cover
-    &_Title
-      position: absolute
-      bottom: 0
-      left: 0
-      text-transform: uppercase
-      padding: var(--spacing-three)
-  &-InfoBlok
-    position: absolute
-    top: 100vh
-    right: 0
-    width: 50%
-    display: flex
-    justify-content: flex-start
-    align-items: flex-start
-    text-align: left
-    padding-top: var(--spacing-three)
-    padding-right: var(--spacing-three)
-    padding-bottom: var(--spacing-three)
 
 .artlistitem
 

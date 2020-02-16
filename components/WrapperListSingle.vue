@@ -5,7 +5,7 @@
     class="brandslistitem"
   >
   <div class="brandslistitem-Container">
-  <h1>{{ blok.title }}</h1>
+  <h1 v-if="blok.title">{{ blok.title }}</h1>
     <component
       :is="blok.component | dashify"
       v-for="blok in blok.list"
