@@ -1,7 +1,7 @@
 <template>
   <div>
     <the-header :class="pageColor" />
-    <the-svgcarousel :class="pageColor" />
+    <!-- <the-svgcarousel :class="pageColor" /> -->
     <transition name="pages" mode="out-in">
       <nuxt />
     </transition>
@@ -12,13 +12,13 @@
 <script>
 import TheHeader from "~/components/TheHeader"
 // import TheTextCarousel from "~/components/TheTextCarousel"
-import TheSVGCarousel from "~/components/TheSVGCarousel"
+// import TheSVGCarousel from "~/components/TheSVGCarousel"
 
 export default {
   components: {
-    "the-header": TheHeader,
+    "the-header": TheHeader
     // "the-textcarousel": TheTextCarousel,
-    "the-svgcarousel": TheSVGCarousel
+    // "the-svgcarousel": TheSVGCarousel
   },
   data() {
     return {
