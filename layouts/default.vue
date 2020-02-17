@@ -5,7 +5,7 @@
     <transition name="pages" mode="out-in">
       <nuxt />
     </transition>
-    <blok-footerform :class="pageColor" />
+    <blok-footer-form :class="pageColor" />
   </div>
 </template>
 
