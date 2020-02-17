@@ -122,8 +122,10 @@ section
     bottom: 0
     padding: var(--spacing-three)
     text-transform: uppercase
+.view-Home .landingitem,
 .view-Brands .landingitem,
-.view-Art .landingitem
+// .view-Art .landingitem,
+.view-People .landingitem
   position: sticky
   top: 0
 .view-Single .landingitem
@@ -162,6 +164,8 @@ section
     justify-content: flex-start
   &.center .landinggraphicitem-Container
     justify-content: center
+    svg
+      width: 100%
   &.right .landinggraphicitem-Container
     justify-content: flex-end
 
@@ -180,7 +184,7 @@ section
 
 // IMAGE GRID
 .view-Art, .view-Single
-  .imagelistitem
+  .imageGrid
     ul
       display: flex
       flex-wrap: wrap
@@ -263,8 +267,13 @@ section
     color: currentColor
     stroke: currentColor
 
-.listSingle
-  &-Wrapper
+// PROJECT LIST
+.projectList
+  &-Single
+    cursor: pointer
+
+.view-Brands
+  .projectList
     position: relative
     display: flex
     justify-content: center
@@ -294,41 +303,83 @@ section
         -webkit-text-stroke: 1px rgba($color-blue, 0)
     &-Container
       width: 100%
-  &-Single
-    display: inline-block
-    word-break: break-word
-    overflow-wrap: break-word
-    hyphens: none
-    &:last-child
-      .dash
-        display: none
-    &_Image
-      position: fixed
-      display: none
-      top: 0
-      left: 0
-      right: 0
-      bottom: 0
-      pointer-events: none
-      z-index: -1
-      img
-        width: 100%
-        height: 100%
-        object-fit: cover
-    p
-      cursor: pointer
+    &-Single
       display: inline-block
-      overflow-wrap: break-word
-      hyphens: none
-    span
-      display: inline
       word-break: break-word
       overflow-wrap: break-word
       hyphens: none
-    &:hover .listSingle-Single_Image
-      display: block
-.view-Brands
+      &:last-child
+        .dash
+          display: none
+      &_Image
+        position: fixed
+        display: none
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        pointer-events: none
+        z-index: -1
+        img
+          width: 100%
+          height: 100%
+          object-fit: cover
+      p
+        cursor: pointer
+        display: inline-block
+        overflow-wrap: break-word
+        hyphens: none
+      span
+        display: inline
+        word-break: break-word
+        overflow-wrap: break-word
+        hyphens: none
+      &:hover .projectList-Single_Image
+        display: block
 .view-Art
+  .projectList
+    &-Container
+      display: flex
+      flex-wrap: wrap
+      width: 100%
+    &-Single
+      position: relative
+      display: flex
+      flex-basis: 50%
+      height: 50vw
+      p
+        position: absolute
+        bottom: 0
+        left: 0
+      .dash
+        display: none
+      img
+        width: 80%
+        object-fit: contain
+      &:nth-child(1)
+        align-items: flex-start
+      &:nth-child(2)
+        justify-content: flex-end
+      &:nth-child(3)
+        align-items: flex-start
+      &:nth-child(4)
+        align-items: flex-end
+      &:nth-child(5)
+        align-items: flex-end
+      &:nth-child(6)
+        justify-content: flex-end
+      &:nth-child(7)
+        align-items: flex-end
+      &:nth-child(8)
+        justify-content: flex-start
+      &:nth-child(9)
+        justify-content: flex-start
+      &:nth-child(10)
+        justify-content: flex-start
+      &:nth-child(11)
+        align-items: flex-start
+      &:nth-child(12)
+        justify-content: flex-end
 
 // SINGLE PAGE DETAIL BLOK
 .singleDetails
@@ -366,7 +417,7 @@ section
     color: white
   .markdown h1, h2, p
     max-width: 23em
-  &.yellow, &.white
+  &.white
     .markdown p, input, button
       color: black
   form

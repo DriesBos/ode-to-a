@@ -1,6 +1,6 @@
 <template>
   <!-- prettier-ignore -->
-  <section v-editable="blok" class="imagelistitem">
+  <section v-editable="blok" class="imageGrid">
     <ul>
       <li v-for="image in blok.image" :key="image.name">
         <img :src="image.filename" />

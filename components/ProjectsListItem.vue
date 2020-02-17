@@ -1,12 +1,12 @@
 <template>
   <!-- prettier-ignore -->
-  <div class="listSingle-Single">
+  <div class="projectList-Single">
     <nuxt-link :to="blok.hyperlink.cached_url" tag="p">
       {{ blok.title }} <span class="dash">—</span>
-    </nuxt-link>
-    <div class="listSingle-Single_Image">
+    <div class="projectList-Single_Image">
       <img :src="blok.image" />
     </div>
+    </nuxt-link>
   </div>
 </template>
 

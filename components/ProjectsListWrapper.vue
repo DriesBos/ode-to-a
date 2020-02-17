@@ -2,9 +2,9 @@
   <!-- prettier-ignore -->
   <section
     v-editable="blok"
-    class="listSingle-Wrapper"
+    class="projectList"
   >
-  <div class="listSingle-Wrapper-Container imagelistitem">
+  <div class="projectList-Container">
     <h1 v-if="blok.title">{{ blok.title }}</h1>
     <component
       :is="blok.component | dashify"
