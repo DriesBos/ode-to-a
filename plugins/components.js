@@ -9,7 +9,7 @@ import LandingGraphicItem from "~/components/LandingGraphicItem.vue"
 import MarkdownItem from "~/components/MarkdownItem.vue"
 import Page from "~/components/Page.vue"
 import PageProject from "~/components/PageProject.vue"
-import TextblockItem from "~/components/TextblockItem.vue"
+import TextblokItem from "~/components/TextblokItem.vue"
 import FooterForm from "~/components/FooterForm.vue"
 import ImageGrid from "~/components/ImageGrid.vue"
 import ListblockItem from "~/components/ListblockItem.vue"
@@ -23,7 +23,7 @@ Vue.component("blok-infoblok-item", InfoblokItem)
 Vue.component("markdown", MarkdownItem)
 Vue.component("blok-page", Page)
 Vue.component("blok-page-project", PageProject)
-Vue.component("blok-textblock-item", TextblockItem)
+Vue.component("blok-textblok-item", TextblokItem)
 Vue.component("blok-footer-form", FooterForm)
 Vue.component("blok-image-grid", ImageGrid)
 Vue.component("blok-listblock-item", ListblockItem)

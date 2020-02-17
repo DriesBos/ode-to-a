@@ -169,8 +169,9 @@ section
   &.right .landinggraphicitem-Container
     justify-content: flex-end
 
-.textitem
+.textBlok
   display: flex
+  flex-direction: column
   justify-content: center
   align-items: center
   width: 100%
@@ -179,6 +180,9 @@ section
   padding-left: var(--side-spacing)
   padding-right: var(--side-spacing)
   text-align: center
+  &-FadeIn
+    margin-top: 1em
+    opacity: 0
   &.fullscreen
     min-height: 100vh
 
