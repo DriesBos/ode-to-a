@@ -1,6 +1,6 @@
 <template>
   <!-- prettier-ignore -->
-  <section v-editable="blok" class="singleDetails-Wrapper">
+  <section v-editable="blok" class="infoBlok-Wrapper">
     <component
       :is="blok.component | dashify"
       v-for="blok in blok.body"

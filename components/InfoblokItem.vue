@@ -1,7 +1,7 @@
 <template>
-  <section v-editable="blok" class="singleDetails">
+  <section v-editable="blok" class="infoBlok">
     <h1 v-if="blok.title" class="font-regular">{{ blok.title }}</h1>
-    <p v-if="blok.text">{{ blok.text }}</p>
+    <markdown v-if="blok.text" :input="blok.text"></markdown>
   </section>
 </template>
 
