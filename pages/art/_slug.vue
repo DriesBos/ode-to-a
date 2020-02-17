@@ -1,6 +1,6 @@
 <template>
   <div class="view view-Single view-ArtSingle">
-    <blok-page-single :blok="story.content" />
+    <blok-page-project :blok="story.content" />
   </div>
 </template>
 

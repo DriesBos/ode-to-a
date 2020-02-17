@@ -2,10 +2,10 @@
   <!-- prettier-ignore -->
   <section
     v-editable="blok"
-    class="brandslistitem"
+    class="listSingle-Wrapper"
   >
-  <div class="brandslistitem-Container">
-  <h1 v-if="blok.title">{{ blok.title }}</h1>
+  <div class="listSingle-Wrapper-Container imagelistitem">
+    <h1 v-if="blok.title">{{ blok.title }}</h1>
     <component
       :is="blok.component | dashify"
       v-for="blok in blok.list"

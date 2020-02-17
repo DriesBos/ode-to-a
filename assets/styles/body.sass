@@ -178,65 +178,44 @@ section
   &.fullscreen
     min-height: 100vh
 
-.imagelistitem
-  ul
-    display: flex
-    flex-wrap: wrap
-    width: 100%
-    li
+// IMAGE GRID
+.view-Art, .view-Single
+  .imagelistitem
+    ul
       display: flex
-      flex-basis: 50%
-      height: 50vw
-      img
-        width: 80%
-        object-fit: contain
-      &:nth-child(1)
-        align-items: flex-start
-      &:nth-child(2)
-        justify-content: flex-end
-      &:nth-child(3)
-        align-items: flex-start
-      &:nth-child(4)
-        align-items: flex-end
-      &:nth-child(5)
-        align-items: flex-end
-      &:nth-child(6)
-        justify-content: flex-end
-      &:nth-child(7)
-        align-items: flex-end
-      &:nth-child(8)
-        justify-content: flex-start
-      &:nth-child(9)
-        justify-content: flex-start
-      &:nth-child(10)
-        justify-content: flex-start
-      &:nth-child(11)
-        align-items: flex-start
-      &:nth-child(12)
-        justify-content: flex-end
-
-.singleDetails
-  margin-bottom: 1em
-  &-Wrapper
-    position: absolute
-    top: 100vh
-    right: 0
-    width: 50%
-    padding-top: var(--spacing-three)
-    padding-right: var(--spacing-three)
-    padding-bottom: var(--spacing-three)
-    & section:first-child
-      p
-        font-size: 2em
-        display: block
-  h1, p
-    display: inline
-    line-height: 1
-  h1
-    font-family: "DINRg", Helvetica, Arial, sans-serif
-    text-transform: uppercase
-    font-size: 1em
-  &-InfoBlok
+      flex-wrap: wrap
+      width: 100%
+      li
+        display: flex
+        flex-basis: 50%
+        height: 50vw
+        img
+          width: 80%
+          object-fit: contain
+        &:nth-child(1)
+          align-items: flex-start
+        &:nth-child(2)
+          justify-content: flex-end
+        &:nth-child(3)
+          align-items: flex-start
+        &:nth-child(4)
+          align-items: flex-end
+        &:nth-child(5)
+          align-items: flex-end
+        &:nth-child(6)
+          justify-content: flex-end
+        &:nth-child(7)
+          align-items: flex-end
+        &:nth-child(8)
+          justify-content: flex-start
+        &:nth-child(9)
+          justify-content: flex-start
+        &:nth-child(10)
+          justify-content: flex-start
+        &:nth-child(11)
+          align-items: flex-start
+        &:nth-child(12)
+          justify-content: flex-end
 
 .listitem
   position: relative
@@ -284,74 +263,95 @@ section
     color: currentColor
     stroke: currentColor
 
-.brandslistitem
-  position: relative
-  display: flex
-  justify-content: center
-  align-items: center
-  text-align: left
-  width: 100%
-  min-height: 100vh
-  padding-top: var(--spacing-three)
-  padding-bottom: var(--spacing-three)
-  padding-left: var(--side-spacing)
-  padding-right: var(--side-spacing)
-  h1
-    font-size: 2em
-    font-family: "DINRg", Helvetica, Arial, sans-serif
-    text-transform: uppercase
-    display: block
-  p
-    font-size: 3em
-    display: inline
-    text-transform: uppercase
-    cursor: pointer
-    color: rgba($color-blue, 0)
-    -webkit-text-stroke: 1px rgba($color-blue, 1)
-    transition: color $transition-color, text-stroke $transition-color
-    &:hover
-      color: $color-blue
-      -webkit-text-stroke: 1px rgba($color-blue, 0)
-  &-Container
+.listSingle
+  &-Wrapper
+    position: relative
+    display: flex
+    justify-content: center
+    align-items: center
+    text-align: left
     width: 100%
-
-.brandslistitemsingle
-  display: inline-block
-  word-break: break-word
-  overflow-wrap: break-word
-  hyphens: none
-  &:last-child
-    .dash
-      display: none
-  &-Image
-    position: fixed
-    display: none
-    top: 0
-    left: 0
-    right: 0
-    bottom: 0
-    pointer-events: none
-    z-index: -1
-    img
+    min-height: 100vh
+    padding-top: var(--spacing-three)
+    padding-bottom: var(--spacing-three)
+    padding-left: var(--side-spacing)
+    padding-right: var(--side-spacing)
+    h1
+      font-size: 2em
+      font-family: "DINRg", Helvetica, Arial, sans-serif
+      text-transform: uppercase
+      display: block
+    p
+      font-size: 3em
+      display: inline
+      text-transform: uppercase
+      cursor: pointer
+      color: rgba($color-blue, 0)
+      -webkit-text-stroke: 1px rgba($color-blue, 1)
+      transition: color $transition-color, text-stroke $transition-color
+      &:hover
+        color: $color-blue
+        -webkit-text-stroke: 1px rgba($color-blue, 0)
+    &-Container
       width: 100%
-      height: 100%
-      object-fit: cover
-  p
-    cursor: pointer
+  &-Single
     display: inline-block
-    overflow-wrap: break-word
-    hyphens: none
-  span
-    display: inline
     word-break: break-word
     overflow-wrap: break-word
     hyphens: none
-  &:hover .brandslistitemsingle-Image
-    display: block
+    &:last-child
+      .dash
+        display: none
+    &_Image
+      position: fixed
+      display: none
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      pointer-events: none
+      z-index: -1
+      img
+        width: 100%
+        height: 100%
+        object-fit: cover
+    p
+      cursor: pointer
+      display: inline-block
+      overflow-wrap: break-word
+      hyphens: none
+    span
+      display: inline
+      word-break: break-word
+      overflow-wrap: break-word
+      hyphens: none
+    &:hover .listSingle-Single_Image
+      display: block
+.view-Brands
+.view-Art
 
-.artlistitem
-
-.artlistitemsingle
+// SINGLE PAGE DETAIL BLOK
+.singleDetails
+  margin-bottom: 1em
+  &-Wrapper
+    position: absolute
+    top: 100vh
+    right: 0
+    width: 50%
+    padding-top: var(--spacing-three)
+    padding-right: var(--spacing-three)
+    padding-bottom: var(--spacing-three)
+    & section:first-child
+      p
+        font-size: 2em
+        display: block
+  h1, p
+    display: inline
+    line-height: 1
+  h1
+    font-family: "DINRg", Helvetica, Arial, sans-serif
+    text-transform: uppercase
+    font-size: 1em
 
 .footerform
   position: relative
