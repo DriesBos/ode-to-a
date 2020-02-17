@@ -2,7 +2,7 @@
   <!-- prettier-ignore -->
   <div class="projectList-Single">
     <nuxt-link :to="blok.hyperlink.cached_url" tag="p">
-      {{ blok.title }} <span class="dash">—</span>
+      {{ blok.title }}<span class="dash">&nbsp;—&nbsp;</span>
     <div class="projectList-Single_Image">
       <img :src="blok.image" />
     </div>
