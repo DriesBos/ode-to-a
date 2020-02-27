@@ -24,8 +24,9 @@ export default {
     this.observer = new IntersectionObserver(
       ([entry]) => {
         if (entry && entry.isIntersecting) {
-          console.log(entry)
           entry.target.classList.add("fade")
+        } else {
+          entry.target.classList.remove("fade")
         }
       },
       { threshold: 0.7 }
