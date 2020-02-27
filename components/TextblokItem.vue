@@ -1,6 +1,10 @@
 <template>
   <!-- prettier-ignore -->
-  <section v-editable="blok" class="textBlok" :class="{ fullscreen: blok.fullscreen }">
+  <section
+    v-editable="blok"
+    class="textBlok intersectionObserver"
+    :class="{ fullscreen: blok.fullscreen }"
+  >
     <markdown v-if="blok.text" class="textBlok-Main" :input="blok.text" />
     <markdown v-if="blok.fade_in_text" class="textBlok-FadeIn" :input="blok.fade_in_text" />
   </section>
@@ -11,8 +15,26 @@ export default {
   props: {
     blok: Object
   },
+  data() {
+    return {
+      observer: null
+    }
+  },
   mounted() {
-    console.log(this.blok)
-  }
+    this.observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry && entry.isIntersecting) {
+          console.log(entry)
+          entry.target.classList.add("fade")
+        }
+      },
+      { threshold: 0.7 }
+    )
+    this.observer.observe(this.$el)
+  },
+  destroyed() {
+    this.observer.disconnect()
+  },
+  method: {}
 }
 </script>

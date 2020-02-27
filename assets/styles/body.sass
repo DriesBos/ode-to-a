@@ -103,6 +103,14 @@
 .white, .view-People
   color: white
 
+.intersectionObserver
+  .textBlok-FadeIn
+    opacity: 0
+    transition: opacity .33s ease
+  &.fade
+    .textBlok-FadeIn
+      opacity: 1
+
 section
   max-width: 100%
   img
@@ -182,7 +190,6 @@ section
   text-align: center
   &-FadeIn
     margin-top: 1em
-    opacity: 0
   &.fullscreen
     min-height: 100vh
 
