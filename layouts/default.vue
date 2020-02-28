@@ -1,12 +1,12 @@
 <template>
-  <div>
+  <main>
     <the-header :class="pageColor" />
     <!-- <the-svgcarousel :class="pageColor" /> -->
     <transition name="pages" mode="out-in">
       <nuxt />
     </transition>
     <blok-footer-form :class="pageColor" />
-  </div>
+  </main>
 </template>
 
 <script>
