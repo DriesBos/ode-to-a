@@ -103,6 +103,37 @@
 .white, .view-People
   color: white
 
+section
+  position: relative
+  max-width: 100%
+  img
+    max-width: 100%
+
+.graphic
+  position: absolute
+  top: 0
+  left: 0
+  bottom: 0
+  width: 100%
+  height: 100%
+  display: flex
+  justify-content: center
+  align-items: center
+  padding-top: var(--spacing-three)
+  padding-bottom: var(--spacing-three)
+  padding-left: var(--side-spacing)
+  padding-right: var(--side-spacing)
+  z-index: -1
+  &.left
+    justify-content: flex-start
+  &.right
+    justify-content: flex-end
+  .svg
+    height: 100%
+    width: 100%
+  svg, img
+    height: 100%
+
 .intersectionObserver
   .textBlok-FadeIn
     opacity: 0
@@ -110,11 +141,6 @@
   &.fade
     .textBlok-FadeIn
       opacity: 1
-
-section
-  max-width: 100%
-  img
-    max-width: 100%
 
 .landingitem
   width: 100vw
@@ -193,7 +219,6 @@ section
   &.fullscreen
     min-height: 100vh
 
-// IMAGE GRID
 .view-Art, .view-Single
   .imageGrid
     ul
@@ -237,20 +262,6 @@ section
     font-size: 3em
     display: inline
     text-transform: uppercase
-  &-Graphic
-    position: absolute
-    top: 0
-    left: 0
-    bottom: 0
-    width: 100%
-    height: 100%
-    display: flex
-    justify-content: flex-end
-    align-items: center
-    padding-top: var(--spacing-three)
-    padding-bottom: var(--spacing-three)
-    padding-left: var(--side-spacing)
-    padding-right: var(--side-spacing)
   &.smallsize
     h1, p
       font-size: 1em
