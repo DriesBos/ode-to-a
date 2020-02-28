@@ -1,6 +1,6 @@
 <template>
   <div class="view view-Brands">
-    <div class="landinggraphicitem right">
+    <!-- <div class="landinggraphicitem right">
       <div class="landinggraphicitem-Container">
         <svg viewBox="0 0 758.5 723">
           <g data-name="Laag 2">
@@ -18,7 +18,7 @@
           </g>
         </svg>
       </div>
-    </div>
+    </div> -->
     <component
       :is="story.content.component | dashify"
       v-if="story.content.component"
