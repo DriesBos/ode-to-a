@@ -6,6 +6,7 @@
       :key="story.content._uid"
       :blok="story.content"
     ></component>
+    <blok-footer-form />
   </div>
 </template>
 

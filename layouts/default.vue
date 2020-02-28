@@ -3,9 +3,8 @@
     <the-header :class="pageColor" />
     <!-- <the-svgcarousel :class="pageColor" /> -->
     <transition name="pages" mode="out-in">
-      <nuxt />
+      <nuxt :class="pageColor" />
     </transition>
-    <blok-footer-form :class="pageColor" />
   </main>
 </template>
 

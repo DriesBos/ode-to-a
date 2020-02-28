@@ -1,6 +1,7 @@
 <template>
   <div class="view view-Single view-BrandSingle">
     <blok-page-project :blok="story.content" />
+    <blok-footer-form />
   </div>
 </template>
 
