@@ -106,7 +106,7 @@
 .intersectionObserver
   .textBlok-FadeIn
     opacity: 0
-    transition: opacity .33s ease
+    transition: opacity $transition-scroll-fade
   &.fade
     .textBlok-FadeIn
       opacity: 1
@@ -453,7 +453,7 @@ section
       svg
         height: .7em
         fill: currentColor
-        transition: transform $transition-arrow
+        transition: transform $transition-icon
       &:hover
         svg
           transform: translateX(.1em)
