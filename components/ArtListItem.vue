@@ -1,8 +1,8 @@
 <template>
-  <li class="artList-Item">
+  <nuxt-link :to="blok.hyperlink.cached_url" class="artList-Item" tag="li">
     <p>{{ blok.title }}</p>
     <img :src="blok.image" />
-  </li>
+  </nuxt-link>
 </template>
 
 <script>
@@ -16,6 +16,7 @@ export default {
     }
   },
   mounted() {
+    console.log(this.blok)
     const targets = document.querySelectorAll(".artList-Item")
     const lazyFilter = target => {
       this.observer = new IntersectionObserver(
