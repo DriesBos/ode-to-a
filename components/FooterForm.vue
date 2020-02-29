@@ -8,10 +8,10 @@
       </div>
       <form name="contact" method="post" action="/succes" data-netlify="true" data-netlify-honeypot="bot-field">
         <input type="hidden" name="form-name" value="contact" />
-        <input type="text" name="name" placeholder="NAME" />
-        <input type="email" name="email" placeholder="EMAIL" />
+        <input required type="text" name="name" placeholder="NAME" />
+        <input required type="email" name="email" placeholder="EMAIL" />
         <input type="text" name="city" placeholder="CITY" />
-        <input type="text" name="message" placeholder="FIRE AWAY" />
+        <input required type="text" name="message" placeholder="FIRE AWAY" />
         <div class="footerform-Buttons">
           <button type="submit">SEND
             <svg viewBox="0 0 46.65 37.7">
