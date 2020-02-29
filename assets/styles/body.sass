@@ -130,18 +130,23 @@ section
   line-height: 1
   color: currentColor
   font-style: normal
-  &.red
-    color: rgba($color-red, 1)
-  &.blue
-    color: rgba($color-blue, 1)
-  &.yellow
-    color: rgba($color-yellow, 1)
-  &.white
-    color: rgba($color-yellow, 1)
+  &.red text
+    color: $color-red
+  &.blue text
+    color: $color-blue
+  &.yellow text
+    color: $color-yellow
+  &.white text
+    color: white
   svg
     height: 100%
     width: 100%
     overflow: visible
+    & text
+      fill: currentColor
+  &.scrolled
+    svg text
+      fill: none
 
 .graphic
   position: absolute

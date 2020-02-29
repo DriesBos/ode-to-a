@@ -18,7 +18,7 @@
         />
       </defs>
       <!-- prettier-ignore -->
-      <text fill="currentColor" font-size="1em">
+      <text fill="none" stroke="currentColor" font-size="1em">
         <textPath
           xlink:href="#thePath"
           method="stretch"
