@@ -7,8 +7,20 @@
         <nuxt-link to="/people" tag="li">For People</nuxt-link>
         <nuxt-link to="/art" tag="li">For Art</nuxt-link>
       </ul>
-      <ul v-else class="header-Single">
+      <ul v-if="this.$route.name === 'brands-slug'" class="header-Single">
         <nuxt-link to="/brands" tag="li">
+          <svg viewBox="0 0 46.65 37.7">
+            <g data-name="Laag 2">
+              <path
+                d="M27.8,37.7H17.55l15.2-15H0V15H32.75L17.55,0H27.8L46.65,18.85Z"
+                data-name="Laag 1"
+              />
+            </g>
+          </svg>
+        </nuxt-link>
+      </ul>
+      <ul v-if="this.$route.name === 'art-slug'" class="header-Single">
+        <nuxt-link to="/art" tag="li">
           <svg viewBox="0 0 46.65 37.7">
             <g data-name="Laag 2">
               <path
