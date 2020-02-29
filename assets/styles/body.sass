@@ -55,7 +55,12 @@
     padding: var(--spacing-three)
     svg
       transform: rotate(180deg)
-      height: 1em
+      height: .8em
+      fill: currentColor
+      transition: transform $transition-icon
+    &:hover
+      svg
+        transform: rotate(0deg)
   .nuxt-link-exact-active
     text-decoration: none
   &.yellow
@@ -458,7 +463,7 @@ section
         transition: transform $transition-icon
       &:hover
         svg
-          transform: translateX(.1em)
+          transform: rotate(180deg)
 
 .theMoreInfo
   position: absolute
