@@ -125,7 +125,7 @@ export default {
       let height = window.innerHeight
       let shape = document.getElementById("theSvg")
       let path = document.getElementById("thePath")
-      let d = `M 0 0 L ${width} 0 L ${width} ${height} L 0 ${height} z`
+      let d = `M 0 ${height} L 0 0 L ${width} 0 L ${width} ${height} z`
       shape.setAttribute("viewBox", `0 0 ${width} ${height}`)
       path.setAttribute("d", d)
     },
@@ -133,7 +133,6 @@ export default {
       let height = window.innerHeight
       let shape = document.querySelector(".svg-container")
       let path = document.getElementById("text-path")
-      // let pathLenght = path.getTotalLength()
       let position =
         document.body.scrollTop || document.documentElement.scrollTop
       path.setAttribute("startOffset", -5000 + position / 2)
