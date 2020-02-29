@@ -47,7 +47,7 @@ export default {
     },
     onScroll() {
       let height = window.innerHeight
-      let shape = document.getElementById("theSvg")
+      let shape = document.querySelector(".svg-container")
       let path = document.getElementById("thePath")
       // let pathLenght = path.getTotalLength()
       let position =
@@ -55,8 +55,9 @@ export default {
       path.setAttribute("startOffset", position)
       // console.log(position)
       if (position > height) {
-        console.log("FIRED")
         shape.classList.add("scrolled")
+      } else {
+        shape.classList.remove("scrolled")
       }
     }
   },
