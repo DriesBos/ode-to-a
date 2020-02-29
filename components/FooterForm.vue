@@ -12,15 +12,19 @@
         <input type="email" name="email" placeholder="EMAIL" />
         <input type="text" name="city" placeholder="CITY" />
         <input type="text" name="message" placeholder="FIRE AWAY" />
-        <button type="submit">SEND
-          <svg viewBox="0 0 46.65 37.7">
-            <g data-name="Laag 2">
-              <path d="M27.8,37.7H17.55l15.2-15H0V15H32.75L17.55,0H27.8L46.65,18.85Z" data-name="Laag 1"/>
-            </g>
-          </svg>
-        </button>
+        <div class="footerform-Buttons">
+          <button type="submit">SEND
+            <svg viewBox="0 0 46.65 37.7">
+              <g data-name="Laag 2">
+                <path d="M27.8,37.7H17.55l15.2-15H0V15H32.75L17.55,0H27.8L46.65,18.85Z" data-name="Laag 1"/>
+              </g>
+            </svg>
+          </button>
+          <h4 @click="toggleItem">INFO</h4>
+        </div>
       </form>
     </div>
+    <the-more-info @clicked="toggleItem" :active="isOpen"/>
   </section>
 </template>
 
@@ -29,6 +33,15 @@ export default {
   props: {
     blok: Object
   },
-  mounted() {}
+  data() {
+    return {
+      isOpen: false
+    }
+  },
+  methods: {
+    toggleItem() {
+      this.isOpen = !this.isOpen
+    }
+  }
 }
 </script>

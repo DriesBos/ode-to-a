@@ -15,6 +15,7 @@ import GraphicItem from "~/components/GraphicItem.vue"
 import FooterForm from "~/components/FooterForm.vue"
 import ImageGrid from "~/components/ImageGrid.vue"
 import ListblokItem from "~/components/ListblokItem.vue"
+import TheMoreInfo from "~/components/TheMoreInfo.vue"
 
 Vue.component("blok-projects-list-wrapper", ProjectsListWrapper)
 Vue.component("blok-projects-list-item", ProjectsListItem)
@@ -31,3 +32,4 @@ Vue.component("blok-graphic-item", GraphicItem)
 Vue.component("blok-footer-form", FooterForm)
 Vue.component("blok-image-grid", ImageGrid)
 Vue.component("blok-listblok-item", ListblokItem)
+Vue.component("the-more-info", TheMoreInfo)

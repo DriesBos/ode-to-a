@@ -420,8 +420,14 @@ section
   min-height: 100vh
   justify-content: space-around
   padding: var(--spacing-three)
-  h1, h2, p
-    color: white
+  &-Buttons
+    display: flex
+    justify-content: space-between
+    width: 100%
+    margin-top: var(--spacing-three)
+    h4
+      color: white
+      cursor: pointer
   .markdown h1, h2, p
     max-width: 23em
   &.yellow, &.white
@@ -441,7 +447,6 @@ section
         color: currentColor
         text-transform: uppercase
     button
-      margin-top: var(--spacing-three)
       color: currentColor
       cursor: pointer
       color: white
@@ -452,3 +457,21 @@ section
       &:hover
         svg
           transform: translateX(.1em)
+
+.theMoreInfo
+  position: absolute
+  left: 0
+  bottom: 0
+  right: 0
+  background: white
+  padding: var(--spacing-three)
+  transition: transform $transition-slide
+  transform: translate3d(0, 100%, 0)
+  &.active
+    transform: translate3d(0, 0%, 0)
+  p
+    margin-bottom: 1em
+  p, h1, h2, h3, h4
+    color: black
+  h1
+    text-transform: uppercase
