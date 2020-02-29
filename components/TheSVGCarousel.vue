@@ -18,7 +18,7 @@
         />
       </defs>
       <!-- prettier-ignore -->
-      <text fill="none" stroke="currentColor" font-size="1em">
+      <text v-if="this.$route.name === 'index'" fill="none" stroke="currentColor" stroke-width="2" font-size="1em">
         <textPath
           xlink:href="#thePath"
           method="stretch"
@@ -27,7 +27,91 @@
           lengthAdjust="spacingAndGlyphs"
           id="text-path"
         >
-        ODE TO ODE TO ODE TO ODE ODE TO ODE TO ODE TO ODE ODE TO ODE TO ODE TO ODE ODE TO ODE TO ODE TO ODE ODE TO ODE TO ODE TO ODE ODE TO ODE TO ODE TO ODE ODE TO ODE TO ODE TO ODE ODE TO ODE TO ODE TO ODE ODE TO ODE TO ODE TO ODE ODE TO ODE TO ODE TO ODE ODE TO ODE TO ODE TO ODE ODE TO ODE TO ODE TO ODE ODE TO ODE TO ODE TO ODE ODE TO ODE TO ODE TO ODE ODE TO ODE TO ODE TO ODE ODE TO ODE TO ODE TO ODE ODE TO ODE TO ODE TO ODE ODE TO ODE TO ODE TO ODE ODE TO ODE TO ODE TO ODE ODE TO ODE TO ODE TO ODE ODE TO ODE TO ODE TO ODE</textPath>
+        YOUR ESSENCE IS YOUR PRESSENCE IS YOUR ESSENCE IS YOUR PRESSENCE IS YOUR ESSENCE IS YOUR PRESSENCE IS YOUR ESSENCE IS YOUR PRESSENCE YOUR ESSENCE IS YOUR PRESSENCE IS YOUR ESSENCE IS YOUR PRESSENCE YOUR ESSENCE IS YOUR PRESSENCE IS YOUR ESSENCE IS YOUR PRESSENCE YOUR ESSENCE IS YOUR PRESSENCE IS YOUR ESSENCE IS YOUR PRESSENCE YOUR ESSENCE IS YOUR PRESSENCE IS YOUR ESSENCE IS YOUR PRESSENCE YOUR ESSENCE IS YOUR PRESSENCE IS YOUR ESSENCE IS YOUR PRESSENCE YOUR ESSENCE IS YOUR PRESSENCE IS YOUR ESSENCE IS YOUR PRESSENCE YOUR ESSENCE IS YOUR PRESSENCE IS YOUR ESSENCE IS YOUR PRESSENCE
+        </textPath>
+      </text>
+      <text
+        v-else-if="this.$route.name === 'people'"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        font-size="1em"
+      >
+        <textPath
+          xlink:href="#thePath"
+          method="stretch"
+          spacing="auto"
+          startOffset="0"
+          lengthAdjust="spacingAndGlyphs"
+          id="text-path"
+        >
+          ODE TO PEOPLE ODE TO PEOPLE ODE TO PEOPLE ODE TO PEOPLE ODE TO PEOPLE
+          ODE TO PEOPLE ODE TO PEOPLE ODE TO PEOPLE ODE TO PEOPLE ODE TO PEOPLE
+          ODE TO PEOPLE ODE TO PEOPLE ODE TO PEOPLE ODE TO PEOPLE ODE TO PEOPLE
+          ODE TO PEOPLE ODE TO PEOPLE ODE TO PEOPLE ODE TO PEOPLE ODE TO PEOPLE
+          ODE TO PEOPLE ODE TO PEOPLE ODE TO PEOPLE ODE TO PEOPLE ODE TO PEOPLE
+          ODE TO PEOPLE ODE TO PEOPLE ODE TO PEOPLE ODE TO PEOPLE ODE TO PEOPLE
+          ODE TO PEOPLE ODE TO PEOPLE ODE TO PEOPLE ODE TO PEOPLE ODE TO PEOPLE
+          ODE TO PEOPLE ODE TO PEOPLE ODE TO PEOPLE ODE TO PEOPLE ODE TO PEOPLE
+          ODE TO PEOPLE ODE TO PEOPLE ODE TO PEOPLE ODE TO PEOPLE ODE TO PEOPLE
+        </textPath>
+      </text>
+      <text
+        v-else-if="
+          this.$route.name === 'art' || this.$route.name === 'art-slug'
+        "
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        font-size="1em"
+      >
+        <textPath
+          xlink:href="#thePath"
+          method="stretch"
+          spacing="auto"
+          startOffset="0"
+          lengthAdjust="spacingAndGlyphs"
+          id="text-path"
+        >
+          ODE TO ART ODE TO ART ODE TO ART ODE TO ART ODE TO ART ODE TO ART ODE
+          TO ART DE TO ART ODE TO ART ODE TO ART ODE TO ART ODE TO ART ODE TO
+          ART ODE TO ART DE TO ART ODE TO ART ODE TO ART ODE TO ART ODE TO ART
+          ODE TO ART ODE TO ART DE TO ART ODE TO ART ODE TO ART ODE TO ART ODE
+          TO ART ODE TO ART ODE TO ART DE TO ART ODE TO ART ODE TO ART ODE TO
+          ART ODE TO ART ODE TO ART ODE TO ART DE TO ART ODE TO ART ODE TO ART
+          ODE TO ART ODE TO ART ODE TO ART ODE TO ART DE TO ART ODE TO ART ODE
+          TO ART ODE TO ART ODE TO ART ODE TO ART ODE TO ART DE TO ART ODE TO
+          ART ODE TO ART ODE TO ART ODE TO ART ODE TO ART ODE TO ART DE TO ART
+          ODE TO ART ODE TO ART ODE TO ART ODE TO ART ODE TO ART ODE TO ART DE
+          TO ART ODE TO ART ODE TO ART ODE TO ART ODE TO ART ODE TO ART ODE TO
+          ART DE TO ART ODE TO ART ODE TO ART ODE TO ART ODE TO ART ODE TO ART
+          ODE TO ART
+        </textPath>
+      </text>
+      <text
+        v-else
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        font-size="1em"
+      >
+        <textPath
+          xlink:href="#thePath"
+          method="stretch"
+          spacing="auto"
+          startOffset="0"
+          lengthAdjust="spacingAndGlyphs"
+          id="text-path"
+        >
+          ODE TO A ODE TO A ODE TO A ODE TO A ODE TO A ODE TO A ODE TO A ODE TO
+          A ODE TO A ODE TO A ODE TO A ODE TO A ODE TO A ODE TO A ODE TO A ODE
+          TO A ODE TO A ODE TO A ODE TO A ODE TO A ODE TO A ODE TO A ODE TO A
+          ODE TO A ODE TO A ODE TO A ODE TO A ODE TO A ODE TO A ODE TO A ODE TO
+          A ODE TO A ODE TO A ODE TO A ODE TO A ODE TO A ODE TO A ODE TO A ODE
+          TO A ODE TO A ODE TO A ODE TO A ODE TO A ODE TO A ODE TO A ODE TO A
+          ODE TO A ODE TO A ODE TO A ODE TO A ODE TO A ODE TO A ODE TO A ODE TO
+          A ODE TO A ODE TO A ODE TO A ODE TO A ODE TO A ODE TO A
+        </textPath>
       </text>
     </svg>
   </div>
