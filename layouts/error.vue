@@ -1,5 +1,5 @@
 <template>
-  <div class="view view-Error">
+  <div class="view view-Message">
     <section class="textBlok fullscreen">
       <h1 class="textBlok-Main">404 ERROR</h1>
       <p>

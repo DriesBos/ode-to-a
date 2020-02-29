@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <main :class="pageColor">
     <the-header :class="pageColor" />
     <the-svgcarousel :class="pageColor" />
     <transition name="pages" mode="out-in">
