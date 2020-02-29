@@ -159,7 +159,24 @@ export default {
       let position =
         document.body.scrollTop || document.documentElement.scrollTop
       path.setAttribute("startOffset", -4000 + position / 2)
-      if (position > height / 2) {
+      if (
+        position > height / 2 ||
+        this.$route.name === "brands-slug" ||
+        this.$route.name === "art-slug"
+      ) {
+        shape.classList.add("scrolled")
+      } else {
+        shape.classList.remove("scrolled")
+      }
+    }
+  },
+  watch: {
+    $route() {
+      let shape = document.querySelector(".svg-container")
+      if (
+        this.$route.name === "brands-slug" ||
+        this.$route.name === "art-slug"
+      ) {
         shape.classList.add("scrolled")
       } else {
         shape.classList.remove("scrolled")
