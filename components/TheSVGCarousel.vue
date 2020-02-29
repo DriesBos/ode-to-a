@@ -23,8 +23,9 @@
           xlink:href="#thePath"
           method="stretch"
           spacing="auto"
+          startOffset="0"
           lengthAdjust="spacingAndGlyphs"
-        >ODE TO ODE TO ODE TO ODE TO ODE TO ODE TO ODE TO ODE TO ODE TO ODE TO ODE TO ODE TO ODE TO ODE TO ODE TO ODE TO ODE TO ODE TO ODE TO ODE TO ODE TO ODE TO ODE TO ODE TO ODE TO ODE TO ODE TO ODE TO ODE TO ODE TO ODE TO ODE TO ODE TO ODE TO ODE TO ODE TO ODE TO ODE TO ODE TO ODE TO ODE TO ODE TO ODE TO ODE TO ODE TO ODE TO ODE TO ODE TO ODE TO ODE TO ODE TO ODE TO ODE TO ODE TO ODE TO ODE TO ODE TO ODE TO ODE TO ODE TO ODE TO ODE TO ODE TO ODE TO ODE TO ODE TO ODE TO ODE TO ODE TO ODE TO ODE TO ODE TO ODE TO ODE TO ODE TO ODE TO</textPath>
+        >ODE TO ODE TO ODE TO ODE ODE TO ODE TO ODE TO ODE ODE TO ODE TO ODE TO ODE ODE TO ODE TO ODE TO ODE ODE TO ODE TO ODE TO ODE ODE TO ODE TO ODE TO ODE ODE TO ODE TO ODE TO ODE</textPath>
       </text>
     </svg>
   </div>
@@ -41,34 +42,22 @@ export default {
       let d = `M 0 0 L ${width} 0 L ${width} ${height} L 0 ${height} z`
       shape.setAttribute("viewBox", `0 0 ${width} ${height}`)
       path.setAttribute("d", d)
+    },
+    carouselOnScroll() {
+      let path = document.getElementById("thePath")
+      let pathLenght = path.getTotalLength()
+      // let position = window.scrollY
+      path.setAttribute("startOffset", 500)
+      console.log(pathLenght)
     }
   },
   mounted() {
     this.setRatio()
-    window.addEventListener("resize", this.setRatio())
+    window.addEventListener("resize", this.setRatio)
+    window.addEventListener("scroll", this.carouselOnScroll)
+  },
+  destroyed() {
+    window.removeEventListener("scroll", this.carouselOnScroll())
   }
 }
 </script>
-
-<style lang="sass" scoped>
-.svg-container
-  display: inline-block
-  position: fixed
-  left: 0
-  right: 0
-  top: 0
-  bottom: 0
-  padding: 5vmin
-  overflow: hidden
-  font-family: 'DINBk', Helvetica, Arial, sans-serif
-  font-size: 50px !important
-  line-height: 1.5
-  color: yellow
-  font-style: normal
-  border: 2px solid green
-  svg
-    height: 100%
-    width: 100%
-    overflow: visible
-    fill: currentColor
-</style>
