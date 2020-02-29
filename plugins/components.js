@@ -2,6 +2,8 @@ import Vue from "vue"
 
 import ProjectsListWrapper from "~/components/ProjectsListWrapper.vue"
 import ProjectsListItem from "~/components/ProjectsListItem.vue"
+import ArtListWrapper from "~/components/ArtListWrapper.vue"
+import ArtListItem from "~/components/ArtListItem.vue"
 import InfoblokWrapper from "~/components/InfoblokWrapper.vue"
 import InfoblokItem from "~/components/InfoblokItem.vue"
 import LandingItem from "~/components/LandingItem.vue"
@@ -16,6 +18,8 @@ import ListblokItem from "~/components/ListblokItem.vue"
 
 Vue.component("blok-projects-list-wrapper", ProjectsListWrapper)
 Vue.component("blok-projects-list-item", ProjectsListItem)
+Vue.component("blok-art-list-wrapper", ArtListWrapper)
+Vue.component("blok-art-list-item", ArtListItem)
 Vue.component("blok-landing-item", LandingItem)
 Vue.component("blok-infoblok-wrapper", InfoblokWrapper)
 Vue.component("blok-infoblok-item", InfoblokItem)

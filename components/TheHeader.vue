@@ -1,7 +1,7 @@
 <template>
   <header class="header">
     <nav>
-      <ul class="header-Desktop" v-if="showHeader">
+      <ul v-if="showHeader" class="header-Desktop">
         <nuxt-link to="/" tag="li">A —</nuxt-link>
         <nuxt-link to="/brands" tag="li">For Brands</nuxt-link>
         <nuxt-link to="/people" tag="li">For People</nuxt-link>
