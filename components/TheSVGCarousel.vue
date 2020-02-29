@@ -23,10 +23,10 @@
           xlink:href="#thePath"
           method="stretch"
           spacing="auto"
-          startOffset="-100"
+          startOffset="0"
           lengthAdjust="spacingAndGlyphs"
+          id="text-path"
         >
-        <animate attributeName="startOffset" from="-100%" to ="100%" begin="0s" dur="100s" repeatCount="indefinite"/>
         ODE TO ODE TO ODE TO ODE ODE TO ODE TO ODE TO ODE ODE TO ODE TO ODE TO ODE ODE TO ODE TO ODE TO ODE ODE TO ODE TO ODE TO ODE ODE TO ODE TO ODE TO ODE ODE TO ODE TO ODE TO ODE ODE TO ODE TO ODE TO ODE ODE TO ODE TO ODE TO ODE ODE TO ODE TO ODE TO ODE ODE TO ODE TO ODE TO ODE ODE TO ODE TO ODE TO ODE ODE TO ODE TO ODE TO ODE ODE TO ODE TO ODE TO ODE ODE TO ODE TO ODE TO ODE ODE TO ODE TO ODE TO ODE ODE TO ODE TO ODE TO ODE ODE TO ODE TO ODE TO ODE ODE TO ODE TO ODE TO ODE ODE TO ODE TO ODE TO ODE ODE TO ODE TO ODE TO ODE</textPath>
       </text>
     </svg>
@@ -48,12 +48,11 @@ export default {
     onScroll() {
       let height = window.innerHeight
       let shape = document.querySelector(".svg-container")
-      let path = document.getElementById("thePath")
+      let path = document.getElementById("text-path")
       // let pathLenght = path.getTotalLength()
       let position =
         document.body.scrollTop || document.documentElement.scrollTop
-      path.setAttribute("startOffset", position)
-      // console.log(position)
+      path.setAttribute("startOffset", -5000 + position / 2)
       if (position > height) {
         shape.classList.add("scrolled")
       } else {
