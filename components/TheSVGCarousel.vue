@@ -23,9 +23,11 @@
           xlink:href="#thePath"
           method="stretch"
           spacing="auto"
-          startOffset="0"
+          startOffset="-100"
           lengthAdjust="spacingAndGlyphs"
-        >ODE TO ODE TO ODE TO ODE ODE TO ODE TO ODE TO ODE ODE TO ODE TO ODE TO ODE ODE TO ODE TO ODE TO ODE ODE TO ODE TO ODE TO ODE ODE TO ODE TO ODE TO ODE ODE TO ODE TO ODE TO ODE</textPath>
+        >
+        <animate attributeName="startOffset" from="-100%" to ="100%" begin="0s" dur="100s" repeatCount="indefinite"/>
+        ODE TO ODE TO ODE TO ODE ODE TO ODE TO ODE TO ODE ODE TO ODE TO ODE TO ODE ODE TO ODE TO ODE TO ODE ODE TO ODE TO ODE TO ODE ODE TO ODE TO ODE TO ODE ODE TO ODE TO ODE TO ODE ODE TO ODE TO ODE TO ODE ODE TO ODE TO ODE TO ODE ODE TO ODE TO ODE TO ODE ODE TO ODE TO ODE TO ODE ODE TO ODE TO ODE TO ODE ODE TO ODE TO ODE TO ODE ODE TO ODE TO ODE TO ODE ODE TO ODE TO ODE TO ODE ODE TO ODE TO ODE TO ODE ODE TO ODE TO ODE TO ODE ODE TO ODE TO ODE TO ODE ODE TO ODE TO ODE TO ODE ODE TO ODE TO ODE TO ODE ODE TO ODE TO ODE TO ODE</textPath>
       </text>
     </svg>
   </div>
@@ -43,21 +45,28 @@ export default {
       shape.setAttribute("viewBox", `0 0 ${width} ${height}`)
       path.setAttribute("d", d)
     },
-    carouselOnScroll() {
+    onScroll() {
+      let height = window.innerHeight
+      let shape = document.getElementById("theSvg")
       let path = document.getElementById("thePath")
-      let pathLenght = path.getTotalLength()
-      // let position = window.scrollY
-      path.setAttribute("startOffset", 500)
-      console.log(pathLenght)
+      // let pathLenght = path.getTotalLength()
+      let position =
+        document.body.scrollTop || document.documentElement.scrollTop
+      path.setAttribute("startOffset", position)
+      // console.log(position)
+      if (position > height) {
+        console.log("FIRED")
+        shape.classList.add("scrolled")
+      }
     }
   },
   mounted() {
     this.setRatio()
     window.addEventListener("resize", this.setRatio)
-    window.addEventListener("scroll", this.carouselOnScroll)
+    window.addEventListener("scroll", this.onScroll)
   },
   destroyed() {
-    window.removeEventListener("scroll", this.carouselOnScroll())
+    window.removeEventListener("scroll", this.onScroll())
   }
 }
 </script>
