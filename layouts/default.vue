@@ -10,13 +10,11 @@
 
 <script>
 import TheHeader from "~/components/TheHeader"
-// import TheTextCarousel from "~/components/TheTextCarousel"
 import TheSVGCarousel from "~/components/TheSVGCarousel"
 
 export default {
   components: {
     "the-header": TheHeader,
-    // "the-textcarousel": TheTextCarousel,
     "the-svgcarousel": TheSVGCarousel
   },
   data() {
