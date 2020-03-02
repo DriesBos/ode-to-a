@@ -14,7 +14,7 @@ export default {
   },
   data() {
     return {
-      filtered: true
+      filtered: false
     }
   },
   mounted() {

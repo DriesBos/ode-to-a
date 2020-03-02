@@ -192,14 +192,6 @@ section
     height: 100%
     object-fit: cover
     transition: filter $transition-scroll-filter
-  &.filter
-    h1, h2, h3, h4, p
-      color: var(--second-color)
-      -webkit-text-stroke: 1px var(--current-color)
-    img
-      mix-blend-mode: screen
-      filter: greyscale(1) contrast(2)
-      -webkit-filter: grayscale(1) contrast(2)
   &-Text
     position: absolute
     display: flex
@@ -219,6 +211,14 @@ section
   top: 0
 .view-Single .landingItem
   position: relative
+  &.filter
+    h1, h2, h3, h4, p
+      color: var(--second-color)
+      -webkit-text-stroke: 1px var(--current-color)
+    img
+      mix-blend-mode: screen
+      filter: greyscale(1) contrast(2)
+      -webkit-filter: grayscale(1) contrast(2)
 
 .textBlok
   display: flex
