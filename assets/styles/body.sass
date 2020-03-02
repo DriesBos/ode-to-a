@@ -182,15 +182,7 @@ section
     &.right
       justify-content: flex-end
 
-.intersectionObserver
-  .textBlok-FadeIn
-    opacity: 0
-    transition: opacity $transition-scroll-fade
-  &.fade
-    .textBlok-FadeIn
-      opacity: 1
-
-.landingitem
+.landingItem
   width: 100vw
   height: 100vh
   z-index: -1
@@ -198,17 +190,25 @@ section
     width: 100%
     height: 100%
     object-fit: cover
-  h1
+  &-Text
     position: absolute
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
     left: 0
+    top: 0
+    right: 0
     bottom: 0
     padding: var(--spacing-three)
     text-transform: uppercase
-.view-Home .landingitem,
-.view-Brands .landingitem,
-.view-People .landingitem
+.view-Home .landingItem,
+.view-Brands .landingItem,
+.view-People .landingItem
   position: sticky
   top: 0
+.view-Single .landingItem
+  position: relative
 
 .textBlok
   display: flex

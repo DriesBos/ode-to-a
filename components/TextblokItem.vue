@@ -17,28 +17,6 @@
 export default {
   props: {
     blok: Object
-  },
-  data() {
-    return {
-      observer: null
-    }
-  },
-  mounted() {
-    this.observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry && entry.isIntersecting) {
-          entry.target.classList.add("fade")
-        } else {
-          entry.target.classList.remove("fade")
-        }
-      },
-      { threshold: 0.7 }
-    )
-    this.observer.observe(this.$el)
-  },
-  destroyed() {
-    this.observer.disconnect()
-  },
-  method: {}
+  }
 }
 </script>

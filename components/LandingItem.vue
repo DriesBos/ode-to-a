@@ -1,7 +1,9 @@
 <template>
-  <section v-editable="blok" class="landingitem">
+  <section v-editable="blok" class="landingItem">
     <img v-if="blok.image" :src="blok.image" />
-    <h1 v-if="blok.title">{{ blok.title }}</h1>
+    <div class="landingItem-Text">
+      <h1 v-if="blok.title">{{ blok.title }}</h1>
+    </div>
   </section>
 </template>
 
