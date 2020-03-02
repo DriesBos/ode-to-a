@@ -8,7 +8,7 @@ $transition-imagehover: .1625s ease
 $transition-hover: .1625s ease
 $transition-icon: .1625s ease
 $transition-scroll-fade: .1625s ease
-$transition-scroll-filter: .25s ease
+$transition-scroll-filter: .33s ease
 $transition-slide: .1625s ease
 
 body
@@ -23,12 +23,19 @@ body
     --side-spacing: 2em
 
 main
-  --current-color: $color-yellow
+  --current-color: black
+  --second-color: black
   &.yellow
-    --current-color: $color-yellow
+    --current-color: #FEFF00
+    --second-color: black
   &.blue
-    --current-color: $color-blue
+    --current-color: #1500FF
+    --background-color: #0A0080
+    --second-color: white
   &.red
-    --current-color: $color-red
+    --current-color: #FF0200
+    --background-color: #FF0200
+    --second-color: white
   &.white
     --current-color: white
+    --second-color: black
