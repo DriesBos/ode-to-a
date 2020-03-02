@@ -27,7 +27,7 @@
       line-height: 1
       pointer-events: auto
       color: currentcolor
-      transition: all $transition-hover
+      transition: color $transition-hover
     li:nth-child(1)
       top: 0
       left: 0
@@ -268,23 +268,27 @@ section
       li:nth-child(#{$i})
         .imageGrid-Item_Placeholder
           width: random(30) + 70%
-          margin-bottom: random(200) - 150 px
+          margin-top: random(50) - 50 + px
+          margin-bottom: random(300) - 300 px
     li:nth-child(odd)
       .imageGrid-Item_Placeholder
-        margin-left: random(200) - 200 + px
+        margin-left: random(300) - 300 + px
     li:nth-child(even)
       .imageGrid-Item_Placeholder
-        margin-right: random(200) - 200 + px
+        margin-right: random(300) - 300 + px
+        li: nth-child(4n+1) // Every fourth
+      .imageGrid-Item_Placeholder
+        margin-right: random(400) - 400 + px
     li:first-child
       .imageGrid-Item_Placeholder
-        margin-left: random(200) - 200 + px
+        margin-left: random(300) - 300 + px
     li:nth-child(2)
       .imageGrid-Item_Placeholder
-        margin-top: random(200) - 200 + px
+        margin-top: random(300) - 300 + px
     li:nth-child(4)
       .imageGrid-Item_Placeholder
-        margin-top: random(200) - 0 + px
-    li:last-child
+        margin-top: random(300) - 0 + px
+    li:last-child, li:nth-last-child(2)
       .imageGrid-Item_Placeholder
         margin-bottom: 50px
 
