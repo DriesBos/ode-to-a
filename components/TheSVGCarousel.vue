@@ -211,6 +211,8 @@ export default {
   font-size: 5vw
   color: var(--current-color)
   transition: color $transition-color
+  z-index: 999
+  pointer-events: none
   svg
     height: 100%
     width: 100%
