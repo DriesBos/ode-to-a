@@ -2,13 +2,13 @@
   <!-- prettier-ignore -->
   <section
     v-editable="blok"
-    class="listitem"
-    :class="{ smallsize: blok.small_type, fullscreen: blok.fullscreen }"
+    class="list-Item"
+    :class="{ smallsize: blok.small_type, fullscreen: blok.fullscreen, textCenter: blok.left_alignment, capslock: blok.capslock }"
   >
     <div v-if="blok.graphic" class="graphic" :class="blok.graphic_alignment">
       <img :src="blok.graphic" />
     </div>
-    <div class="listitem-Container">
+    <div class="listitem-Text">
       <h1 v-if="blok.title">{{ blok.title }}</h1>
       <p v-if="blok.content">{{ blok.content }}</p>
     </div>

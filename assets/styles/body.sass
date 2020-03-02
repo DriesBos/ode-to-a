@@ -19,6 +19,19 @@
     input, .markdown p, button, h4
       color: black
 
+.fullscreen
+  min-height: 100vh
+.textLeft
+  text-align: left
+.textCenter
+  text-align: center
+.capslock
+  text-transform: uppercase
+.smallsize
+  h1, h2, h3, h4, h5, p, a
+    font-size: 1em !important
+    display: inline !important
+
 section
   position: relative
   max-width: 100%
@@ -94,11 +107,8 @@ section
   padding-bottom: var(--spacing-three)
   padding-left: var(--side-spacing)
   padding-right: var(--side-spacing)
-  text-align: center
   &-FadeIn
     margin-top: 1em
-  &.fullscreen
-    min-height: 100vh
 
 .imageGrid
   z-index: -1
@@ -157,38 +167,6 @@ section
       .imageGrid-Item_Placeholder
         margin-bottomq: var(--spacing-three)
 
-.listitem
-  position: relative
-  display: flex
-  justify-content: center
-  align-items: center
-  text-align: left
-  width: 100%
-  padding-top: var(--spacing-three)
-  padding-bottom: var(--spacing-three)
-  padding-left: var(--side-spacing)
-  padding-right: var(--side-spacing)
-  h1
-    font-size: 2em
-    font-family: "DINRg", Helvetica, Arial, sans-serif
-    text-transform: uppercase
-    display: block
-  p
-    font-size: 3em
-    display: inline
-    text-transform: uppercase
-  &.smallsize
-    h1, p
-      font-size: 1em
-    h1
-      display: inline
-  &.fullscreen
-    min-height: 100vh
-  svg
-    height: 90%
-    color: currentColor
-    stroke: currentColor
-
 // PROJECT LIST
 .projectList
   &-Single
@@ -199,7 +177,6 @@ section
   display: flex
   justify-content: center
   align-items: center
-  text-align: left
   width: 100%
   min-height: 100vh
   padding-top: var(--spacing-three)
@@ -257,38 +234,6 @@ section
       hyphens: none
     &:hover .projectList-Single_Image
       display: block
-
-.infoBlok
-  position: relative
-  display: flex
-  flex-direction: column
-  align-items: flex-start
-  text-align: left
-  width: 100%
-  padding-top: var(--spacing-three)
-  padding-bottom: var(--spacing-three)
-  padding-left: var(--side-spacing)
-  padding-right: var(--side-spacing)
-  &-Item
-    h1, p, .markdown
-      display: inline
-      font-size: 1em
-      text-transform: uppercase
-    h1
-      font-family: "DINRg", Helvetica, Arial, sans-serif
-      text-transform: uppercase
-      font-size: 1em
-  &-Item:first-child
-    h1
-      font-size: 2em
-      display: block
-    p
-      font-size: 3em
-    h1, p, .markdown
-      line-height: 1
-      text-transform: uppercase
-  &-Item:nth-child(2)
-    margin-top: 1em
 
 .footerform
   position: relative

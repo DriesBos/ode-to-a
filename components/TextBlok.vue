@@ -3,7 +3,7 @@
   <section
     v-editable="blok"
     class="textBlok intersectionObserver"
-    :class="{ fullscreen: blok.fullscreen }"
+    :class="{ fullscreen: blok.fullscreen, textCenter: blok.left_alignment, capslock: blok.capslock }"
   >
     <div class="graphic" :class="blok.graphic_alignment">
       <img :src="blok.graphic" />
@@ -17,6 +17,9 @@
 export default {
   props: {
     blok: Object
+  },
+  mounted() {
+    console.log(this.blok)
   }
 }
 </script>
