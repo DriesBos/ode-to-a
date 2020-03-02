@@ -227,35 +227,57 @@ section
     min-height: 100vh
 
 .imageGrid
+  z-index: -1
   ul
     display: flex
     flex-wrap: wrap
     width: 100%
     z-index: -1
+    padding-left: var(--side-spacing)
+    padding-right: var(--side-spacing)
     li
       display: flex
       justify-content: center
       align-items: center
       flex-basis: 50%
-      height: 50vw
-      &.filter
+      .imageGrid-Item_Placeholder
+        background-color: var(--current-color)
+        background: blue
+        overflow: visible
         img
-          mix-blend-mode: screen
-          filter: greyscale(1)
-          -webkit-filter: grayscale(1)
+          width: auto
+          height: auto
+          overflow: visible
           opacity: 1
-      img
-        width: 100%
-        height: 100%
-        max-height: 100%
-        object-fit: contain
-        transition: filter $transition-scroll-filter
+          transition: filter $transition-scroll-filter
+        &.filter
+          img
+            mix-blend-mode: screen
+            filter: greyscale(1) contrast(2)
+            -webkit-filter: grayscale(1) contrast(2)
     @for $i from 1 through 100
       li:nth-child(#{$i})
-        img
-          width: random(50) + 50%
-          height: random(50) + 50%
-          object-position: random(100) + 0% random(100) + 0%
+        .imageGrid-Item_Placeholder
+          width: random(30) + 70%
+          margin-bottom: random(200) - 150 px
+    li:nth-child(odd)
+      .imageGrid-Item_Placeholder
+        margin-left: random(200) - 200 + px
+    li:nth-child(even)
+      .imageGrid-Item_Placeholder
+        margin-right: random(200) - 200 + px
+    li:first-child
+      .imageGrid-Item_Placeholder
+        margin-left: random(200) - 200 + px
+    li:nth-child(2)
+      .imageGrid-Item_Placeholder
+        margin-top: random(200) - 200 + px
+    li:nth-child(4)
+      .imageGrid-Item_Placeholder
+        margin-top: random(200) - 0 + px
+    li:last-child
+      .imageGrid-Item_Placeholder
+        margin-bottom: 50px
 
 .listitem
   position: relative

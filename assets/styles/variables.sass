@@ -8,7 +8,7 @@ $transition-imagehover: .1625s ease
 $transition-hover: .1625s ease
 $transition-icon: .1625s ease
 $transition-scroll-fade: .1625s ease
-$transition-scroll-filter: .33s ease
+$transition-scroll-filter: .25s ease
 $transition-slide: .1625s ease
 
 body
@@ -23,10 +23,12 @@ body
     --side-spacing: 2em
 
 main
-  --current-color: 0, 100%, 50%
-  .blue, .view-BrandSingle, .view-Art, .svg-container
+  --current-color: $color-yellow
+  &.yellow
+    --current-color: $color-yellow
+  &.blue
     --current-color: $color-blue
-  .red, .view-ArtSingle, .view-Art, .svg-container.red
+  &.red
     --current-color: $color-red
-  .white
+  &.white
     --current-color: white
