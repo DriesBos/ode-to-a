@@ -9,26 +9,26 @@
       </ul>
       <ul v-if="this.$route.name === 'brands-slug'" class="header-Single">
         <nuxt-link to="/brands" tag="li">
-          <svg viewBox="0 0 49 41">
-            <path
-              d="M28.51,38.7 L16.83,38.7 L32,23.7 L0,23.7 L0,15 L32,15 L16.83,0 L28.51,0 L47.86,19.35 L28.51,38.7 Z M19.27,37.7 L28.09,37.7 L46.45,19.35 L28.09,1 L19.27,1 L34.47,16 L1,16 L1,22.7 L34.47,22.7 L19.27,37.7 Z"
-              transform="translate(1.000000, 1.000000)"
-              fill-rule="nonzero"
-            />
+          <svg viewBox="0 0 46.65 37.7">
+            <g data-name="Laag 2">
+              <path
+                d="M27.8,37.7H17.55l15.2-15H0V15H32.75L17.55,0H27.8L46.65,18.85Z"
+                data-name="Laag 1"
+              />
+            </g>
           </svg>
-          BACK
         </nuxt-link>
       </ul>
       <ul v-if="this.$route.name === 'art-slug'" class="header-Single">
         <nuxt-link to="/art" tag="li">
-          <svg viewBox="0 0 49 41">
-            <path
-              d="M28.51,38.7 L16.83,38.7 L32,23.7 L0,23.7 L0,15 L32,15 L16.83,0 L28.51,0 L47.86,19.35 L28.51,38.7 Z M19.27,37.7 L28.09,37.7 L46.45,19.35 L28.09,1 L19.27,1 L34.47,16 L1,16 L1,22.7 L34.47,22.7 L19.27,37.7 Z"
-              transform="translate(1.000000, 1.000000)"
-              fill-rule="nonzero"
-            />
+          <svg viewBox="0 0 46.65 37.7">
+            <g data-name="Laag 2">
+              <path
+                d="M27.8,37.7H17.55l15.2-15H0V15H32.75L17.55,0H27.8L46.65,18.85Z"
+                data-name="Laag 1"
+              />
+            </g>
           </svg>
-          BACK
         </nuxt-link>
       </ul>
     </nav>
@@ -72,3 +72,99 @@ export default {
   }
 }
 </script>
+
+<style lang="sass">
+@import '~assets/styles/variables'
+
+.header
+  position: fixed
+  top: 0
+  left: 0
+  bottom: 0
+  width: 100%
+  z-index: 800
+  transition: color $transition-color, text-stroke $transition-color
+  will-change: color
+  pointer-events: none
+  nav
+    width: 100%
+    height: 100%
+    padding: 5vw
+  .header-Desktop
+    position: relative
+    width: 100%
+    height: 100%
+    display: flex
+    justify-content: flex-end
+    li
+      position: absolute
+      cursor: pointer
+      text-transform: uppercase
+      line-height: 1
+      pointer-events: auto
+      color: currentcolor
+      transition: color $transition-hover
+    li:nth-child(1)
+      top: 0
+      left: 0
+    li:nth-child(2)
+      top: 0
+      right: 0
+      transform: rotate(90deg) translateY(-4em)
+      transform-origin: 15% 100%
+    li:nth-child(3)
+      bottom: 0
+      left: 0
+      transform: rotate(90deg) translateY(4em)
+      transform-origin: 85% 0%
+    li:nth-child(4)
+      bottom: 0
+      right: 0
+  .header-Single li
+    position: absolute
+    cursor: pointer
+    text-transform: uppercase
+    line-height: 1
+    pointer-events: auto
+    top: 0
+    left: 0
+    padding: var(--spacing-three)
+    svg
+      transform: rotate(180deg)
+      height: 2em
+      fill: var(--current-color)
+  .nuxt-link-exact-active
+    text-decoration: none
+  // &.yellow
+  //   li
+  //     color: rgba($color-yellow, 0)
+  //     -webkit-text-stroke: 1px rgba($color-yellow, 1)
+  //     &.nuxt-link-exact-active, &:hover
+  //       color: $color-yellow
+  //       -webkit-text-stroke: 1px rgba($color-yellow, 0)
+  // &.blue
+  //   li
+  //     color: rgba($color-blue, 0)
+  //     -webkit-text-stroke: 1px rgba($color-blue, 1)
+  //     &.nuxt-link-exact-active, &:hover
+  //       color: $color-blue
+  //       -webkit-text-stroke: 1px rgba($color-blue, 0)
+  //     svg
+  //       fill: $color-blue
+  // &.red
+  //   li
+  //     color: rgba($color-red, 0)
+  //     -webkit-text-stroke: 1px rgba($color-red, 1)
+  //     &.nuxt-link-exact-active, &:hover
+  //       color: $color-red
+  //       -webkit-text-stroke: 1px rgba($color-red, 0)
+  //     svg
+  //       fill: $color-red
+  // &.white
+  //   li
+  //     color: rgba(white, 0)
+  //     -webkit-text-stroke: 1px rgba(white, 1)
+  //     &.nuxt-link-exact-active, &:hover
+  //       color: white
+  //       -webkit-text-stroke: 1px rgba(white, 0)
+</style>

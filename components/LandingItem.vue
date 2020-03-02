@@ -50,6 +50,7 @@ export default {
   z-index: -1
   background: white
   transition: background $transition-scroll-filter
+  pointer-events: none
   h1, h2, h3, h4, p
     transition: color $transition-scroll-filter, stroke $transition-scroll-filter
   img
