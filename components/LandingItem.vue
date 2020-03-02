@@ -34,10 +34,7 @@ export default {
       const currentScrollPosition =
         window.pageYOffset || document.documentElement.scrollTop
       const el = document.querySelector(".landingItem")
-      if (
-        currentScrollPosition > window.innerHeight * 0.1 &&
-        currentScrollPosition < window.innerHeight * 0.6
-      ) {
+      if (currentScrollPosition < window.innerHeight * 0.6) {
         el.classList.remove("filter")
       } else {
         el.classList.add("filter")
@@ -94,9 +91,9 @@ export default {
   &.filter
     h1, h2, h3, h4, p
       color: var(--second-color)
-      -webkit-text-stroke: 1px var(--current-color)
+      // -webkit-text-stroke: 1px var(--current-color)
     img
       mix-blend-mode: screen
-      filter: greyscale(1) contrast(2)
-      -webkit-filter: grayscale(1) contrast(2)
+      filter: greyscale(1)
+      -webkit-filter: grayscale(1)
 </style>
