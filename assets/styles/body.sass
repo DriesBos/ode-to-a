@@ -397,25 +397,36 @@ section
           object-position: random(100) + 0% random(100) + 0%
 
 .infoBlok
-  &-Container
-    width: 50%
-    margin-left: auto
-    padding-top: var(--spacing-three)
-    padding-right: var(--spacing-three)
-    .infoBlok
-      margin-bottom: 1em
-      &:first-child
-        p
-          font-size: 2em
-          display: block
-      h1, p, .markdown
-        display: inline
-        line-height: 1
-        text-transform: uppercase
-      h1
-        font-family: "DINRg", Helvetica, Arial, sans-serif
-        text-transform: uppercase
-        font-size: 1em
+  position: relative
+  display: flex
+  flex-direction: column
+  align-items: flex-start
+  text-align: left
+  width: 100%
+  padding-top: var(--spacing-three)
+  padding-bottom: var(--spacing-three)
+  padding-left: var(--side-spacing)
+  padding-right: var(--side-spacing)
+  &-Item
+    h1, p, .markdown
+      display: inline
+      font-size: 1em
+      text-transform: uppercase
+    h1
+      font-family: "DINRg", Helvetica, Arial, sans-serif
+      text-transform: uppercase
+      font-size: 1em
+  &-Item:first-child
+    h1
+      font-size: 2em
+      display: block
+    p
+      font-size: 3em
+    h1, p, .markdown
+      line-height: 1
+      text-transform: uppercase
+  &-Item:nth-child(2)
+    margin-top: 1em
 
 .footerform
   position: relative

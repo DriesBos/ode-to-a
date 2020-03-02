@@ -5,12 +5,12 @@
     class="listitem"
     :class="{ smallsize: blok.small_type, fullscreen: blok.fullscreen }"
   >
-    <div class="graphic" :class="blok.graphic_alignment">
+    <div v-if="blok.graphic" class="graphic" :class="blok.graphic_alignment">
       <img :src="blok.graphic" />
     </div>
     <div class="listitem-Container">
-      <h1>{{ blok.title }}</h1>
-      <p>{{ blok.content }}</p>
+      <h1 v-if="blok.title">{{ blok.title }}</h1>
+      <p v-if="blok.content">{{ blok.content }}</p>
     </div>
   </section>
 </template>
