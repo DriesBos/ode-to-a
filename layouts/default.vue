@@ -32,7 +32,7 @@ export default {
   },
   methods: {
     setpageColor() {
-      if (this.$route.path === "/") {
+      if (this.$route.path === "/" || this.$route.path === "/home") {
         this.pageColor = "yellow"
       } else if (
         this.$route.path === "/brands" ||
