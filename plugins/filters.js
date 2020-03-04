@@ -1,4 +1,5 @@
 import Vue from "vue"
+import VueLazyload from "vue-lazyload"
 
 /*eslint-disable */
 Vue.filter("transformImage", (image, option) => {
@@ -10,6 +11,8 @@ Vue.filter("transformImage", (image, option) => {
   return imageService + option + path
 })
 /* eslint-enable */
+
+Vue.use(VueLazyload)
 
 Vue.filter("dashify", function(value) {
   if (typeof value === "undefined") {
