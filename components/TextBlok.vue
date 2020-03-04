@@ -39,6 +39,7 @@ export default {
   padding-bottom: var(--spacing-three)
   padding-left: var(--side-spacing)
   padding-right: var(--side-spacing)
+  overflow: hidden
   &-Item
     width: 100%
 </style>
