@@ -124,6 +124,7 @@ section
           overflow: visible
           opacity: 1
           transition: filter $transition-scroll-filter
+          will-change: filter
         &.filter
           img
             mix-blend-mode: screen
@@ -172,6 +173,7 @@ section
     color: rgba($color-blue, 0)
     -webkit-text-stroke: 1px rgba($color-blue, 1)
     transition: color $transition-color, text-stroke $transition-color
+    will-change: color, text-stroke
     &:hover
       color: $color-blue
       -webkit-text-stroke: 1px rgba($color-blue, 0)
@@ -253,6 +255,7 @@ section
         height: .7em
         fill: currentColor
         transition: transform $transition-icon
+        will-change: transform
       &:hover
         svg
           transform: rotate(180deg)
@@ -265,6 +268,7 @@ section
   background: white
   padding: var(--spacing-three)
   transition: transform $transition-slide
+  will-change: transform
   transform: translate3d(0, 100%, 0)
   &.active
     transform: translate3d(0, 0%, 0)

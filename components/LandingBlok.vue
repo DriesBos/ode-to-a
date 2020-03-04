@@ -62,17 +62,20 @@ export default {
   z-index: -1
   background: white
   transition: background $transition-scroll-filter
+  will-change: background
   pointer-events: none
   .vueLazy
     width: 100%
     height: 100%
   h1, h2, h3, h4, p
+    will-change: color, stroke
     transition: color $transition-scroll-filter, stroke $transition-scroll-filter
   img
     width: 100%
     height: 100%
     object-fit: cover
     transition: filter $transition-scroll-filter
+    will-change: filter
   &-Text
     position: absolute
     display: flex

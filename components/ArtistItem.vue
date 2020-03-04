@@ -103,7 +103,11 @@ export default {
           height: auto
           overflow: visible
           opacity: 1
-          transition: filter $transition-scroll-filter
+          mix-blend-mode: screen
+          filter: greyscale(0)
+          -webkit-filter: grayscale(0)
+          transition: all $transition-scroll-filter
+          will-change: filter
         &.filter
           img
             mix-blend-mode: screen
