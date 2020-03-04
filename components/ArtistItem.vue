@@ -107,8 +107,8 @@ export default {
         &.filter
           img
             mix-blend-mode: screen
-            filter: greyscale(1) contrast(2)
-            -webkit-filter: grayscale(1) contrast(2)
+            filter: greyscale(1)
+            -webkit-filter: grayscale(1)
     @for $i from 1 through 100
       li:nth-child(#{$i})
         .artList-Item_Placeholder
