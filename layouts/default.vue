@@ -32,17 +32,26 @@ export default {
   },
   methods: {
     setpageColor() {
-      if (this.$route.path === "/" || this.$route.path === "/home") {
+      if (
+        this.$route.path === "/" ||
+        this.$route.path === "/home" ||
+        this.$route.path === "/home/"
+      ) {
         this.pageColor = "yellow"
       } else if (
         this.$route.path === "/brands" ||
-        this.$route.name === "brands-slug"
+        this.$route.name === "brands-slug" ||
+        this.$route.path === "/brands/"
       ) {
         this.pageColor = "blue"
-      } else if (this.$route.path === "/people") {
+      } else if (
+        this.$route.path === "/people" ||
+        this.$route.path === "/people/"
+      ) {
         this.pageColor = "white"
       } else if (
         this.$route.path === "/art" ||
+        this.$route.path === "/art/" ||
         this.$route.name === "art-slug"
       ) {
         this.pageColor = "red"
