@@ -217,10 +217,11 @@ export default {
     width: 100%
     overflow: visible
     text
+      transition: fill .66s ease
       fill: currentColor
 @media (orientation: landscape)
   .svg-container.scrolled
     svg
       text
-        fill: none
+        fill: rgba(0,0,0,0)
 </style>
