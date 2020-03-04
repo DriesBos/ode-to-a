@@ -1,8 +1,30 @@
 <template>
   <nuxt-link :to="blok.hyperlink.cached_url" class="artList-Item" tag="li">
     <p>{{ blok.title }}</p>
-    <div class="artList-Item_Placeholder">
-      <img :src="blok.image" />
+    <div
+      class="vueLazy artList-Item_Placeholder"
+      v-lazy-container="{ selector: 'img' }"
+    >
+      <img
+        v-if="blok.image"
+        :srcset="
+          `${transformImage(blok.image, '2880x0')} 2880w, ${transformImage(
+            blok.image,
+            '2560x0'
+          )} 2560w, ${transformImage(
+            blok.image,
+            '1920x0'
+          )} 1920w, ${transformImage(
+            blok.image,
+            '1680x0'
+          )} 1680w, ${transformImage(
+            blok.image,
+            '1370x0'
+          )} 1370w, ${transformImage(blok.image, '900x0')} 900w`
+        "
+        sizes="50vw"
+        :data-src="`${transformImage(blok.image, '1440')}`"
+      />
     </div>
   </nuxt-link>
 </template>
@@ -39,6 +61,15 @@ export default {
   },
   destroyed() {
     this.observer.disconnect()
+  },
+  methods: {
+    transformImage(image, option) {
+      if (!image) return ""
+      if (!option) return ""
+      let imageService = "//img2.storyblok.com/"
+      let path = image.replace("//a.storyblok.com", "")
+      return imageService + option + "/filters:quality(10)" + path
+    }
   }
 }
 </script>

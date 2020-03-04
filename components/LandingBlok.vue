@@ -1,13 +1,14 @@
 <template>
   <section v-editable="blok" class="landingItem" :class="{ filter: filtered }">
-    <img :src="blok.image" />
     <!-- prettier-ignore -->
-    <!-- <img
+    <div class="vueLazy" v-lazy-container="{ selector: 'img' }">
+    <img
       v-if="blok.image"
       :srcset="`${transformImage(blok.image, '2880x0')} 2880w, ${transformImage(blok.image, '2560x0')} 2560w, ${transformImage(blok.image, '1920x0')} 1920w, ${transformImage(blok.image, '1680x0')} 1680w, ${transformImage(blok.image, '1370x0')} 1370w, ${transformImage(blok.image, '900x0')} 900w`"
       sizes="100vw"
       :data-src="`${transformImage(blok.image, '1440')}`"
-    />-->
+    />
+    </div>
     <div class="landingItem-Text">
       <h1 v-if="blok.title">{{ blok.title }}</h1>
     </div>
@@ -62,6 +63,9 @@ export default {
   background: white
   transition: background $transition-scroll-filter
   pointer-events: none
+  .vueLazy
+    width: 100%
+    height: 100%
   h1, h2, h3, h4, p
     transition: color $transition-scroll-filter, stroke $transition-scroll-filter
   img
