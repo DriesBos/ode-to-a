@@ -40,6 +40,19 @@ export default {
     return {
       story: { content: {} }
     }
+  },
+  mounted() {},
+  head() {
+    return {
+      title: this.story.content.SEO.title || this.story.name,
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: this.story.content.SEO.description || this.story.name
+        }
+      ]
+    }
   }
 }
 </script>

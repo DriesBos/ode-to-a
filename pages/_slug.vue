@@ -33,6 +33,18 @@ export default {
   },
   data() {
     return { story: { content: {} } }
+  },
+  head() {
+    return {
+      title: this.story.content.SEO.title || this.story.name,
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: this.story.content.SEO.description || this.story.name
+        }
+      ]
+    }
   }
 }
 </script>
