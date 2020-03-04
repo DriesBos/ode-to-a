@@ -4,7 +4,7 @@
     v-editable="blok"
   >
     <div class="landinggraphicitem-Container" :class="blok.graphic_alignment">
-      <img :src="blok.graphic" />
+      <img v-if="blok.graphic" :src="blok.graphic" />
     </div>
   </section>
 </template>

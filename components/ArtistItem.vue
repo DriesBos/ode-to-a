@@ -1,6 +1,6 @@
 <template>
   <nuxt-link :to="blok.hyperlink.cached_url" class="artList-Item" tag="li">
-    <p>{{ blok.title }}</p>
+    <p v-if="blok.title">{{ blok.title }}</p>
     <div
       class="vueLazy artList-Item_Placeholder"
       v-lazy-container="{ selector: 'img' }"
@@ -40,7 +40,6 @@ export default {
     }
   },
   mounted() {
-    console.log(this.blok)
     const targets = document.querySelectorAll(".artList-Item_Placeholder")
     const lazyFilter = target => {
       this.observer = new IntersectionObserver(
