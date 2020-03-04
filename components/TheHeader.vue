@@ -83,8 +83,6 @@ export default {
   bottom: 0
   width: 100%
   z-index: 800
-  transition: color $transition-color, text-stroke $transition-color
-  will-change: color
   pointer-events: none
   nav
     width: 100%
@@ -102,7 +100,6 @@ export default {
       text-transform: uppercase
       line-height: 1
       pointer-events: auto
-      transition: color $transition-hover
     li:nth-child(1)
       top: 0
       left: 0
