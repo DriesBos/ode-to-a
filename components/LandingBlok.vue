@@ -47,7 +47,7 @@ export default {
       if (!option) return ""
       let imageService = "//img2.storyblok.com/"
       let path = image.replace("//a.storyblok.com", "")
-      return imageService + option + "/filters:quality(10)" + path
+      return imageService + option + path
     }
   }
 }
