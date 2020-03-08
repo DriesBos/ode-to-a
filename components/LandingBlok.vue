@@ -26,7 +26,7 @@ export default {
     }
   },
   mounted() {
-    this.initFilter()
+    this.applyFilter()
     window.addEventListener("scroll", this.applyFilter)
   },
   destroyed() {
@@ -43,14 +43,14 @@ export default {
   //   }
   // },
   methods: {
-    initFilter() {
-      if (
-        this.$route.name === "brands-slug" ||
-        this.$route.name === "art-slug"
-      ) {
-        this.filtered = true
-      }
-    },
+    // initFilter() {
+    //   if (
+    //     this.$route.name === "brands-slug" ||
+    //     this.$route.name === "art-slug"
+    //   ) {
+    //     this.filtered = true
+    //   }
+    // },
     applyFilter() {
       const currentScrollPosition =
         window.pageYOffset || document.documentElement.scrollTop
@@ -124,7 +124,7 @@ export default {
   background: var(--background-color)
   &.filter
     h1, h2, h3, h4, p
-      color: var(--second-color)
+      // color: var(--second-color)
       // -webkit-text-stroke: 1px var(--current-color)
     img
       mix-blend-mode: screen
