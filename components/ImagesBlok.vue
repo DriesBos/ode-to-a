@@ -81,7 +81,10 @@ export default {
           // background: var(--background-color)
           img
             // opacity: .5
+<<<<<<< HEAD
             // mix-blend-mode: screen
+=======
+>>>>>>> development
             filter: greyscale(1)
             -webkit-filter: grayscale(1)
     @for $i from 1 through 100
