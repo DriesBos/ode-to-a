@@ -1,6 +1,6 @@
 <template>
   <!-- prettier-ignore -->
-  <div class="svg-container">
+  <div id="carousel" class="svg-container">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -34,7 +34,7 @@
           startOffset="0"
           lengthAdjust="spacingAndGlyphs"
           id="text-path"
-        >YOUR ESSENCE IS YOUR PRESENCE IS YOUR ESSENCE IS YOUR PRESENCE IS YOUR ESSENCE IS YOUR PRESENCE IS YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE IS YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE IS YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE IS YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE IS YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE IS YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE IS YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE IS YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE IS YOUR ESSENCE IS YOUR PRESENCE IS YOUR ESSENCE IS YOUR PRESENCE IS YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE IS YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE IS YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE IS YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE IS YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE IS YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE IS YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE IS YOUR ESSENCE IS YOUR PRESENCE</textPath>
+        >YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE</textPath>
       </text>
       <text
         v-else-if="this.$route.name === 'people'"
@@ -144,49 +144,53 @@
 <script>
 export default {
   methods: {
-    setRatio() {
+    setRatioAndPath() {
       let width = window.innerWidth
       let height = window.innerHeight
       let shape = document.getElementById("theSvg")
-      let path = document.getElementById("thePath")
-      let d = `M 0 ${height} L 0 0 L ${width} 0 L ${width} ${height} z`
       shape.setAttribute("viewBox", `0 0 ${width} ${height}`)
+      let path = document.getElementById("thePath")
+      let d = `M 0 0 L ${width} 0 L ${width} ${height} L 0 ${height} z`
       path.setAttribute("d", d)
+      let carousel = document.getElementById("carousel")
+      carousel.classList.add("visible")
     },
     onScroll() {
-      let height = window.innerHeight
-      let shape = document.querySelector(".svg-container")
+      // let height = window.innerHeight
+      // let shape = document.querySelector(".svg-container")
       let path = document.getElementById("text-path")
       let position =
         document.body.scrollTop || document.documentElement.scrollTop
       path.setAttribute("startOffset", -4000 + position / 2)
-      if (
-        position > height / 2 ||
-        this.$route.name === "brands-slug" ||
-        this.$route.name === "art-slug"
-      ) {
-        shape.classList.add("scrolled")
-      } else {
-        shape.classList.remove("scrolled")
-      }
+      // if (
+      //   position > height / 2 ||
+      //   this.$route.name === "brands-slug" ||
+      //   this.$route.name === "art-slug"
+      // ) {
+      //   shape.classList.add("scrolled")
+      // } else {
+      //   shape.classList.remove("scrolled")
+      // }
     }
   },
   watch: {
     $route() {
-      let shape = document.querySelector(".svg-container")
-      if (
-        this.$route.name === "brands-slug" ||
-        this.$route.name === "art-slug"
-      ) {
-        shape.classList.add("scrolled")
-      } else {
-        shape.classList.remove("scrolled")
-      }
+      let carousel = document.getElementById("carousel")
+      carousel.classList.add("visible")
+      // let shape = document.querySelector(".svg-container")
+      // if (
+      //   this.$route.name === "brands-slug" ||
+      //   this.$route.name === "art-slug"
+      // ) {
+      //   shape.classList.add("scrolled")
+      // } else {
+      //   shape.classList.remove("scrolled")
+      // }
     }
   },
   mounted() {
-    this.setRatio()
-    window.addEventListener("resize", this.setRatio)
+    this.setRatioAndPath()
+    window.addEventListener("resize", this.setRatioAndPath)
     window.addEventListener("scroll", this.onScroll)
   },
   destroyed() {
@@ -212,17 +216,19 @@ export default {
   color: var(--current-color)
   z-index: 999
   pointer-events: none
+  transition: opacity 0s ease .05s
+  opacity: 0
   svg
     height: 100%
     width: 100%
     overflow: visible
     text
-      transition: fill .66s ease
-      will-change: fill
-      fill: currentColor
-@media (orientation: landscape)
-  .svg-container.scrolled
-    svg
-      text
-        fill: rgba(0,0,0,0)
+    // transition: fill .66s ease
+    // will-change: fill
+    fill: rgba(0,0,0,0)
+// @media (orientation: landscape)
+//   .svg-container.scrolled
+//     svg
+//       text
+//       fill: rgba(0,0,0,0)
 </style>
