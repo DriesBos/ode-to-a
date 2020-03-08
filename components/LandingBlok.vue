@@ -1,7 +1,7 @@
 <template>
   <section v-editable="blok" class="landingItem" :class="{ filter: filtered }">
     <!-- prettier-ignore -->
-    <div class="vueLazy" v-lazy-container="{ selector: 'img' }">
+    <div v-lazy-container="{ selector: 'img' }" class="vueLazy">
       <img
         v-if="blok.image"
         :srcset="`${transformImage(blok.image, '2880x0')} 2880w, ${transformImage(blok.image, '2560x0')} 2560w, ${transformImage(blok.image, '1920x0')} 1920w, ${transformImage(blok.image, '1680x0')} 1680w, ${transformImage(blok.image, '1370x0')} 1370w, ${transformImage(blok.image, '900x0')} 900w`"
@@ -86,7 +86,7 @@ export default {
   width: 100vw
   height: 100vh
   z-index: -1
-  background: white
+  background: rgba(0,0,0,0)
   transition: background $transition-scroll-filter
   will-change: background
   pointer-events: none
@@ -94,12 +94,14 @@ export default {
     width: 100%
     height: 100%
   h1, h2, h3, h4, p
-    will-change: color, stroke
-    transition: color $transition-scroll-filter, stroke $transition-scroll-filter
+    will-change: color
+    transition: color $transition-scroll-filter
   img
     width: 100%
     height: 100%
     object-fit: cover
+    filter: greyscale(0)
+    -webkit-filter: grayscale(0)
     transition: filter $transition-scroll-filter
     will-change: filter
   &-Text
@@ -123,11 +125,10 @@ export default {
   top: 0
 .view-Single .landingItem
   position: relative
-  background: var(--background-color)
   &.filter
+    background: var(--background-color)
     h1, h2, h3, h4, p
       color: white
-      // -webkit-text-stroke: 1px var(--current-color)
     img
       mix-blend-mode: screen
       filter: greyscale(1)
