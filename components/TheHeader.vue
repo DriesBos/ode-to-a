@@ -120,7 +120,6 @@ export default {
     position: absolute
     cursor: pointer
     text-transform: uppercase
-    line-height: 1
     pointer-events: auto
     top: 0
     left: 0
