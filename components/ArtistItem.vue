@@ -101,7 +101,7 @@ export default {
           height: auto
           overflow: visible
           opacity: 1
-          mix-blend-mode: screen
+          // mix-blend-mode: screen
           // filter: greyscale(0)
           // -webkit-filter: grayscale(0)
           // transition: all $transition-scroll-filter

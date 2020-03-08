@@ -100,10 +100,11 @@ export default {
     width: 100%
     height: 100%
     object-fit: cover
+    opacity: 1
     filter: greyscale(0)
     -webkit-filter: grayscale(0)
-    transition: filter $transition-scroll-filter
-    will-change: filter
+    transition: filter $transition-scroll-filter, opacity $transition-scroll-filter
+    will-change: filter, opacity
   &-Text
     position: absolute
     display: flex
@@ -130,7 +131,8 @@ export default {
     h1, h2, h3, h4, p
       color: white
     img
-      mix-blend-mode: screen
+      opacity: .5
+      // mix-blend-mode: screen
       filter: greyscale(1)
       -webkit-filter: grayscale(1)
 </style>

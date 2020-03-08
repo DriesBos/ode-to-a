@@ -75,12 +75,12 @@ export default {
           opacity: 1
           filter: greyscale(0)
           -webkit-filter: grayscale(0)
-          transition: filter $transition-scroll-filter
-          will-change: filter
+          transition: filter $transition-scroll-filter, opacity $transition-scroll-filter
+          will-change: filter, opacity
         &.filter
           background: var(--background-color)
           img
-            mix-blend-mode: screen
+            opacity: .5
             filter: greyscale(1)
             -webkit-filter: grayscale(1)
     @for $i from 1 through 100
