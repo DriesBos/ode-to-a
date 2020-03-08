@@ -145,7 +145,7 @@
 export default {
   data() {
     return {
-      showHeader: true
+      showCarousel: true
     }
   },
   methods: {
@@ -195,9 +195,9 @@ export default {
         this.$route.name === "brands-slug" ||
         this.$route.name === "art-slug"
       ) {
-        this.showHeader = false
+        this.showCarousel = false
       } else {
-        this.showHeader = true
+        this.showCarousel = true
       }
     }
   },

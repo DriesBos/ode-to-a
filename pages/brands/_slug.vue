@@ -41,9 +41,6 @@ export default {
       story: { content: {} }
     }
   },
-  mounted() {
-    console.log(this.story)
-  },
   head() {
     return {
       title: this.story.content.SEO.title || this.story.name,

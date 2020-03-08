@@ -26,20 +26,46 @@ export default {
     }
   },
   mounted() {
+    this.initFilter()
     window.addEventListener("scroll", this.applyFilter)
   },
   destroyed() {
     window.removeEventListener("scroll", this.applyFilter)
   },
+  // watch: {
+  //   $route() {
+  //     if (
+  //       this.$route.name === "brands-slug" ||
+  //       this.$route.name === "art-slug"
+  //     ) {
+  //       this.filtered = true
+  //     }
+  //   }
+  // },
   methods: {
+    initFilter() {
+      if (
+        this.$route.name === "brands-slug" ||
+        this.$route.name === "art-slug"
+      ) {
+        this.filtered = true
+      }
+    },
     applyFilter() {
       const currentScrollPosition =
         window.pageYOffset || document.documentElement.scrollTop
-      const el = document.querySelector(".landingItem")
-      if (currentScrollPosition < window.innerHeight * 0.6) {
-        el.classList.remove("filter")
+      if (currentScrollPosition < window.innerHeight * 0.8) {
+        this.filtered = false
       } else {
-        el.classList.add("filter")
+        this.filtered = true
+      }
+      if (
+        this.$route.name === "brands-slug" ||
+        this.$route.name === "art-slug"
+      ) {
+        if (currentScrollPosition === 0) {
+          this.filtered = true
+        }
       }
     },
     transformImage(image, option) {
