@@ -116,7 +116,8 @@ export default {
     text-transform: uppercase
 .view-Home .landingItem,
 .view-Brands .landingItem,
-.view-People .landingItem
+.view-People .landingItem,
+.view-Art .landingItem
   position: sticky
   top: 0
 .view-Single .landingItem
