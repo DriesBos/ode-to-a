@@ -176,11 +176,11 @@ section
     text-transform: uppercase
     cursor: pointer
     color: rgba($color-blue, 0)
-    -webkit-text-stroke: 1px rgba($color-blue, 1)
+    -webkit-text-stroke: 1px var(--current-color)
     transition: color $transition-color, text-stroke $transition-color
     will-change: color, text-stroke
     &:hover
-      color: $color-blue
+      color: var(--current-color)
       -webkit-text-stroke: 1px rgba($color-blue, 0)
   &-Container
     width: 100%
