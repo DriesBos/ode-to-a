@@ -114,6 +114,7 @@ export default {
     bottom: 0
     padding: var(--spacing-three)
     text-transform: uppercase
+    text-align: center
 .view-Home .landingItem,
 .view-Brands .landingItem,
 .view-People .landingItem,
@@ -125,7 +126,7 @@ export default {
   background: var(--background-color)
   &.filter
     h1, h2, h3, h4, p
-      // color: var(--second-color)
+      color: white
       // -webkit-text-stroke: 1px var(--current-color)
     img
       mix-blend-mode: screen
