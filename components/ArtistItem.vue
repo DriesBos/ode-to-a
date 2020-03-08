@@ -1,10 +1,8 @@
 <template>
   <nuxt-link :to="blok.hyperlink.cached_url" class="artList-Item" tag="li">
     <p v-if="blok.title">{{ blok.title }}</p>
-    <div
-      class="vueLazy artList-Item_Placeholder"
-      v-lazy-container="{ selector: 'img' }"
-    >
+    <!-- prettier-ignore -->
+    <div v-lazy-container="{ selector: 'img' }" class="vueLazy artList-Item_Placeholder">
       <img
         v-if="blok.image"
         :srcset="
@@ -104,15 +102,15 @@ export default {
           overflow: visible
           opacity: 1
           mix-blend-mode: screen
-          filter: greyscale(0)
-          -webkit-filter: grayscale(0)
-          transition: all $transition-scroll-filter
-          will-change: filter
-        &.filter
-          img
-            mix-blend-mode: screen
-            filter: greyscale(1)
-            -webkit-filter: grayscale(1)
+          // filter: greyscale(0)
+          // -webkit-filter: grayscale(0)
+          // transition: all $transition-scroll-filter
+          // will-change: filter
+        // &.filter
+        //   img
+        //     mix-blend-mode: screen
+        //     filter: greyscale(1)
+        //     -webkit-filter: grayscale(1)
     @for $i from 1 through 100
       li:nth-child(#{$i})
         .artList-Item_Placeholder
