@@ -1,6 +1,12 @@
 <template>
   <div class="view view-Single view-BrandSingle">
-    <blok-page-project :blok="story.content" />
+    <!-- <blok-page-project :blok="story.content" /> -->
+    <component
+      :is="story.content.component | dashify"
+      v-if="story.content.component"
+      :key="story.content._uid"
+      :blok="story.content"
+    ></component>
     <blok-footer-form />
   </div>
 </template>
