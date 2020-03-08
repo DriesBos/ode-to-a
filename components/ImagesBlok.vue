@@ -64,9 +64,9 @@ export default {
       align-items: center
       flex-basis: 50%
       .imageGrid-Item_Placeholder
-        background: rgba(0,0,0,0)
-        transition: background $transition-scroll-filter
-        will-change: background
+        // background: rgba(0,0,0,0)
+        // transition: background $transition-scroll-filter
+        // will-change: background
         overflow: visible
         img
           width: auto
@@ -78,9 +78,9 @@ export default {
           transition: filter $transition-scroll-filter, opacity $transition-scroll-filter
           will-change: filter, opacity
         &.filter
-          background: var(--background-color)
+          // background: var(--background-color)
           img
-            opacity: .5
+            // opacity: .5
             filter: greyscale(1)
             -webkit-filter: grayscale(1)
     @for $i from 1 through 100
