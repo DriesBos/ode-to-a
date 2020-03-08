@@ -30,7 +30,11 @@
               </g>
             </svg>
           </button>
-          <h4 @click="toggleItem">INFO</h4>
+          <div class="footerform-Links">
+            <h4 @click="toggleItem">INFO</h4>
+            <h4 @click="toggleItem">SOCIAL</h4>
+            <h4 @click="toggleItem">TERMS</h4>
+          </div>
         </div>
       </form>
     </div>

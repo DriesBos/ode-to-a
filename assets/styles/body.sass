@@ -196,6 +196,16 @@ section
     h4
       color: white
       cursor: pointer
+  &-Links
+    display: flex
+    h4
+      margin-left: var(--spacing-one)
+      color: rgba(0,0,0,0) !important
+      -webkit-text-stroke: 1px var(--second-color)
+      transition: color $transition-hover, stroke $transition-hover
+      &:hover
+        color: var(--second-color) !important
+
   // &.yellow, &.white
   //   .markdown p, input, button
   //     color: black
