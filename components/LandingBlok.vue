@@ -131,8 +131,8 @@ export default {
     h1, h2, h3, h4, p
       color: white
     img
-      opacity: .5
-      // mix-blend-mode: screen
+      // opacity: .5
+      mix-blend-mode: screen
       filter: greyscale(1)
       -webkit-filter: grayscale(1)
 </style>
