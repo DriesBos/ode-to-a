@@ -1,6 +1,6 @@
 <template>
   <!-- prettier-ignore -->
-  <div id="carousel" class="svg-container">
+  <div v-if="showCarousel" id="carousel" class="svg-container">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -143,6 +143,11 @@
 
 <script>
 export default {
+  data() {
+    return {
+      showHeader: true
+    }
+  },
   methods: {
     setRatioAndPath() {
       let width = window.innerWidth
@@ -186,6 +191,14 @@ export default {
       // } else {
       //   shape.classList.remove("scrolled")
       // }
+      if (
+        this.$route.name === "brands-slug" ||
+        this.$route.name === "art-slug"
+      ) {
+        this.showHeader = false
+      } else {
+        this.showHeader = true
+      }
     }
   },
   mounted() {
