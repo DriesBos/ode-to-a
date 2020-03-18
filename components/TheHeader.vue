@@ -1,11 +1,12 @@
 <template>
   <header class="header">
     <nav>
+      <!-- prettier-ignore -->
       <ul v-if="showHeader" class="header-Desktop">
         <nuxt-link to="/" tag="li">A —</nuxt-link>
-        <nuxt-link to="/brands" tag="li">For Brands</nuxt-link>
-        <nuxt-link to="/people" tag="li">For People</nuxt-link>
-        <nuxt-link to="/art" tag="li">For Art</nuxt-link>
+        <nuxt-link :to="{ name: 'brands' }" tag="li">For Brands</nuxt-link>
+        <nuxt-link :to="{ name: 'people' }" tag="li">For People</nuxt-link>
+        <nuxt-link :to="{ name: 'art' }" tag="li">For Art</nuxt-link>
       </ul>
       <!-- prettier-ignore -->
       <ul
@@ -13,7 +14,7 @@
         class="header-Single"
         :class="{ active: arrowFilled }"
       >
-        <nuxt-link to="brands" tag="li">
+        <nuxt-link :to="{ name: 'brands' }" tag="li">
           <svg viewBox="0 0 46.65 37.7">
             <g data-name="Laag 2">
               <path
@@ -29,7 +30,7 @@
         class="header-Single"
         :class="{ active: arrowFilled }"
       >
-        <nuxt-link to="/art" tag="li">
+        <nuxt-link :to="{ name: 'art' }" tag="li">
           <svg viewBox="0 0 46.65 37.7">
             <g data-name="Laag 2">
               <path
