@@ -58,5 +58,5 @@ export default {
   padding-right: var(--side-spacing)
   .list-Item
     padding: 0
-    margin-bottom: 1em
+    // margin-bottom: 1em
 </style>

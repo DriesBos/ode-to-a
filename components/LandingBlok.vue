@@ -96,7 +96,7 @@ export default {
   h1, h2, h3, h4, p
     color: rgba(0,0,0,0)
     -webkit-text-stroke: 1px white
-    transition: color $transition-scroll-filter, stroke $transition-scroll-filter
+    transition: color $transition-scroll-filter, -webkit-text-stroke $transition-scroll-filter
   img
     width: 100%
     height: 100%
@@ -128,9 +128,8 @@ export default {
 .view-Single .landingItem
   position: relative
   &.filter
-    background: var(--background-color)
     h1, h2, h3, h4, p
-      color: white
+      color: var(--current-color)
       -webkit-text-stroke: 1px rgba(0,0,0,0)
     img
       mix-blend-mode: screen

@@ -7,7 +7,12 @@
         <nuxt-link to="/people" tag="li">For People</nuxt-link>
         <nuxt-link to="/art" tag="li">For Art</nuxt-link>
       </ul>
-      <ul v-if="this.$route.name === 'brands-slug'" class="header-Single">
+      <!-- prettier-ignore -->
+      <ul
+        v-if="this.$route.name === 'brands-slug'"
+        class="header-Single"
+        :class="{ active: arrowFilled }"
+      >
         <nuxt-link to="/brands" tag="li">
           <svg viewBox="0 0 46.65 37.7">
             <g data-name="Laag 2">
@@ -19,7 +24,11 @@
           </svg>
         </nuxt-link>
       </ul>
-      <ul v-if="this.$route.name === 'art-slug'" class="header-Single">
+      <ul
+        v-if="this.$route.name === 'art-slug'"
+        class="header-Single"
+        :class="{ active: arrowFilled }"
+      >
         <nuxt-link to="/art" tag="li">
           <svg viewBox="0 0 46.65 37.7">
             <g data-name="Laag 2">
@@ -40,7 +49,8 @@ export default {
   name: "TheHeader",
   data() {
     return {
-      showHeader: true
+      showHeader: true,
+      arrowFilled: true
     }
   },
   watch: {
@@ -57,6 +67,10 @@ export default {
   },
   mounted() {
     this.routeCheck()
+    window.addEventListener("scroll", this.singlePageArrowColor)
+  },
+  destroyed() {
+    window.removeEventListener("scroll", this.singlePageArrowColor)
   },
   methods: {
     routeCheck() {
@@ -67,6 +81,15 @@ export default {
         this.showHeader = false
       } else {
         this.showHeader = true
+      }
+    },
+    singlePageArrowColor() {
+      const currentScrollPosition =
+        window.pageYOffset || document.documentElement.scrollTop
+      if (currentScrollPosition < window.innerHeight * 0.3) {
+        this.arrowFilled = true
+      } else {
+        this.arrowFilled = false
       }
     }
   }
@@ -116,18 +139,26 @@ export default {
     li:nth-child(4)
       bottom: 0
       right: 0
-  .header-Single li
-    position: absolute
-    cursor: pointer
-    text-transform: uppercase
-    pointer-events: auto
-    top: 0
-    left: 0
-    padding: var(--spacing-three)
-    svg
-      transform: rotate(180deg)
-      height: 2em
-      fill: var(--current-color)
+  .header-Single
+    li
+      position: absolute
+      cursor: pointer
+      text-transform: uppercase
+      pointer-events: auto
+      top: 0
+      left: 0
+      padding: var(--spacing-three)
+      svg
+        transform: rotate(180deg)
+        height: 2em
+        fill: var(--current-color)
+        stroke: rgba(0,0,0,0)
+        transition: fill $transition-scroll-filter, stroke $transition-scroll-filter
+    &.active
+      svg
+        fill: rgba(0,0,0,0)
+        stroke: white
+
   .nuxt-link-exact-active
     text-decoration: none
   &.yellow
