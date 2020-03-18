@@ -1,13 +1,14 @@
 <template>
   <!-- prettier-ignore -->
-  <div class="projectList-Single">
+  <li class="projectList-Single">
     <nuxt-link :to="blok.hyperlink.cached_url" tag="p">
       {{ blok.title }}
       <span class="dash">,&nbsp;</span>
-      <div v-lazy-container="{ selector: 'img' }" class="vueLazy projectList-Single_Image">
-        <img
-          v-if="blok.image"
-          :srcset="
+    </nuxt-link>
+    <div v-lazy-container="{ selector: 'img' }" class="vueLazy projectList-Single_Image">
+      <img
+        v-if="blok.image"
+        :srcset="
           `${transformImage(blok.image, '2880x0')} 2880w, ${transformImage(
             blok.image,
             '2560x0'
@@ -22,12 +23,11 @@
             '1370x0'
           )} 1370w, ${transformImage(blok.image, '900x0')} 900w`
         "
-          sizes="100vw"
-          :data-src="`${transformImage(blok.image, '1440')}`"
-        />
-      </div>
-    </nuxt-link>
-  </div>
+        sizes="100vw"
+        :data-src="`${transformImage(blok.image, '1440')}`"
+      />
+    </div>
+  </li>
 </template>
 
 <script>
