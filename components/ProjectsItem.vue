@@ -3,7 +3,7 @@
   <div class="projectList-Single">
     <nuxt-link :to="blok.hyperlink.cached_url" tag="p">
       {{ blok.title }}
-      <span class="dash">,</span>
+      <span class="dash">,&nbsp;</span>
       <div v-lazy-container="{ selector: 'img' }" class="vueLazy projectList-Single_Image">
         <img
           v-if="blok.image"
