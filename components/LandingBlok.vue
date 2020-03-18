@@ -94,8 +94,9 @@ export default {
     width: 100%
     height: 100%
   h1, h2, h3, h4, p
-    will-change: color
-    transition: color $transition-scroll-filter
+    color: rgba(0,0,0,0)
+    -webkit-text-stroke: 1px white
+    transition: color $transition-scroll-filter, stroke $transition-scroll-filter
   img
     width: 100%
     height: 100%
@@ -130,8 +131,8 @@ export default {
     background: var(--background-color)
     h1, h2, h3, h4, p
       color: white
+      -webkit-text-stroke: 1px rgba(0,0,0,0)
     img
-      // opacity: .5
       mix-blend-mode: screen
       filter: greyscale(1)
       -webkit-filter: grayscale(1)
