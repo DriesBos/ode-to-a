@@ -31,14 +31,16 @@
             </svg>
           </button>
           <div class="footerform-Links">
-            <h4 @click="toggleItem">INFO</h4>
-            <h4 @click="toggleItem">SOCIAL</h4>
-            <h4 @click="toggleItem">TERMS</h4>
+            <h4 @click="toggleInfo">INFO</h4>
+            <h4 @click="toggleSocial">SOCIAL</h4>
+            <h4 @click="toggleTerms">TERMS</h4>
           </div>
         </div>
       </form>
     </div>
-    <the-more-info :active="isOpen" @clicked="toggleItem" />
+    <the-more-info :active="isOpenInfo" @clicked="toggleInfo" />
+    <the-more-social :active="isOpenSocial" @clicked="toggleSocial" />
+    <the-more-terms :active="isOpenTerms" @clicked="toggleTerms" />
   </section>
 </template>
 
@@ -49,12 +51,20 @@ export default {
   },
   data() {
     return {
-      isOpen: false
+      isOpenInfo: false,
+      isOpenSocial: false,
+      isOpenTerms: false
     }
   },
   methods: {
-    toggleItem() {
-      this.isOpen = !this.isOpen
+    toggleInfo() {
+      this.isOpenInfo = !this.isOpenInfo
+    },
+    toggleSocial() {
+      this.isOpenSocial = !this.isOpenSocial
+    },
+    toggleTerms() {
+      this.isOpenTerms = !this.isOpenTerms
     }
   }
 }

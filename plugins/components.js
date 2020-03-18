@@ -15,6 +15,8 @@ import TextBlok from "~/components/TextBlok.vue"
 import GraphicBlok from "~/components/GraphicBlok.vue"
 import ImagesBlok from "~/components/ImagesBlok.vue"
 import TheMoreInfo from "~/components/TheMoreInfo.vue"
+import TheMoreSocial from "~/components/TheMoreSocial.vue"
+import TheMoreTerms from "~/components/TheMoreTerms.vue"
 
 Vue.component("markdown", MarkdownItem)
 Vue.component("blok-footer-form", FooterForm)
@@ -31,3 +33,5 @@ Vue.component("blok-text-blok", TextBlok)
 Vue.component("blok-graphic-blok", GraphicBlok)
 Vue.component("blok-images-blok", ImagesBlok)
 Vue.component("the-more-info", TheMoreInfo)
+Vue.component("the-more-social", TheMoreSocial)
+Vue.component("the-more-terms", TheMoreTerms)
