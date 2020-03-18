@@ -32,10 +32,10 @@ export default {
   padding-left: var(--side-spacing)
   padding-right: var(--side-spacing)
   p
-    font-size: 3em
+    font-size: 2.33rem
     display: inline
   h1
-    font-size: 2em
+    font-size: 2.33rem
     font-family: "DINRg", Helvetica, Arial, sans-serif
     display: block
   svg

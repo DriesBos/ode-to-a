@@ -4,7 +4,7 @@
     <div class="content-wrapper">
       <!-- <markdown :input="blok.text" /> -->
       <div class="markdown">
-        <p>Let’s talk! Be bold, don’t be shy. We would love to have a moment with you.</p>
+        <h3>Let’s talk! Be bold, don’t be shy. We would love to have a moment with you.</h3>
       </div>
       <form
         name="contact"
@@ -59,3 +59,61 @@ export default {
   }
 }
 </script>
+
+<style lang="sass">
+@import '~assets/styles/variables'
+
+.footerform
+  position: relative
+  z-index: 999
+  display: flex
+  flex-direction: column
+  background: var(--current-color)
+  color: var(--second-color)
+  min-height: 100vh
+  justify-content: space-around
+  padding: var(--spacing-three)
+  overflow: hidden
+  &-Buttons
+    display: flex
+    justify-content: space-between
+    width: 100%
+    margin-top: var(--spacing-three)
+    h4
+      color: white
+      cursor: pointer
+  &-Links
+    display: flex
+    h4
+      margin-left: var(--spacing-one)
+      color: rgba(0,0,0,0) !important
+      -webkit-text-stroke: 1px var(--second-color)
+      transition: color $transition-hover, stroke $transition-hover
+      &:hover
+        color: var(--second-color) !important
+  .markdown
+    color: var(--second-color)
+  form
+    margin-top: var(--spacing-two)
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+    color: currentColor
+    input
+      width: 100%
+      border-bottom: 2px solid currentColor
+      text-transform: uppercase
+      &::placeholder
+        color: currentColor
+        text-transform: uppercase
+    button
+      cursor: pointer
+      svg
+        height: .7em
+        fill: currentColor
+        transition: transform $transition-icon
+        will-change: transform
+      &:hover
+        svg
+          transform: rotate(180deg)
+</style>

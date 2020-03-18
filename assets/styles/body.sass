@@ -37,7 +37,7 @@
   text-transform: uppercase
 .smallsize
   h1, h2, h3, h4, h5, p, a
-    font-size: 1em !important
+    font-size: 1.33em !important
     display: inline !important
 .visible
   opacity: 1 !important
@@ -126,12 +126,12 @@ section
   padding-left: var(--side-spacing)
   padding-right: var(--side-spacing)
   h1
-    font-size: 2em
+    font-size: 2.33em
     font-family: "DINRg", Helvetica, Arial, sans-serif
     text-transform: uppercase
     display: block
   p
-    font-size: 3em
+    font-size: 2.33em
     display: inline
     text-transform: uppercase
     cursor: pointer
@@ -177,63 +177,6 @@ section
       hyphens: none
     &:hover .projectList-Single_Image
       display: block
-
-.footerform
-  position: relative
-  z-index: 999
-  display: flex
-  flex-direction: column
-  background: currentColor
-  min-height: 100vh
-  justify-content: space-around
-  padding: var(--spacing-three)
-  overflow: hidden
-  &-Buttons
-    display: flex
-    justify-content: space-between
-    width: 100%
-    margin-top: var(--spacing-three)
-    h4
-      color: white
-      cursor: pointer
-  &-Links
-    display: flex
-    h4
-      margin-left: var(--spacing-one)
-      color: rgba(0,0,0,0) !important
-      -webkit-text-stroke: 1px var(--second-color)
-      transition: color $transition-hover, stroke $transition-hover
-      &:hover
-        color: var(--second-color) !important
-
-  // &.yellow, &.white
-  //   .markdown p, input, button
-  //     color: black
-  form
-    margin-top: var(--spacing-two)
-    display: flex
-    flex-direction: column
-    align-items: flex-start
-    input
-      width: 100%
-      border-bottom: 2px solid currentColor
-      color: white
-      text-transform: uppercase
-      &::placeholder
-        color: currentColor
-        text-transform: uppercase
-    button
-      color: currentColor
-      cursor: pointer
-      color: white
-      svg
-        height: .7em
-        fill: currentColor
-        transition: transform $transition-icon
-        will-change: transform
-      &:hover
-        svg
-          transform: rotate(180deg)
 
 .theMoreInfo
   position: absolute

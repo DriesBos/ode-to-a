@@ -33,7 +33,7 @@ body
   font-size: 18px
   font-size: calc(18px + (22 - 18) * ((100vw - 700px) / (1400 - 700)))
 
-h1, h2, h3, h4, p, a, em, strong, .markdown
+h1, h2, h3, h4, h5, p, a, em, strong, .markdown
   word-wrap: break-word
   overflow-wrap: break-word
   word-break: break-all
@@ -42,7 +42,7 @@ h1, h2, h3, h4, p, a, em, strong, .markdown
 
 li, h1, h2, h3, h4, h5, p, a, a:link, a:visited, a:hover, a:active, span, input, button
   font-family: 'DINBk', Helvetica, Arial, sans-serif
-  font-size: 1em
+  font-size: 1.33em
   line-height: 1.28
   color: currentColor
   font-style: normal
@@ -54,12 +54,10 @@ h1, h2, input
   font-size: 4em // 100pt
   // line-height: 1em
 h3
-  font-size: 3em // 75pt
+  font-size: 2.33em // 75pt
   // line-height: .5em
-h4, button
-  font-size: 2em // 50pt
-p, h5
-  font-size: 1em // 25pt
+h4, h5, p, button
+  font-size: 1.33em // 50pt
 
 a
   color: black
@@ -75,8 +73,7 @@ em
   li, h1, h2, h3, h4, p, a, a:link, a:visited, a:hover, a:active, span, input, button
     display: inline
 
-.footerform .markdown p
-  font-size: 2em // 50pt
+.footerform .markdown
   color: white
 
 .ellipsis
