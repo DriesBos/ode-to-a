@@ -28,7 +28,7 @@
   font-weight: normal
   font-style: normal
 
-body
+body, .projectList, .list-Item
   // https://css-tricks.com/snippets/css/fluid-typography/
   font-size: 18px
   font-size: calc(18px + (22 - 18) * ((100vw - 700px) / (1400 - 700)))
@@ -50,32 +50,22 @@ li, h1, h2, h3, h4, h5, p, a, span, input, button
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
 
-h1, h2, input
-  font-size: 4em // 100pt
-  // line-height: 1em
-h3
-  font-size: 2.33em // 75pt
-  // line-height: .5em
+h1, h2, input, .projectList h1, .projectList h2, .projectList h3, .projectList h4, .projectList h5, .projectList p
+  font-size: 4em
+h3, .list-Item h1, .list-Item h2, .list-Item h3, .list-Item h4, .list-Item h5, .list-Item p
+  font-size: 2.33em
 h4, h5, p, button
-  font-size: 1.33em // 50pt
-
+  font-size: 1.33em
 a
   color: black
   text-decoration: none
-
 strong
   font-weight: bold
-
 em
   font-style: italic
-
 .inline
   li, h1, h2, h3, h4, p, a, span, input, button
     display: inline
-
-.footerform .markdown
-  color: white
-
 .ellipsis
   overflow: hidden
   min-width: 0
@@ -84,7 +74,6 @@ em
     white-space: nowrap
     overflow: hidden
     text-overflow: ellipsis
-
 .markdown
   h1, h2, h3, h4, h5, p, a
     margin-top: 1em
@@ -95,3 +84,7 @@ em
     margin-bottom: 0
   a
     text-decoration: underline
+.smallsize
+  h1, h2, h3, h4, h5, p, a
+    font-size: 1.33em !important
+    display: inline !important

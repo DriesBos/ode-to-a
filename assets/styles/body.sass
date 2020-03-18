@@ -35,10 +35,6 @@
     align-items: center
 .capslock
   text-transform: uppercase
-.smallsize
-  h1, h2, h3, h4, h5, p, a
-    font-size: 1.33em !important
-    display: inline !important
 .visible
   opacity: 1 !important
 
@@ -113,6 +109,7 @@ section
 .projectList
   &-Single
     cursor: pointer
+    display: inline
 
 .projectList
   position: relative
@@ -126,12 +123,10 @@ section
   padding-left: var(--side-spacing)
   padding-right: var(--side-spacing)
   h1
-    font-size: 2.33em
     font-family: "DINRg", Helvetica, Arial, sans-serif
     text-transform: uppercase
     display: block
   p
-    font-size: 2.33em
     display: inline
     text-transform: uppercase
     cursor: pointer
@@ -145,7 +140,7 @@ section
   &-Container
     width: 100%
   &-Single
-    display: inline-block
+    display: inline
     word-break: break-word
     overflow-wrap: break-word
     hyphens: none
@@ -167,7 +162,7 @@ section
         object-fit: cover
     p
       cursor: pointer
-      display: inline-block
+      display: inline
       overflow-wrap: break-word
       hyphens: none
     span
@@ -214,4 +209,6 @@ section
   &-Close
     margin-top: var(--spacing-three)
     text-align: right
-    cursor: pointer
+    h4
+      cursor: pointer
+      display: inline
