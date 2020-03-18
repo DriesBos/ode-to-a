@@ -54,19 +54,19 @@ export default {
     applyFilter() {
       const currentScrollPosition =
         window.pageYOffset || document.documentElement.scrollTop
-      if (currentScrollPosition < window.innerHeight * 0.8) {
+      if (currentScrollPosition < window.innerHeight * 0.3) {
         this.filtered = false
       } else {
         this.filtered = true
       }
-      if (
-        this.$route.name === "brands-slug" ||
-        this.$route.name === "art-slug"
-      ) {
-        if (currentScrollPosition === 0) {
-          this.filtered = true
-        }
-      }
+      // if (
+      //   this.$route.name === "brands-slug" ||
+      //   this.$route.name === "art-slug"
+      // ) {
+      //   if (currentScrollPosition === 0) {
+      //     this.filtered = true
+      //   }
+      // }
     },
     transformImage(image, option) {
       if (!image) return ""
