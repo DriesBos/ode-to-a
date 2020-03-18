@@ -96,7 +96,7 @@ export default {
   h1, h2, h3, h4, p
     color: rgba(0,0,0,0)
     -webkit-text-stroke: 1px white
-    transition: color $transition-scroll-filter, -webkit-text-stroke $transition-scroll-filter
+    transition: color $transition-scroll-fade, -webkit-text-stroke $transition-scroll-fade
   img
     width: 100%
     height: 100%

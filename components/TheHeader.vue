@@ -13,7 +13,7 @@
         class="header-Single"
         :class="{ active: arrowFilled }"
       >
-        <nuxt-link to="/brands" tag="li">
+        <nuxt-link to="brands" tag="li">
           <svg viewBox="0 0 46.65 37.7">
             <g data-name="Laag 2">
               <path
@@ -153,7 +153,7 @@ export default {
         height: 2em
         fill: var(--current-color)
         stroke: rgba(0,0,0,0)
-        transition: fill $transition-scroll-filter, stroke $transition-scroll-filter
+        transition: fill $transition-scroll-fade, stroke $transition-scroll-fade
     &.active
       svg
         fill: rgba(0,0,0,0)
