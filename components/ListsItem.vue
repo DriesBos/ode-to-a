@@ -9,8 +9,8 @@
       <img v-if="blok.graphic" :src="blok.graphic" />
     </div>
     <div class="listitem-Text">
-      <h4 v-if="blok.title" class="DINRg">{{ blok.title }}</h4>
-      <h4 v-if="blok.content">{{ blok.content }}</h4>
+      <h3 v-if="blok.title" class="DINRg">{{ blok.title }}</h3>
+      <h3 v-if="blok.content">{{ blok.content }}</h3>
     </div>
   </section>
 </template>
