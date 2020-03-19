@@ -31,9 +31,9 @@
         </svg>
       </button>
       <div class="footerform-Buttons_Links">
-        <h4 @click="toggleInfo">INFO</h4>
-        <h4 @click="toggleSocial">SOCIAL</h4>
-        <h4 @click="toggleTerms">TERMS</h4>
+        <h5 @click="toggleInfo">INFO</h5>
+        <h5 @click="toggleSocial">SOCIAL</h5>
+        <h5 @click="toggleTerms">TERMS</h5>
       </div>
     </div>
     <the-more-info :active="isOpenInfo" @clicked="toggleInfo" />
@@ -101,7 +101,7 @@ export default {
     justify-content: space-between
     width: 100%
     margin-top: var(--spacing-three)
-    h4, button
+    h4, h5, button
       cursor: pointer
     button
       svg
@@ -114,7 +114,7 @@ export default {
           transform: rotate(180deg)
     &_Links
       display: flex
-      h4
+      h4, h5
         margin-left: var(--spacing-one)
         color: rgba(0,0,0,0) !important
         -webkit-text-stroke: 1px var(--second-color)

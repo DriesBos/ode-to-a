@@ -1,7 +1,7 @@
 <template>
   <!-- prettier-ignore -->
   <section v-editable="blok" class="projectList">
-    <h1 v-if="blok.title">{{ blok.title }}</h1>
+    <h3 v-if="blok.title" class="DINRg">{{ blok.title }}</h3>
     <ul class="projectList-Container">
       <component
         :is="blok.component | dashify"
@@ -47,15 +47,14 @@ export default {
     align-items: center
     justify-content: center
     flex-wrap: wrap
-  h1
+  .DINRg
     font-family: "DINRg", Helvetica, Arial, sans-serif
     text-transform: uppercase
     display: block
-    font-size: 2.33em
-    line-height: 1
-  p
-    font-size: 2.33em
+    font-size: 3em
+  h3.content
     display: inline
+    font-size: 3em
     text-transform: uppercase
     color: rgba($color-blue, 0)
     -webkit-text-stroke: 1px var(--current-color)
@@ -74,7 +73,7 @@ export default {
     word-break: break-word
     overflow-wrap: break-word
     hyphens: none
-    height: calc(2.33 * 1.5em)
+    // height: calc(4 * 1.5em)
     // &:last-child
     //   .dash
     //     display: none

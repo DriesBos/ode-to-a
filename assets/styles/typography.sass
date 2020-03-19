@@ -28,9 +28,9 @@
   font-weight: normal
   font-style: normal
 
-body, .projectList, .list-Item
+body
   // https://css-tricks.com/snippets/css/fluid-typography/
-  font-size: 18px
+  // font-size: 18px
   font-size: calc(18px + (22 - 18) * ((100vw - 700px) / (1400 - 700)))
 
 h1, h2, h3, h4, h5, p, a, em, strong, .markdown
@@ -42,20 +42,24 @@ h1, h2, h3, h4, h5, p, a, em, strong, .markdown
 
 li, h1, h2, h3, h4, h5, p, a, span, input, button
   font-family: 'DINBk', Helvetica, Arial, sans-serif
-  font-size: 1.33em
-  line-height: 1.28
   color: currentColor
   font-style: normal
   font-weight: normal
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
 
-h1, h2, input
+h1, h2, input // Titles + input type
   font-size: 4em
-h3, .list-Item h1, .list-Item h2, .list-Item h3, .list-Item h4, .list-Item h5, .list-Item p
+  line-height: 1.28
+h3 // Big type
   font-size: 2.33em
-h4, h5, p, button
+  line-height: 1.28
+h4, p // Small type,
+  font-size: 1.66em
+  line-height: 1.28
+h5, span, button, nav // Info type
   font-size: 1.33em
+  line-height: 1.28
 a
   color: currentColor
   text-decoration: none
@@ -84,9 +88,6 @@ em
     margin-bottom: 0
   a
     text-decoration: underline
-  h1, h2, h3, h4, h5, p
-    a
-      font-size: 1em
 .smallsize
   h1, h2, h3, h4, h5, p, a
     font-size: 1.33em !important

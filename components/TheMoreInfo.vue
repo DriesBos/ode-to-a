@@ -12,7 +12,7 @@
       </h1>
     </div>
     <div class="theMoreInfo-Close">
-      <h4 @click="onClick()">CLOSE</h4>
+      <h5 @click="onClick()">CLOSE</h5>
     </div>
   </div>
 </template>

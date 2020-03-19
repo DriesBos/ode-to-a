@@ -1,7 +1,7 @@
 <template>
   <!-- prettier-ignore -->
   <li class="projectList-Single">
-    <nuxt-link :to="blok.hyperlink.cached_url" tag="p">
+    <nuxt-link :to="blok.hyperlink.cached_url" tag="h3" class="content">
       {{ blok.title }}
       <span class="dash">,&nbsp;</span>
     </nuxt-link>
