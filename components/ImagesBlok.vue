@@ -53,7 +53,6 @@ export default {
       const distance = window.scrollY
       const array = document.querySelectorAll("#parralax")
       array[0].style.transform = `translateY(${distance * -0.1}px)`
-      // array[3].style.transform = `translateY(${distance * -0.1}px)`
     }
     // parallaxScroller() {
     //   // const distance = window.scrollY
