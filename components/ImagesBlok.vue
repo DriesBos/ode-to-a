@@ -2,8 +2,8 @@
   <!-- prettier-ignore -->
   <section v-editable="blok" class="imageGrid">
     <ul>
-      <li v-for="image in blok.image" :key="image.name" class="imageGrid-Item">
-        <div class="imageGrid-Item_Placeholder parralax">
+      <li v-for="image in blok.image" :key="image.filename" class="imageGrid-Item">
+        <div id="parralax" class="imageGrid-Item_Placeholder">
           <img :src="image.filename" />
         </div>
       </li>
@@ -12,6 +12,9 @@
 </template>
 
 <script>
+// import JQuery from "jquery"
+// let $ = JQuery
+
 export default {
   props: {
     blok: Object
@@ -22,6 +25,7 @@ export default {
     }
   },
   mounted() {
+    window.addEventListener("scroll", this.parallaxScroller)
     const targets = document.querySelectorAll(".imageGrid-Item_Placeholder")
     const lazyFilter = target => {
       this.observer = new IntersectionObserver(
@@ -39,18 +43,34 @@ export default {
       this.observer.observe(target)
     }
     targets.forEach(lazyFilter)
-    window.addEventListener("scroll", this.parralaxElement)
   },
   destroyed() {
     this.observer.disconnect()
+    window.removeEventListener("scroll", this.parallaxScroller)
   },
   methods: {
-    parralaxElement() {
+    parallaxScroller() {
       const distance = window.scrollY
-      document.querySelector(
-        ".parralax"
-      ).style.transform = `translateY(${distance * -0.1}px)`
+      const array = document.querySelectorAll("#parralax")
+      array[0].style.transform = `translateY(${distance * -0.1}px)`
+      array[3].style.transform = `translateY(${distance * -0.1}px)`
     }
+    // parallaxScroller() {
+    //   // const distance = window.scrollY
+    //   const array = document.querySelector("#parralax")
+    //   const observer = new IntersectionObserver(entries => {
+    //     entries.forEach(entry => {
+    //       if (entry.isIntersecting) {
+    //         // entry.target.style.transform = `translateY(${distance * -0.1}px)`
+    //         console.log(entry)
+    //       }
+    //     })
+    //   })
+    //   // array.forEach(el => {
+    //   //   observer.observe(el)
+    //   // })
+    //   observer.observe(array)
+    // },
   }
 }
 </script>
@@ -59,12 +79,11 @@ export default {
 @import '~assets/styles/variables'
 
 .imageGrid
-  // z-index: -1
+  z-index: -1
   ul
     display: flex
     flex-wrap: wrap
     width: 100%
-    // z-index: -1
     padding-left: var(--spacing-two)
     padding-right: var(--spacing-two)
     // border: 1px solid green
