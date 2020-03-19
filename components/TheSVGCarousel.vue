@@ -201,17 +201,6 @@ export default {
   },
   watch: {
     $route() {
-      let carousel = document.getElementById("carousel")
-      carousel.classList.add("visible")
-      // let shape = document.querySelector(".svg-container")
-      // if (
-      //   this.$route.name === "brands-slug" ||
-      //   this.$route.name === "art-slug"
-      // ) {
-      //   shape.classList.add("scrolled")
-      // } else {
-      //   shape.classList.remove("scrolled")
-      // }
       if (
         this.$route.name === "brands-slug" ||
         this.$route.name === "art-slug"
@@ -229,6 +218,7 @@ export default {
   },
   destroyed() {
     window.removeEventListener("scroll", this.onScroll())
+    window.removeEventListener("resize", this.setRatioAndPath)
   },
   methods: {
     setRatioAndPath() {
@@ -240,24 +230,15 @@ export default {
       let d = `M 0 0 L ${width} 0 L ${width} ${height} L 0 ${height} z`
       path.setAttribute("d", d)
       let carousel = document.getElementById("carousel")
-      carousel.classList.add("visible")
+      setTimeout(function() {
+        carousel.style.opacity = "1"
+      }, 50)
     },
     onScroll() {
-      // let height = window.innerHeight
-      // let shape = document.querySelector(".svg-container")
       let path = document.getElementById("text-path")
       let position =
         document.body.scrollTop || document.documentElement.scrollTop
       path.setAttribute("startOffset", -8000 + position / 2)
-      // if (
-      //   position > height / 2 ||
-      //   this.$route.name === "brands-slug" ||
-      //   this.$route.name === "art-slug"
-      // ) {
-      //   shape.classList.add("scrolled")
-      // } else {
-      //   shape.classList.remove("scrolled")
-      // }
     }
   }
 }
@@ -280,19 +261,11 @@ export default {
   color: var(--current-color)
   z-index: 999
   pointer-events: none
-  transition: opacity 0s ease .05s
-  opacity: 0
+  opacity: 0 // Changed with JavaScript
   svg
     height: 100%
     width: 100%
     overflow: visible
     text
-    // transition: fill .66s ease
-    // will-change: fill
     fill: rgba(0,0,0,0)
-// @media (orientation: landscape)
-//   .svg-container.scrolled
-//     svg
-//       text
-//       fill: rgba(0,0,0,0)
 </style>
