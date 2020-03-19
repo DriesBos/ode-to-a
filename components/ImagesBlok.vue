@@ -3,7 +3,7 @@
   <section v-editable="blok" class="imageGrid">
     <ul>
       <li v-for="image in blok.image" :key="image.name" class="imageGrid-Item">
-        <div class="imageGrid-Item_Placeholder">
+        <div class="imageGrid-Item_Placeholder parralax">
           <img :src="image.filename" />
         </div>
       </li>
@@ -39,9 +39,18 @@ export default {
       this.observer.observe(target)
     }
     targets.forEach(lazyFilter)
+    window.addEventListener("scroll", this.parralaxElement)
   },
   destroyed() {
     this.observer.disconnect()
+  },
+  methods: {
+    parralaxElement() {
+      const distance = window.scrollY
+      document.querySelector(
+        ".parralax"
+      ).style.transform = `translateY(${distance * -0.1}px)`
+    }
   }
 }
 </script>
@@ -50,20 +59,24 @@ export default {
 @import '~assets/styles/variables'
 
 .imageGrid
-  z-index: -1
+  // z-index: -1
   ul
     display: flex
     flex-wrap: wrap
     width: 100%
-    z-index: -1
-    padding-left: var(--side-spacing)
-    padding-right: var(--side-spacing)
+    // z-index: -1
+    padding-left: var(--spacing-two)
+    padding-right: var(--spacing-two)
+    // border: 1px solid green
     li
       display: flex
       justify-content: center
       align-items: center
       flex-basis: 50%
+      // border: 1px solid purple
       .imageGrid-Item_Placeholder
+        position: relative
+        // border: 1px solid orange
         // background: rgba(0,0,0,0)
         // transition: background $transition-scroll-filter
         // will-change: background
@@ -90,7 +103,7 @@ export default {
           width: random(30) + 70%
           margin-top: random(200) + px
           margin-bottom: random(200) + px
-          margin-left: random(300) - 300 + px
+          margin-left: random(100) - 100 + px
     li:first-child, li:nth-child(2)
       .imageGrid-Item_Placeholder
         margin-top: var(--spacing-three)
