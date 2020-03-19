@@ -73,10 +73,7 @@ export default {
     word-break: break-word
     overflow-wrap: break-word
     hyphens: none
-    // height: calc(4 * 1.5em)
-    // &:last-child
-    //   .dash
-    //     display: none
+    height: calc(3 * 1.28em) // Set line-height on "li" tags
     &_Image
       position: fixed
       display: none
