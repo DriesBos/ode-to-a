@@ -213,6 +213,7 @@ export default {
   },
   mounted() {
     this.setRatioAndPath()
+    this.setCarousel()
     window.addEventListener("resize", this.setRatioAndPath)
     window.addEventListener("scroll", this.onScroll)
   },
@@ -233,6 +234,16 @@ export default {
       setTimeout(function() {
         carousel.style.opacity = "1"
       }, 50)
+    },
+    setCarousel() {
+      if (
+        this.$route.name === "brands-slug" ||
+        this.$route.name === "art-slug"
+      ) {
+        this.showCarousel = false
+      } else {
+        this.showCarousel = true
+      }
     },
     onScroll() {
       let path = document.getElementById("text-path")
