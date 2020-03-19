@@ -53,7 +53,7 @@ export default {
       const distance = window.scrollY
       const array = document.querySelectorAll("#parralax")
       array[0].style.transform = `translateY(${distance * -0.1}px)`
-      array[3].style.transform = `translateY(${distance * -0.1}px)`
+      // array[3].style.transform = `translateY(${distance * -0.1}px)`
     }
     // parallaxScroller() {
     //   // const distance = window.scrollY
@@ -119,7 +119,7 @@ export default {
     @for $i from 1 through 100
       li:nth-child(#{$i})
         .imageGrid-Item_Placeholder
-          width: random(30) + 70%
+          width: random(25) + 70%
           margin-top: random(200) + px
           margin-bottom: random(200) + px
           margin-left: random(100) - 100 + px
