@@ -118,7 +118,7 @@ export default {
     @for $i from 1 through 100
       li:nth-child(#{$i})
         .imageGrid-Item_Placeholder
-          width: random(25) + 70%
+          width: random(45) + 50%
           margin-top: random(200) + px
           margin-bottom: random(200) + px
           margin-left: random(100) - 100 + px
