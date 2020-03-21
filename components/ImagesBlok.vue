@@ -91,6 +91,8 @@ export default {
       justify-content: center
       align-items: center
       flex-basis: 50%
+      @media screen and ( max-width: $breakpoint-mobile)
+        flex-basis: 100%
       // border: 1px solid purple
       .imageGrid-Item_Placeholder
         position: relative
@@ -122,10 +124,17 @@ export default {
           margin-top: random(200) + px
           margin-bottom: random(200) + px
           margin-left: random(100) - 100 + px
+          @media screen and ( max-width: $breakpoint-mobile)
+            width: 100%
+            margin-top: 0
+            margin-bottom: var(--spacing-one)
+            margin-left: 0
     li:first-child, li:nth-child(2)
       .imageGrid-Item_Placeholder
-        margin-top: var(--spacing-three)
+        @media screen and ( min-width: $breakpoint-mobile)
+          margin-top: var(--spacing-three)
     li:last-child, li:nth-last-child(2)
       .imageGrid-Item_Placeholder
-        margin-bottom: var(--spacing-three)
+        @media screen and ( min-width: $breakpoint-mobile)
+          margin-bottom: var(--spacing-three)
 </style>

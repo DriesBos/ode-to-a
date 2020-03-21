@@ -47,14 +47,17 @@ export default {
     align-items: center
     justify-content: center
     flex-wrap: wrap
+  li
+    display: inline
+    text-align: center
   .DINRg
     font-family: "DINRg", Helvetica, Arial, sans-serif
     text-transform: uppercase
     display: block
-    font-size: 3em
+    @media screen and ( min-width: $breakpoint-mobile)
+      font-size: 3em
   h3.content
     display: inline
-    font-size: 3em
     text-transform: uppercase
     color: rgba($color-blue, 0)
     -webkit-text-stroke: 1px var(--current-color)
@@ -63,6 +66,8 @@ export default {
     cursor: pointer
     overflow-wrap: break-word
     hyphens: none
+    @media screen and ( min-width: $breakpoint-mobile)
+      font-size: 3em
     &:hover
       color: var(--current-color)
       -webkit-text-stroke: 1px rgba($color-blue, 0)
@@ -73,7 +78,7 @@ export default {
     word-break: break-word
     overflow-wrap: break-word
     hyphens: none
-    height: calc(3 * 1.28em) // Set line-height on "li" tags
+    // height: calc(3 * 1.28em) // Set line-height on "li" tags
     &_Image
       position: fixed
       display: none
