@@ -59,7 +59,8 @@ export default {
       if (
         this.$route.name === "brands-slug" ||
         this.$route.name === "art-slug" ||
-        this.$route.name === "succes"
+        this.$route.name === "succes" ||
+        this.$route.name === "slug" // 404 Page
       ) {
         this.showHeader = false
       } else {
@@ -79,7 +80,8 @@ export default {
       if (
         this.$route.name === "brands-slug" ||
         this.$route.name === "art-slug" ||
-        this.$route.name === "succes"
+        this.$route.name === "succes" ||
+        this.$route.name === "slug"
       ) {
         this.showHeader = false
       } else {

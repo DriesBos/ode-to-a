@@ -1,12 +1,35 @@
 <template>
   <div class="view view-Message">
-    <section class="textBlok fullscreen">
-      <h1 class="textBlok-Main">404 ERROR</h1>
-      <p>
-        Oops, sorry we can't find that page!<br />Visit our
-        <nuxt-link to="/">homepage</nuxt-link>, or take a look at our
-        <nuxt-link to="/brands">work</nuxt-link>
-      </p>
+    <!-- prettier-ignore -->
+    <section class="textBlok fullscreen textCenter">
+      <div class="markdown textBlok-Item textBlok-Main">
+        <h1 class>404 ERROR</h1>
+      </div>
+      <div class="markdown textBlok-Item">
+        <p>
+          Oops, sorry we can't find that page!
+          <br />Check our
+          <nuxt-link to="/brands">projets</nuxt-link>or feel our vibe
+          <nuxt-link to="/">homepage</nuxt-link>
+        </p>
+      </div>
     </section>
   </div>
 </template>
+
+<script>
+export default {
+  head() {
+    return {
+      title: "404 ERROR",
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: "Oops, sorry we can't find that page!"
+        }
+      ]
+    }
+  }
+}
+</script>
