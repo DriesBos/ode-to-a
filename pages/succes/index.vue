@@ -1,18 +1,62 @@
 <template>
   <div class="view view-Message">
-    <section class="textBlok fullscreen">
-      <h1 class="textBlok-Main">
-        Thank you for sharing! We will reach out to you A.S.A.P.
-      </h1>
-      <p>
-        In the meantime, take a look at our<br />
-        take a look at our <nuxt-link to="/brands">work</nuxt-link> or go back
-        to our <nuxt-link to="/">homepage</nuxt-link>
-      </p>
-    </section>
+    <component
+      :is="story.content.component | dashify"
+      v-if="story.content.component"
+      :key="story.content._uid"
+      :blok="story.content"
+    ></component>
   </div>
 </template>
 
 <script>
-export default {}
+import storyblokLivePreview from "@/mixins/storyblokLivePreview"
+
+export default {
+  mixins: [storyblokLivePreview],
+  asyncData(context) {
+    return context.app.$storyapi
+      .get("cdn/stories/succes", {
+        version: "draft"
+      })
+      .then(res => {
+        return res.data
+      })
+      .catch(res => {
+        if (!res.response) {
+          console.error(res)
+          context.error({
+            statusCode: 404,
+            message: "Failed to receive content form api"
+          })
+        } else {
+          console.error(res.response.data)
+          context.error({
+            statusCode: res.response.status,
+            message: res.response.data
+          })
+        }
+      })
+  },
+  data() {
+    return {
+      story: { content: {} }
+    }
+  },
+  mounted() {
+    console.log(this.story)
+  },
+  head() {
+    return {
+      title: this.story.content.SEO.title || this.story.name,
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: this.story.content.SEO.description || this.story.name
+        }
+      ]
+    }
+  }
+}
 </script>
