@@ -8,7 +8,7 @@
       <div class="markdown textBlok-Item">
         <p>
           Oops, sorry we can't find that page! Check our
-          <nuxt-link to="/brands">projects</nuxt-link>or go to our
+          <nuxt-link to="/brands">projects</nuxt-link>&nbsp;or go to our
           <nuxt-link to="/">homepage</nuxt-link>
         </p>
       </div>
