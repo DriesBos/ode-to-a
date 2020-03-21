@@ -58,7 +58,8 @@ export default {
     $route() {
       if (
         this.$route.name === "brands-slug" ||
-        this.$route.name === "art-slug"
+        this.$route.name === "art-slug" ||
+        this.$route.name === "succes"
       ) {
         this.showHeader = false
       } else {
@@ -77,7 +78,8 @@ export default {
     routeCheck() {
       if (
         this.$route.name === "brands-slug" ||
-        this.$route.name === "art-slug"
+        this.$route.name === "art-slug" ||
+        this.$route.name === "succes"
       ) {
         this.showHeader = false
       } else {
