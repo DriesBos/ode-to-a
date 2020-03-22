@@ -35,8 +35,8 @@ export default {
   justify-content: center
   align-items: center
   width: 100%
-  margin-top: var(--spacing-three)
-  margin-bottom: var(--spacing-three)
+  padding-top: var(--spacing-three)
+  padding-bottom: var(--spacing-three)
   padding-left: var(--side-spacing)
   padding-right: var(--side-spacing)
   overflow: hidden
