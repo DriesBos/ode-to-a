@@ -85,7 +85,6 @@ export default {
     width: 100%
     padding-left: var(--spacing-two)
     padding-right: var(--spacing-two)
-    // border: 1px solid green
     li
       display: flex
       justify-content: center
@@ -93,10 +92,8 @@ export default {
       flex-basis: 50%
       @media screen and ( max-width: $breakpoint-mobile)
         flex-basis: 100%
-      // border: 1px solid purple
       .imageGrid-Item_Placeholder
         position: relative
-        // border: 1px solid orange
         // background: rgba(0,0,0,0)
         // transition: background $transition-scroll-filter
         // will-change: background
