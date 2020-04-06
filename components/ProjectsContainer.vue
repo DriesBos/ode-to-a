@@ -47,9 +47,21 @@ export default {
     align-items: center
     justify-content: center
     flex-wrap: wrap
-  li
+  .projectList-Single
     display: inline
+    word-wrap: break-word
+    word-wrap: break-all
+    word-break: break-word
+    word-break: break-all
+    overflow-wrap: break-word
+    overflow-wrap: anywhere
+    -ms-line-break: anywhere
+    -webkit-line-break: anywhere
+    hyphens: auto
     text-align: center
+    &:last-child
+      .dash
+        display: none
   .DINRg
     font-family: "DINRg", Helvetica, Arial, sans-serif
     text-transform: uppercase
@@ -74,10 +86,6 @@ export default {
   &-Container
     width: 100%
   &-Single
-    display: inline
-    word-break: break-word
-    overflow-wrap: break-word
-    hyphens: none
     // height: calc(3 * 1.28em) // Set line-height on "li" tags
     &_Image
       position: fixed
@@ -92,11 +100,6 @@ export default {
         width: 100%
         height: 100%
         object-fit: cover
-    span
-      display: inline
-      word-break: break-word
-      overflow-wrap: break-word
-      hyphens: none
     &:hover .projectList-Single_Image
       display: block
 </style>

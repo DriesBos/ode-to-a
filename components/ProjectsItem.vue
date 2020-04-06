@@ -1,10 +1,10 @@
 <template>
   <!-- prettier-ignore -->
-  <li class="projectList-Single">
+  <span class="projectList-Single">
     <nuxt-link :to="blok.hyperlink.cached_url" tag="h3" class="content">
       {{ blok.title }}
-      <span class="dash">,&nbsp;</span>
     </nuxt-link>
+    <h3 class="dash content">—&nbsp;</h3>
     <div v-lazy-container="{ selector: 'img' }" class="vueLazy projectList-Single_Image">
       <img
         v-if="blok.image"
@@ -27,7 +27,7 @@
         :data-src="`${transformImage(blok.image, '1440')}`"
       />
     </div>
-  </li>
+  </span>
 </template>
 
 <script>
