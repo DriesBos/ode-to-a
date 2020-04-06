@@ -99,19 +99,18 @@ export default {
   &-Buttons
     display: flex
     justify-content: space-between
+    align-items: center
     width: 100%
     margin-top: var(--spacing-three)
     h4, h5, button
       cursor: pointer
     button
+      display: flex
+      align-items: center
       svg
-        height: .7em
+        height: 2em
+        margin-left: var(--spacing-one)
         fill: currentColor
-        transition: transform $transition-icon
-        will-change: transform
-      &:hover
-        svg
-          transform: rotate(180deg)
     &_Links
       display: flex
       h4, h5
