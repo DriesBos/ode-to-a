@@ -20,7 +20,6 @@
     </form>
     <div class="footerform-Buttons">
       <button type="submit">
-        SEND
         <svg viewBox="0 0 46.65 37.7">
           <g data-name="Laag 2">
             <path
@@ -109,7 +108,6 @@ export default {
       align-items: center
       svg
         height: 2em
-        margin-left: var(--spacing-one)
         fill: currentColor
     &_Links
       display: flex
