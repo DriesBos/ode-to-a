@@ -22,7 +22,7 @@ export default {
   },
   data() {
     return {
-      filtered: false
+      filtered: true
     }
   },
   mounted() {
@@ -54,10 +54,14 @@ export default {
     applyFilter() {
       const currentScrollPosition =
         window.pageYOffset || document.documentElement.scrollTop
-      if (currentScrollPosition < window.innerHeight * 0.3) {
-        this.filtered = false
-      } else {
+      console.log(currentScrollPosition)
+      if (
+        currentScrollPosition > window.innerHeight * 0.7 ||
+        currentScrollPosition === 0
+      ) {
         this.filtered = true
+      } else {
+        this.filtered = false
       }
       // if (
       //   this.$route.name === "brands-slug" ||
@@ -93,19 +97,19 @@ export default {
   .vueLazy
     width: 100%
     height: 100%
-  h1, h2, h3, h4, p
-    color: rgba(0,0,0,0)
-    -webkit-text-stroke: 1px white
-    transition: color $transition-scroll-fade, -webkit-text-stroke $transition-scroll-fade
+  // h1, h2, h3, h4, p
+  //   color: rgba(0,0,0,0)
+  //   -webkit-text-stroke: 1px white
+  //   transition: color $transition-scroll-fade, -webkit-text-stroke $transition-scroll-fade
   img
     width: 100%
     height: 100%
     object-fit: cover
-    opacity: 1
-    filter: greyscale(0)
-    -webkit-filter: grayscale(0)
-    transition: filter $transition-scroll-filter, opacity $transition-scroll-filter
-    will-change: filter, opacity
+    // opacity: 1
+    // filter: greyscale(0)
+    // -webkit-filter: grayscale(0)
+    // transition: filter $transition-scroll-filter, opacity $transition-scroll-filter
+    // will-change: filter, opacity
   &-Text
     position: absolute
     display: flex
@@ -127,12 +131,10 @@ export default {
   top: 0
 .view-Single .landingItem
   position: relative
+  background-color: rgba(0,0,0,0)
+  transition: background-color $transition-filter
+  img
+    mix-blend-mode: multiply
   &.filter
-    h1, h2, h3, h4, p
-      color: var(--current-color)
-      -webkit-text-stroke: 1px rgba(0,0,0,0)
-    img
-      mix-blend-mode: screen
-      filter: greyscale(1)
-      -webkit-filter: grayscale(1)
+    background-color: red
 </style>

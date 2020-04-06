@@ -94,26 +94,16 @@ export default {
         flex-basis: 100%
       .imageGrid-Item_Placeholder
         position: relative
-        // background: rgba(0,0,0,0)
-        // transition: background $transition-scroll-filter
-        // will-change: background
         overflow: visible
+        background-color: rgba(0,0,0,0)
+        transition: background-color $transition-filter
         img
           width: auto
           height: auto
           overflow: visible
-          opacity: 1
-          filter: greyscale(0)
-          -webkit-filter: grayscale(0)
-          transition: filter $transition-scroll-filter, opacity $transition-scroll-filter
-          will-change: filter, opacity
+          mix-blend-mode: multiply
         &.filter
-          // background: var(--background-color)
-          img
-            // opacity: .5
-            // mix-blend-mode: screen
-            filter: greyscale(1)
-            -webkit-filter: grayscale(1)
+          background-color: red
     @for $i from 1 through 100
       li:nth-child(#{$i})
         .imageGrid-Item_Placeholder

@@ -160,10 +160,10 @@ export default {
         stroke: rgba(0,0,0,0)
         transition: fill $transition-scroll-fade, stroke $transition-scroll-fade
         overflow: visible
-    &.active
-      svg
-        fill: rgba(0,0,0,0)
-        stroke: white
+    // &.active
+    //   svg
+    //     fill: rgba(0,0,0,0)
+    //     stroke: white
 
   .nuxt-link-exact-active
     text-decoration: none
