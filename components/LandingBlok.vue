@@ -136,5 +136,5 @@ export default {
   img
     mix-blend-mode: multiply
   &.filter
-    background-color: red
+    background-color: var(--filter-color)
 </style>

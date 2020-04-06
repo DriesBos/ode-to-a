@@ -38,7 +38,7 @@ export default {
             }
           })
         },
-        { threshold: 0.8 }
+        { threshold: 0.7 }
       )
       this.observer.observe(target)
     }
@@ -98,12 +98,12 @@ export default {
         background-color: rgba(0,0,0,0)
         transition: background-color $transition-filter
         img
-          width: auto
+          width: 100%
           height: auto
           overflow: visible
           mix-blend-mode: multiply
         &.filter
-          background-color: red
+          background-color: var(--current-color)
     @for $i from 1 through 100
       li:nth-child(#{$i})
         .imageGrid-Item_Placeholder
