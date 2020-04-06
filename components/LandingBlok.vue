@@ -133,6 +133,7 @@ export default {
   position: relative
   background-color: rgba(0,0,0,0)
   transition: background-color $transition-filter
+  will-change: background-color
   img
     mix-blend-mode: multiply
   &.filter
