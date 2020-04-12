@@ -73,7 +73,7 @@ export default {
     text-transform: uppercase
     color: rgba($color-blue, 0)
     -webkit-text-stroke: 1px var(--current-color)
-    transition: color $transition-color, text-stroke $transition-color
+    transition: color $transition-scroll-fade, text-stroke $transition-scroll-fade
     will-change: color, text-stroke
     cursor: pointer
     overflow-wrap: break-word
@@ -100,6 +100,12 @@ export default {
         width: 100%
         height: 100%
         object-fit: cover
+    &.active
+      h3
+        color: var(--current-color)
+        -webkit-text-stroke: 1px rgba($color-blue, 0)
+      .projectList-Single_Image
+        display: block
     &:hover .projectList-Single_Image
       display: block
 </style>

@@ -1,9 +1,7 @@
 <template>
   <!-- prettier-ignore -->
-  <span class="projectList-Single">
-    <nuxt-link :to="blok.hyperlink.cached_url" tag="h3" class="content">
-      {{ blok.title }}
-    </nuxt-link>
+  <span :id="blok.title" class="projectList-Single" :class="{ active: isActive }">
+    <nuxt-link :to="blok.hyperlink.cached_url" tag="h3" class="content">{{ blok.title }}</nuxt-link>
     <h3 class="dash content">—&nbsp;</h3>
     <div v-lazy-container="{ selector: 'img' }" class="vueLazy projectList-Single_Image">
       <img
@@ -35,6 +33,17 @@ export default {
   props: {
     blok: Object
   },
+  data() {
+    return {
+      isActive: false
+    }
+  },
+  mounted() {
+    window.addEventListener("scroll", this.ifViewportCenter)
+  },
+  destroyed() {
+    window.removeEventListener("scroll", this.ifViewportCenter)
+  },
   methods: {
     transformImage(image, option) {
       if (!image) return ""
@@ -42,6 +51,21 @@ export default {
       let imageService = "//img2.storyblok.com/"
       let path = image.replace("//a.storyblok.com", "")
       return imageService + option + path
+    },
+    ifViewportCenter() {
+      var windowHeight =
+        window.innerHeight || document.documentElement.clientHeight
+      var windowHalf = windowHeight / 2
+      var el = document.getElementById(this.blok.title)
+      var bounding = el.getBoundingClientRect()
+      if (
+        bounding.top - windowHalf <= 0 &&
+        bounding.top - windowHalf >= 0 - bounding.height
+      ) {
+        this.isActive = true
+      } else {
+        this.isActive = false
+      }
     }
   }
 }
