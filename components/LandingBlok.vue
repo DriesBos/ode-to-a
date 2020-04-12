@@ -54,7 +54,7 @@ export default {
     applyFilter() {
       const currentScrollPosition =
         window.pageYOffset || document.documentElement.scrollTop
-      console.log(currentScrollPosition)
+      // console.log(currentScrollPosition)
       if (
         currentScrollPosition > window.innerHeight * 0.7 ||
         currentScrollPosition === 0
