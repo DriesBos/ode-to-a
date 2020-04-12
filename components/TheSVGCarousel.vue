@@ -199,6 +199,9 @@ export default {
       let carousel = document.getElementById("carousel")
       if (this.$route.name != "brands-slug" && this.$route.name != "art-slug") {
         setTimeout(function() {
+          document.getElementById("text-path").setAttribute("startOffset", 0)
+        }, 40)
+        setTimeout(function() {
           carousel.style.opacity = "1"
         }, 50)
       } else {
@@ -219,10 +222,11 @@ export default {
     setRatioAndPath() {
       let width = window.innerWidth
       let height = window.innerHeight
+      let lastHeight = window.innerWidth * 0.016
       let shape = document.getElementById("theSvg")
       shape.setAttribute("viewBox", `0 0 ${width} ${height}`)
       let path = document.getElementById("thePath")
-      let d = `M 0 0 L ${width} 0 L ${width} ${height} L 0 ${height} z`
+      let d = `M 0 0 L ${width} 0 L ${width} ${height} L 0 ${height} L 0 ${lastHeight}`
       path.setAttribute("d", d)
       if (this.$route.name != "brands-slug" && this.$route.name != "art-slug") {
         let carousel = document.getElementById("carousel")
