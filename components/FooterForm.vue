@@ -117,7 +117,8 @@ export default {
         -webkit-text-stroke: 1px var(--second-color)
         transition: color $transition-hover, stroke $transition-hover
         &:hover
-          color: var(--second-color) !important
+          @media (hover: hover)
+            color: var(--second-color) !important
   .markdown
     color: var(--second-color)
 </style>

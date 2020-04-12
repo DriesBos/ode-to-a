@@ -171,32 +171,48 @@ export default {
     li
       color: rgba($color-yellow, 0)
       -webkit-text-stroke: 1px rgba($color-yellow, 1)
-      &.nuxt-link-exact-active, &:hover
+      &.nuxt-link-exact-active,
         color: $color-yellow
         -webkit-text-stroke: 1px rgba($color-yellow, 0)
+      &:hover
+        @media (hover: hover)
+          color: $color-yellow
+          -webkit-text-stroke: 1px rgba($color-yellow, 0)
   &.blue
     li
       color: rgba($color-blue, 0)
       -webkit-text-stroke: 1px rgba($color-blue, 1)
-      &.nuxt-link-exact-active, &:hover
+      &.nuxt-link-exact-active,
         color: $color-blue
         -webkit-text-stroke: 1px rgba($color-blue, 0)
+      &:hover
+        @media (hover: hover)
+          color: $color-blue
+          -webkit-text-stroke: 1px rgba($color-blue, 0)
       svg
         fill: $color-blue
   &.red
     li
       color: rgba($color-red, 0)
       -webkit-text-stroke: 1px rgba($color-red, 1)
-      &.nuxt-link-exact-active, &:hover
+      &.nuxt-link-exact-active,
         color: $color-red
         -webkit-text-stroke: 1px rgba($color-red, 0)
+      &:hover
+        @media (hover: hover)
+          color: $color-red
+          -webkit-text-stroke: 1px rgba($color-red, 0)
       svg
         fill: $color-red
   &.white
     li
       color: rgba(white, 0)
       -webkit-text-stroke: 1px rgba(white, 1)
-      &.nuxt-link-exact-active, &:hover
+      &.nuxt-link-exact-active,
         color: white
         -webkit-text-stroke: 1px rgba(white, 0)
+      &:hover
+        @media (hover: hover)
+          color: white
+          -webkit-text-stroke: 1px rgba(white, 0)
 </style>

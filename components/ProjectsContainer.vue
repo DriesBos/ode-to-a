@@ -81,8 +81,9 @@ export default {
     @media screen and ( min-width: $breakpoint-mobile)
       font-size: 3em
     &:hover
-      color: var(--current-color)
-      -webkit-text-stroke: 1px rgba($color-blue, 0)
+      @media (hover: hover)
+        color: var(--current-color)
+        -webkit-text-stroke: 1px rgba($color-blue, 0)
   &-Container
     width: 100%
   &-Single
@@ -107,7 +108,8 @@ export default {
       .projectList-Single_Image
         display: block
     &:hover
-      .projectList-Single_Image
-        display: block
-        z-index: -1
+      @media (hover: hover)
+        .projectList-Single_Image
+          display: block
+          z-index: -1
 </style>
