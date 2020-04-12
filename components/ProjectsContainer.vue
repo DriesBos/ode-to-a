@@ -95,7 +95,7 @@ export default {
       right: 0
       bottom: 0
       pointer-events: none
-      z-index: -1
+      z-index: -2
       img
         width: 100%
         height: 100%
@@ -106,6 +106,8 @@ export default {
         -webkit-text-stroke: 1px rgba($color-blue, 0)
       .projectList-Single_Image
         display: block
-    &:hover .projectList-Single_Image
-      display: block
+    &:hover
+      .projectList-Single_Image
+        display: block
+        z-index: -1
 </style>
