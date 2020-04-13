@@ -46,6 +46,9 @@
 </template>
 
 <script>
+import JQuery from "jquery"
+let $ = JQuery
+
 export default {
   name: "TheHeader",
   data() {
@@ -71,9 +74,13 @@ export default {
   mounted() {
     this.routeCheck()
     window.addEventListener("scroll", this.singlePageArrowColor)
+    $(".hovered").on("mouseover", this.changeCursor)
+    $(".hovered").on("mouseleave", this.removeChangeCursor)
   },
   destroyed() {
     window.removeEventListener("scroll", this.singlePageArrowColor)
+    $(".hovered").off("mouseover", this.changeCursor)
+    $(".hovered").off("mouseleave", this.removeChangeCursor)
   },
   methods: {
     routeCheck() {
@@ -96,6 +103,14 @@ export default {
       } else {
         this.arrowFilled = false
       }
+    },
+    changeCursor() {
+      let $cursor = $(".cursor")
+      $cursor.addClass("hovers-container")
+    },
+    removeChangeCursor() {
+      let $cursor = $(".cursor")
+      $cursor.removeClass("hovers-container")
     }
   }
 }

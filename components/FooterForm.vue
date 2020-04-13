@@ -19,7 +19,7 @@
       <input required type="text" name="message" placeholder="FIRE AWAY" />
     </form>
     <div class="footerform-Buttons">
-      <button type="submit">
+      <button type="submit" class="hovered">
         <svg viewBox="0 0 46.65 37.7">
           <g data-name="Laag 2">
             <path
@@ -30,14 +30,12 @@
         </svg>
       </button>
       <div class="footerform-Buttons_Links">
-        <a href="https://goo.gl/maps/QnLbb1psM5Gdyw3e6">MEET US</a>
-        <a href="tel:0031630108213">CALL US</a>
-        <a href="https://www.instagram.com/odetoa__/">FOLLOW US</a>
-        <h5 @click="toggleTerms">TERMS</h5>
+        <a class="hovered" href="https://goo.gl/maps/QnLbb1psM5Gdyw3e6">MEET US</a>
+        <a class="hovered" href="tel:0031630108213">CALL US</a>
+        <a class="hovered" href="https://www.instagram.com/odetoa__/">FOLLOW US</a>
+        <h5 class="hovered" @click="toggleTerms">TERMS</h5>
       </div>
     </div>
-    <the-more-info :active="isOpenInfo" @clicked="toggleInfo" />
-    <the-more-social :active="isOpenSocial" @clicked="toggleSocial" />
     <the-more-terms :active="isOpenTerms" @clicked="toggleTerms" />
   </section>
 </template>
