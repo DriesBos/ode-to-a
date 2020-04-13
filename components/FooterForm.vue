@@ -30,8 +30,9 @@
         </svg>
       </button>
       <div class="footerform-Buttons_Links">
-        <h5 @click="toggleInfo">INFO</h5>
-        <h5 @click="toggleSocial">SOCIAL</h5>
+        <a href="https://goo.gl/maps/QnLbb1psM5Gdyw3e6">MEET US</a>
+        <a href="tel:0031630108213">CALL US</a>
+        <a href="https://www.instagram.com/odetoa__/">FOLLOW US</a>
         <h5 @click="toggleTerms">TERMS</h5>
       </div>
     </div>
@@ -87,7 +88,6 @@ export default {
     flex-direction: column
     align-items: flex-start
     color: currentColor
-    flex-grow: 1
     input
       width: 100%
       border-bottom: 2px solid currentColor
@@ -97,28 +97,38 @@ export default {
         text-transform: uppercase
   &-Buttons
     display: flex
+    flex-grow: 1
     justify-content: space-between
-    align-items: center
+    align-items: flex-end
     width: 100%
     margin-top: var(--spacing-three)
-    h4, h5, button
+    @media screen and ( max-width: $breakpoint-mobile)
+      flex-direction: column
+    h4, h5, a, button
       cursor: pointer
     button
       display: flex
       align-items: center
+      align-self: flex-start
       svg
         height: 2em
         fill: currentColor
     &_Links
       display: flex
-      h4, h5
-        margin-left: var(--spacing-one)
+      flex-wrap: wrap
+      h4, h5, a
         color: rgba(0,0,0,0) !important
         -webkit-text-stroke: 1px var(--second-color)
         transition: color $transition-hover, stroke $transition-hover
+        font-size: 1.33em
+        line-height: 1
+        flex-shrink: 0
+        margin-top: var(--spacing-two)
         &:hover
           @media (hover: hover)
             color: var(--second-color) !important
+      a
+        margin-right: var(--spacing-two)
   .markdown
     color: var(--second-color)
 </style>
