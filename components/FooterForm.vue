@@ -2,7 +2,7 @@
   <!-- prettier-ignore -->
   <section class="footerform">
     <div class="footerform-Intro markdown">
-      <h3>Let’s talk! Be bold, don’t be shy. We would love to have a moment with you.</h3>
+      <h3>Let’s talk! Be bold, don’t be shy.</h3>
     </div>
     <form
       class="footerform-Form"
