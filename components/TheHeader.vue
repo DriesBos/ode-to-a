@@ -3,10 +3,10 @@
     <nav>
       <!-- prettier-ignore -->
       <ul v-if="showHeader" class="header-Desktop">
-        <nuxt-link to="/" tag="li">A —</nuxt-link>
-        <nuxt-link :to="{ name: 'brands' }" tag="li">For Brands</nuxt-link>
-        <nuxt-link :to="{ name: 'people' }" tag="li">For People</nuxt-link>
-        <nuxt-link :to="{ name: 'art' }" tag="li">For Art</nuxt-link>
+        <nuxt-link to="/" class="hovered" tag="li">A —</nuxt-link>
+        <nuxt-link :to="{ name: 'brands' }" class="hovered" tag="li">For Brands</nuxt-link>
+        <nuxt-link :to="{ name: 'people' }" class="hovered" tag="li">For People</nuxt-link>
+        <nuxt-link :to="{ name: 'art' }" class="hovered" tag="li">For Art</nuxt-link>
       </ul>
       <!-- prettier-ignore -->
       <ul

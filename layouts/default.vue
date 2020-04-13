@@ -5,12 +5,16 @@
     <transition name="pages" mode="out-in">
       <nuxt :class="pageColor" />
     </transition>
+    <div class="cursor" :class="pageColor"></div>
   </main>
 </template>
 
 <script>
 import TheHeader from "~/components/TheHeader"
 import TheSVGCarousel from "~/components/TheSVGCarousel"
+import gsap from "gsap"
+import JQuery from "jquery"
+let $ = JQuery
 
 export default {
   components: {
@@ -29,6 +33,13 @@ export default {
   },
   mounted() {
     this.setpageColor()
+    this.customCursor()
+    $(".hovered").on("mouseover", this.changeCursor)
+    $(".hovered").on("mouseleave", this.removeChangeCursor)
+  },
+  destroyed() {
+    $(".hovered").off("mouseover", this.changeCursor)
+    $(".hovered").off("mouseleave", this.removeChangeCursor)
   },
   methods: {
     setpageColor() {
@@ -58,6 +69,24 @@ export default {
       } else {
         this.pageColor = "black"
       }
+    },
+    customCursor() {
+      let $cursor = $(".cursor")
+      function moveCursor(e) {
+        gsap.to($cursor, 0, {
+          left: e.clientX,
+          top: e.clientY
+        })
+      }
+      $(window).on("mousemove", moveCursor)
+    },
+    changeCursor() {
+      let $cursor = $(".cursor")
+      $cursor.addClass("hovers-container")
+    },
+    removeChangeCursor() {
+      let $cursor = $(".cursor")
+      $cursor.removeClass("hovers-container")
     }
   }
 }
