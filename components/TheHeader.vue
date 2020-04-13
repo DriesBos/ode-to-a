@@ -50,7 +50,7 @@ export default {
   name: "TheHeader",
   data() {
     return {
-      showHeader: true,
+      showHeader: false,
       arrowFilled: true
     }
   },

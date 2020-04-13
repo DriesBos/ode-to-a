@@ -197,7 +197,12 @@ export default {
   watch: {
     $route() {
       let carousel = document.getElementById("carousel")
-      if (this.$route.name != "brands-slug" && this.$route.name != "art-slug") {
+      if (
+        this.$route.name != "brands-slug" &&
+        this.$route.name != "art-slug" &&
+        this.$route.name != "slug" &&
+        this.$route.name != "succes"
+      ) {
         setTimeout(function() {
           document.getElementById("text-path").setAttribute("startOffset", 0)
         }, 40)
