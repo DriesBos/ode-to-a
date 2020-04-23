@@ -76,6 +76,7 @@ export default {
     window.addEventListener("scroll", this.singlePageArrowColor)
     $(".hovered").on("mouseover", this.changeCursor)
     $(".hovered").on("mouseleave", this.removeChangeCursor)
+    $(".projectList-Single").on("mouseenter", this.changeActiveState)
   },
   destroyed() {
     window.removeEventListener("scroll", this.singlePageArrowColor)
@@ -83,6 +84,9 @@ export default {
     $(".hovered").off("mouseleave", this.removeChangeCursor)
   },
   methods: {
+    changeActiveState() {
+      $(".projectList-Single").removeClass("active")
+    },
     routeCheck() {
       if (
         this.$route.name === "brands-slug" ||
@@ -162,7 +166,6 @@ export default {
   .header-Single
     li
       position: absolute
-      // cursor: pointer
       text-transform: uppercase
       pointer-events: auto
       top: 0
@@ -175,11 +178,6 @@ export default {
         stroke: rgba(0,0,0,0)
         transition: fill $transition-scroll-fade, stroke $transition-scroll-fade
         overflow: visible
-    // &.active
-    //   svg
-    //     fill: rgba(0,0,0,0)
-    //     stroke: white
-
   .nuxt-link-exact-active
     text-decoration: none
   &.yellow

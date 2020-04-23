@@ -27,7 +27,6 @@ export default {
 // PROJECT LIST
 .projectList
   &-Single
-    // cursor: pointer
     display: inline
 
 .projectList
@@ -66,8 +65,7 @@ export default {
     font-family: "DINRg", Helvetica, Arial, sans-serif
     text-transform: uppercase
     display: block
-    @media screen and ( min-width: $breakpoint-mobile)
-      font-size: 3em
+    font-size: 8vw
   h3.content
     display: inline
     text-transform: uppercase
@@ -75,7 +73,6 @@ export default {
     -webkit-text-stroke: 1px var(--current-color)
     transition: color $transition-scroll-fade, text-stroke $transition-scroll-fade
     will-change: color, text-stroke
-    // cursor: pointer
     overflow-wrap: break-word
     hyphens: none
     font-size: 8vw
@@ -86,7 +83,6 @@ export default {
   &-Container
     width: 100%
   &-Single
-    // height: calc(3 * 1.28em) // Set line-height on "li" tags
     &_Image
       position: fixed
       display: none
