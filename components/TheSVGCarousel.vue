@@ -22,8 +22,8 @@
       <text
         v-if="this.$route.name === 'index'"
         id="text-wrap"
-        fill="none"
-        stroke="currentColor"
+        fill
+        stroke
         stroke-width
         font-size="1em"
       >
@@ -36,13 +36,7 @@
           lengthAdjust="spacingAndGlyphs"
         >YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE YOUR ESSENCE IS YOUR PRESENCE</textPath>
       </text>
-      <text
-        v-else-if="this.$route.name === 'people'"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        font-size="1em"
-      >
+      <text v-else-if="this.$route.name === 'people'" fill stroke stroke-width="2" font-size="1em">
         <!-- prettier-ignore -->
         <textPath
           id="text-path"
@@ -94,8 +88,8 @@
         v-else-if="
           this.$route.name === 'art' || this.$route.name === 'art-slug'
         "
-        fill="none"
-        stroke="currentColor"
+        fill
+        stroke
         stroke-width="2"
         font-size="1em"
       >
@@ -146,7 +140,7 @@
           ODE TO ART
         </textPath>
       </text>
-      <text v-else fill="none" stroke="currentColor" stroke-width="2" font-size="1em">
+      <text v-else fill stroke stroke-width="2" font-size="1em">
         <textPath
           id="text-path"
           xlink:href="#thePath"
@@ -242,9 +236,15 @@ export default {
     },
     onScroll() {
       let path = document.getElementById("text-path")
+      let text = document.getElementById("theSvg")
       let position =
         document.body.scrollTop || document.documentElement.scrollTop
       path.setAttribute("startOffset", -8000 + position / 2)
+      if (position < window.innerHeight) {
+        text.classList.add("active")
+      } else {
+        text.classList.remove("active")
+      }
     }
   }
 }
@@ -272,6 +272,9 @@ export default {
     height: 100%
     width: 100%
     overflow: visible
-    text
     fill: rgba(0,0,0,0)
+    stroke: currentColor
+    transition: all $transition-carousel
+    &.active
+      fill: currentColor
 </style>
