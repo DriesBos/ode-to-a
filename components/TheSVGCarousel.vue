@@ -192,10 +192,10 @@ export default {
     $route() {
       let carousel = document.getElementById("carousel")
       if (
-        this.$route.name != "brands-slug" &&
-        this.$route.name != "art-slug" &&
-        this.$route.name != "slug" &&
-        this.$route.name != "succes"
+        this.$route.name === "index" ||
+        this.$route.name === "brands" ||
+        this.$route.name === "art" ||
+        this.$route.name === "people"
       ) {
         setTimeout(function() {
           document.getElementById("text-path").setAttribute("startOffset", 0)
@@ -210,6 +210,7 @@ export default {
   },
   mounted() {
     this.setRatioAndPath()
+    this.checkRoute()
     window.addEventListener("resize", this.setRatioAndPath)
     window.addEventListener("scroll", this.onScroll)
   },
@@ -229,6 +230,20 @@ export default {
       path.setAttribute("d", d)
       if (this.$route.name != "brands-slug" && this.$route.name != "art-slug") {
         let carousel = document.getElementById("carousel")
+        setTimeout(function() {
+          carousel.style.opacity = "1"
+        }, 50)
+      }
+    },
+    checkRoute() {
+      let carousel = document.getElementById("carousel")
+      carousel.style.opacity = "0"
+      if (
+        this.$route.name === "index" ||
+        this.$route.name === "brands" ||
+        this.$route.name === "art" ||
+        this.$route.name === "people"
+      ) {
         setTimeout(function() {
           carousel.style.opacity = "1"
         }, 50)
