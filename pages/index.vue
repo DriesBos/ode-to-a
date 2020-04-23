@@ -12,6 +12,8 @@
 
 <script>
 import storyblokLivePreview from "@/mixins/storyblokLivePreview"
+import JQuery from "jquery"
+let $ = JQuery
 
 export default {
   mixins: [storyblokLivePreview],
@@ -44,7 +46,24 @@ export default {
       story: { content: {} }
     }
   },
-  mounted() {},
+  mounted() {
+    $(".hovered").on("mouseover", this.changeCursor)
+    $(".hovered").on("mouseleave", this.removeChangeCursor)
+  },
+  destroyed() {
+    $(".hovered").off("mouseover", this.changeCursor)
+    $(".hovered").off("mouseleave", this.removeChangeCursor)
+  },
+  methods: {
+    changeCursor() {
+      let $cursor = $(".cursor")
+      $cursor.addClass("hovers-container")
+    },
+    removeChangeCursor() {
+      let $cursor = $(".cursor")
+      $cursor.removeClass("hovers-container")
+    }
+  },
   head() {
     return {
       title: this.story.content.SEO.title || this.story.name,
