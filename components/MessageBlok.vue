@@ -23,6 +23,9 @@
       <div v-html="require('~/assets/images/logo-wide.svg?include')" />
       <div v-html="require('~/assets/images/logo-wide.svg?include')" />
       <div v-html="require('~/assets/images/logo-wide.svg?include')" />
+      <div v-html="require('~/assets/images/logo-wide.svg?include')" />
+      <div v-html="require('~/assets/images/logo-wide.svg?include')" />
+      <div v-html="require('~/assets/images/logo-wide.svg?include')" />
     </div>
   </section>
 </template>
@@ -48,7 +51,6 @@ export default {
   padding-bottom: var(--spacing-three)
   padding-left: var(--side-spacing)
   padding-right: var(--side-spacing)
-  overflow: hidden
   min-height: 100vh
   text-align: center
   &-Header

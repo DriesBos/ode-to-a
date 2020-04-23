@@ -102,8 +102,6 @@ export default {
     margin-top: var(--spacing-three)
     @media screen and ( max-width: $breakpoint-mobile)
       flex-direction: column
-    // h4, h5, a, button
-    //   cursor: pointer
     button
       display: flex
       align-items: center
