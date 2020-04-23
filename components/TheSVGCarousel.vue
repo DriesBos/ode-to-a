@@ -210,7 +210,6 @@ export default {
   },
   mounted() {
     this.setRatioAndPath()
-    this.checkRoute()
     window.addEventListener("resize", this.setRatioAndPath)
     window.addEventListener("scroll", this.onScroll)
   },
@@ -228,22 +227,13 @@ export default {
       let path = document.getElementById("thePath")
       let d = `M 0 0 L ${width} 0 L ${width} ${height} L 0 ${height} L 0 ${lastHeight}`
       path.setAttribute("d", d)
-      if (this.$route.name != "brands-slug" && this.$route.name != "art-slug") {
-        let carousel = document.getElementById("carousel")
-        setTimeout(function() {
-          carousel.style.opacity = "1"
-        }, 50)
-      }
-    },
-    checkRoute() {
-      let carousel = document.getElementById("carousel")
-      carousel.style.opacity = "0"
       if (
         this.$route.name === "index" ||
         this.$route.name === "brands" ||
         this.$route.name === "art" ||
         this.$route.name === "people"
       ) {
+        let carousel = document.getElementById("carousel")
         setTimeout(function() {
           carousel.style.opacity = "1"
         }, 50)
