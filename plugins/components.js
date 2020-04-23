@@ -13,6 +13,7 @@ import VideoLandingBlok from "~/components/VideoLandingBlok.vue"
 import Page from "~/components/Page.vue"
 import PageProject from "~/components/PageProject.vue"
 import TextBlok from "~/components/TextBlok.vue"
+import ButtonBlok from "~/components/ButtonBlok.vue"
 import MessageBlok from "~/components/MessageBlok.vue"
 import GraphicBlok from "~/components/GraphicBlok.vue"
 import ImagesBlok from "~/components/ImagesBlok.vue"
@@ -33,6 +34,7 @@ Vue.component("blok-video-landing-blok", VideoLandingBlok)
 Vue.component("blok-page", Page)
 Vue.component("blok-page-project", PageProject)
 Vue.component("blok-text-blok", TextBlok)
+Vue.component("blok-button-blok", ButtonBlok)
 Vue.component("blok-message-blok", MessageBlok)
 Vue.component("blok-graphic-blok", GraphicBlok)
 Vue.component("blok-images-blok", ImagesBlok)
