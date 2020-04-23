@@ -63,12 +63,14 @@ export default {
     animation-timing-function: linear
     animation-direction: alternate
     animation-iteration-count: infinite
+    overflow: visible
     > div
       margin-right: 25vmin
     svg
       fill: rgba(0,0,0,0)
       stroke: currentColor
       height: 30vmin
+      overflow: visible
 
 @keyframes left
   0%
