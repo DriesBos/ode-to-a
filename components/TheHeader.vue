@@ -139,7 +139,7 @@ export default {
     justify-content: flex-end
     li
       position: absolute
-      cursor: pointer
+      // cursor: pointer
       text-transform: uppercase
       line-height: 1
       pointer-events: auto
@@ -162,7 +162,7 @@ export default {
   .header-Single
     li
       position: absolute
-      cursor: pointer
+      // cursor: pointer
       text-transform: uppercase
       pointer-events: auto
       top: 0

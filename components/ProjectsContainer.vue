@@ -27,7 +27,7 @@ export default {
 // PROJECT LIST
 .projectList
   &-Single
-    cursor: pointer
+    // cursor: pointer
     display: inline
 
 .projectList
@@ -75,7 +75,7 @@ export default {
     -webkit-text-stroke: 1px var(--current-color)
     transition: color $transition-scroll-fade, text-stroke $transition-scroll-fade
     will-change: color, text-stroke
-    cursor: pointer
+    // cursor: pointer
     overflow-wrap: break-word
     hyphens: none
     @media screen and ( min-width: $breakpoint-mobile)

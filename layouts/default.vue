@@ -5,7 +5,9 @@
     <transition name="pages" mode="out-in">
       <nuxt :class="pageColor" />
     </transition>
-    <div class="cursor" :class="pageColor"></div>
+    <div class="cursor" :class="pageColor">
+      <div v-html="require('~/assets/images/muis.svg?include')" />
+    </div>
   </main>
 </template>
 

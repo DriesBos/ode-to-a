@@ -41,22 +41,22 @@
 // CURSOR
 .cursor
   position: fixed
-  width: 1em
-  height: 1.1em
-  top: 50%
-  left: 50%
-  transform: translate(-50%, -50%)
-  border-radius: 1000px
-  background: var(--current-color)
-  border: 1px solid white
   pointer-events: none
-  transition: width $transition-cursor, height $transition-cursor
-  will-change: width, height
   z-index: 999
+  width: 3vmin
+  height: 3vmin
+  svg
+    position: absolute
+    top: 0
+    left: 0
+    transform: translate(-50%, -50%)
+    // transform-origin: center
+    transition: transform $transition-cursor
+    will-change: transform
+    color: currentColor
   &.hovers-container
-    width: 3em
-    height: 3em
-    cursor: none
+    svg
+      transform: scale(1.5)  translate(-50%, -50%)
   @media ( hover: none )
     display: none
 
@@ -142,5 +142,5 @@ section
     margin-top: var(--spacing-three)
     text-align: right
     h4, h5
-      cursor: pointer
+      // cursor: pointer
       display: inline

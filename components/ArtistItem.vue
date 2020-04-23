@@ -86,13 +86,13 @@ export default {
       justify-content: center
       align-items: center
       flex-basis: 50%
-      cursor: pointer
+      // cursor: pointer
       p
         position: absolute
         text-transform: uppercase
         color: rgba($color-red, 0)
         -webkit-text-stroke: 1px var(--current-color)
-        cursor: pointer
+        // cursor: pointer
       .artList-Item_Placeholder
         background-color: var(--background-color)
         overflow: visible
