@@ -74,5 +74,5 @@ export default {
   0%
     transform: translateX(0)
   100%
-    transform: translateX(-80%)
+    transform: translateX(-1000vw)
 </style>
