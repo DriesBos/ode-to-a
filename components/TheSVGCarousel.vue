@@ -240,10 +240,10 @@ export default {
       let position =
         document.body.scrollTop || document.documentElement.scrollTop
       path.setAttribute("startOffset", -8000 + position / 2)
-      if (position < window.innerHeight) {
-        text.classList.add("active")
+      if (position > window.innerHeight) {
+        text.classList.add("inactive")
       } else {
-        text.classList.remove("active")
+        text.classList.remove("inactive")
       }
     }
   }
@@ -272,9 +272,9 @@ export default {
     height: 100%
     width: 100%
     overflow: visible
-    fill: rgba(0,0,0,0)
+    fill: currentColor
     stroke: currentColor
     transition: all $transition-carousel
-    &.active
-      fill: currentColor
+    &.inactive
+      fill: rgba(0,0,0,0)
 </style>
