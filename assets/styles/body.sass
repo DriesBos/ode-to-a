@@ -52,12 +52,14 @@
     top: 0
     left: 0
     transform: translate(-50%, -50%)
-    transition: transform $transition-cursor
-    will-change: transform
+    transition: color $transition-hover
     color: currentColor
-  &.hovers-container
-    svg
-      // transform: scale(1.5)  translate(-50%, -50%)
+  // &.hovers-container
+  //   svg
+  //     // transform: scale(1.5)  translate(-50%, -50%)
+  &.footer
+    color: var(--second-color)
+
   @media ( hover: none )
     display: none
 

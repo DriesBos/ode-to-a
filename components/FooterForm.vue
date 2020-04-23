@@ -41,26 +41,37 @@
 </template>
 
 <script>
+import JQuery from "jquery"
+let $ = JQuery
+
 export default {
   props: {
     blok: Object
   },
   data() {
     return {
-      isOpenInfo: false,
-      isOpenSocial: false,
       isOpenTerms: false
     }
   },
+  mounted() {
+    $(".footerform").on("mouseover", this.FooterCursor)
+    $(".footerform").on("mouseleave", this.removeFooterCursor)
+  },
+  destroyed() {
+    $(".footerform").off("mouseover", this.FooterCursor)
+    $(".footerform").off("mouseleave", this.removeFooterCursor)
+  },
   methods: {
-    toggleInfo() {
-      this.isOpenInfo = !this.isOpenInfo
-    },
-    toggleSocial() {
-      this.isOpenSocial = !this.isOpenSocial
-    },
     toggleTerms() {
       this.isOpenTerms = !this.isOpenTerms
+    },
+    FooterCursor() {
+      let $cursor = $(".cursor")
+      $cursor.addClass("footer")
+    },
+    removeFooterCursor() {
+      let $cursor = $(".cursor")
+      $cursor.removeClass("footer")
     }
   }
 }
