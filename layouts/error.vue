@@ -1,17 +1,36 @@
 <template>
   <div class="view view-Message">
     <!-- prettier-ignore -->
-    <section class="textBlok fullscreen textCenter">
-      <div class="markdown textBlok-Item textBlok-Main">
+    <section class="messageBlok">
+      <div class="markdown messageBlok-Header">
         <h1 class>TOO BAD</h1>
       </div>
-      <div class="markdown textBlok-Item">
+      <div class="markdown messageBlok-Text">
         <p>
           We can't find the page you're looking for.
           You can check out our
           <nuxt-link to="/brands">projects</nuxt-link>&nbsp;or feel out
           <nuxt-link to="/">vibe</nuxt-link>
         </p>
+      </div>
+      <div class="messageBlok-Graphic">
+        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
+        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
+        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
+        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
+        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
+        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
+        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
+        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
+        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
+        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
+        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
+        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
+        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
+        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
+        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
+        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
+        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
       </div>
     </section>
   </div>

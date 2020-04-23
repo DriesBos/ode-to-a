@@ -48,6 +48,7 @@ export default {
   padding-right: var(--side-spacing)
   min-height: 100vh
   text-align: center
+  overflow: hidden
   &-Header
     text-transform: uppercase
   .markdown
