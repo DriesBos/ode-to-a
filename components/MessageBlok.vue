@@ -21,11 +21,6 @@
       <div v-html="require('~/assets/images/logo-wide.svg?include')" />
       <div v-html="require('~/assets/images/logo-wide.svg?include')" />
       <div v-html="require('~/assets/images/logo-wide.svg?include')" />
-      <div v-html="require('~/assets/images/logo-wide.svg?include')" />
-      <div v-html="require('~/assets/images/logo-wide.svg?include')" />
-      <div v-html="require('~/assets/images/logo-wide.svg?include')" />
-      <div v-html="require('~/assets/images/logo-wide.svg?include')" />
-      <div v-html="require('~/assets/images/logo-wide.svg?include')" />
     </div>
   </section>
 </template>
@@ -63,7 +58,7 @@ export default {
   &-Graphic
     display: flex
     animation: left
-    animation-duration: 120s
+    animation-duration: 60s
     animation-timing-function: linear
     animation-direction: alternate
     animation-iteration-count: infinite
@@ -78,5 +73,5 @@ export default {
   0%
     transform: translateX(0)
   100%
-    transform: translateX(-100%)
+    transform: translateX(-80%)
 </style>
