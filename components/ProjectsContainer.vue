@@ -78,8 +78,7 @@ export default {
     // cursor: pointer
     overflow-wrap: break-word
     hyphens: none
-    @media screen and ( min-width: $breakpoint-mobile)
-      font-size: 3em
+    font-size: 8vw
     &:hover
       @media (hover: hover)
         color: var(--current-color)
