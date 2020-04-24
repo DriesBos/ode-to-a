@@ -45,4 +45,6 @@ export default {
       color: var(--current-color)
     h3
       text-align: center
+      transform: translateY(-0.1rem)
+      line-height: 1
 </style>
