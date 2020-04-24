@@ -1,17 +1,14 @@
 <template>
   <!-- prettier-ignore -->
-  <section
-    v-editable="blok"
-    class="artList"
-  >
-  <ul>
-    <component
-      :is="blok.component | dashify"
-      v-for="blok in blok.body"
-      :key="blok._uid"
-      :blok="blok"
-    ></component>
-  </ul>
+  <section class="artList">
+    <ul>
+      <component
+        :is="blok.component | dashify"
+        v-for="blok in blok.body"
+        :key="blok._uid"
+        :blok="blok"
+      ></component>
+    </ul>
   </section>
 </template>
 

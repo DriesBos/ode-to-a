@@ -1,7 +1,6 @@
 <template>
   <!-- prettier-ignore -->
   <section
-    v-editable="blok"
     class="listItem-Container"
     :class="{ fullscreen: blok.fullscreen, textCenter: blok.left_alignment, capslock: blok.capslock }"
   >

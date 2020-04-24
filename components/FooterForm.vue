@@ -1,6 +1,6 @@
 <template>
   <!-- prettier-ignore -->
-  <section v-editable="blok" class="footerform">
+  <section class="footerform">
     <div class="footerform-Intro markdown">
       <h3>Let’s talk! Be bold, don’t be shy.</h3>
     </div>

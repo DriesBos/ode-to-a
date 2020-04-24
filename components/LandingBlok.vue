@@ -32,25 +32,7 @@ export default {
   destroyed() {
     window.removeEventListener("scroll", this.applyFilter)
   },
-  // watch: {
-  //   $route() {
-  //     if (
-  //       this.$route.name === "brands-slug" ||
-  //       this.$route.name === "art-slug"
-  //     ) {
-  //       this.filtered = true
-  //     }
-  //   }
-  // },
   methods: {
-    // initFilter() {
-    //   if (
-    //     this.$route.name === "brands-slug" ||
-    //     this.$route.name === "art-slug"
-    //   ) {
-    //     this.filtered = true
-    //   }
-    // },
     applyFilter() {
       const currentScrollPosition =
         window.pageYOffset || document.documentElement.scrollTop
@@ -62,14 +44,6 @@ export default {
       } else {
         this.filtered = false
       }
-      // if (
-      //   this.$route.name === "brands-slug" ||
-      //   this.$route.name === "art-slug"
-      // ) {
-      //   if (currentScrollPosition === 0) {
-      //     this.filtered = true
-      //   }
-      // }
     },
     transformImage(image, option) {
       if (!image) return ""
@@ -96,19 +70,10 @@ export default {
   .vueLazy
     width: 100%
     height: 100%
-  // h1, h2, h3, h4, p
-  //   color: rgba(0,0,0,0)
-  //   -webkit-text-stroke: 1px white
-  //   transition: color $transition-scroll-fade, -webkit-text-stroke $transition-scroll-fade
   img
     width: 100%
     height: 100%
     object-fit: cover
-    // opacity: 1
-    // filter: greyscale(0)
-    // -webkit-filter: grayscale(0)
-    // transition: filter $transition-scroll-filter, opacity $transition-scroll-filter
-    // will-change: filter, opacity
   &-Text
     position: absolute
     display: flex
