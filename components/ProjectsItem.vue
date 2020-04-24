@@ -1,6 +1,11 @@
 <template>
   <!-- prettier-ignore -->
-  <span :id="blok.title" class="projectList-Single hovered" :class="{ active: isActive }">
+  <span
+    v-editable="blok"
+    :id="blok.title"
+    class="projectList-Single hovered"
+    :class="{ active: isActive }"
+  >
     <nuxt-link :to="blok.hyperlink.cached_url" tag="h3" class="content">{{ blok.title }}</nuxt-link>
     <h3 class="dash content">—&nbsp;</h3>
     <div v-lazy-container="{ selector: 'img' }" class="vueLazy projectList-Single_Image">

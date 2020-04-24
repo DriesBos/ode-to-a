@@ -1,7 +1,7 @@
 <template>
-  <nuxt-link :to="blok.hyperlink.cached_url" class="artList-Item" tag="li">
+  <!-- prettier-ignore -->
+  <nuxt-link v-editable="blok" :to="blok.hyperlink.cached_url" class="artList-Item" tag="li">
     <p v-if="blok.title">{{ blok.title }}</p>
-    <!-- prettier-ignore -->
     <div v-lazy-container="{ selector: 'img' }" class="vueLazy artList-Item_Placeholder">
       <img
         v-if="blok.image"
