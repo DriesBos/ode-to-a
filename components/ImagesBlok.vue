@@ -124,5 +124,6 @@ export default {
           margin-bottom: var(--spacing-three)
     li:only-child, li:last-child:nth-child(odd)
       flex-basis: 100%
-      width: random(30) + 50%
+      .imageGrid-Item_Placeholder
+        width: random(20) + 40%
 </style>
