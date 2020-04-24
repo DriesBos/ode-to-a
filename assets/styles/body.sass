@@ -58,6 +58,8 @@
     color: var(--second-color)
   &.footer
     color: var(--second-color)
+  &.terms
+    color: black
 
   @media ( hover: none )
     display: none
@@ -103,48 +105,3 @@ section
     width: 100%
   img
     height: 100%
-
-.theMoreInfo
-  display: flex
-  flex-direction: column
-  position: absolute
-  left: 0
-  bottom: 0
-  right: 0
-  background: white
-  padding: var(--spacing-three)
-  transition: transform $transition-slide
-  will-change: transform
-  transform: translate3d(0, 100%, 0)
-  height: 100vh
-  overflow-y: auto
-  &.active
-    transform: translate3d(0, 0%, 0)
-  p, h1, h2, h3, h4, h5, a
-    color: black
-  a
-    font-size: 4em
-    line-height: 1.28em
-    color: black
-    display: inline
-    &:hover
-      @media (hover: hover)
-        text-decoration: underline
-  h1
-    text-transform: uppercase
-  &-Intro
-    margin-bottom: var(--spacing-two)
-  &-Content
-    display: flex
-    flex-direction: column
-    align-items: flex-start
-    justify-content: flex-start
-    flex-grow: 1
-  &-Terms
-    flex-grow: 1
-  &-Close
-    margin-top: var(--spacing-three)
-    text-align: right
-    h4, h5
-      // cursor: pointer
-      display: inline
