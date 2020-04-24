@@ -27,3 +27,9 @@ export default {
   }
 }
 </script>
+
+<style lang="sass">
+.markdown
+  a
+    text-decoration: underline
+</style>
