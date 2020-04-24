@@ -22,7 +22,7 @@ export default {
     }
   },
   mounted() {
-    window.addEventListener("scroll", this.parallaxScroller)
+    // window.addEventListener("scroll", this.parallaxScroller)
     const targets = document.querySelectorAll(".imageGrid-Item_Placeholder")
     const lazyFilter = target => {
       this.observer = new IntersectionObserver(
@@ -42,15 +42,15 @@ export default {
     targets.forEach(lazyFilter)
   },
   destroyed() {
-    this.observer.disconnect()
-    window.removeEventListener("scroll", this.parallaxScroller)
+    // this.observer.disconnect()
+    // window.removeEventListener("scroll", this.parallaxScroller)
   },
   methods: {
-    parallaxScroller() {
-      const distance = window.scrollY
-      const array = document.querySelectorAll("#parralax")
-      array[0].style.transform = `translateY(${distance * -0.1}px)`
-    }
+    // parallaxScroller() {
+    //   const distance = window.scrollY
+    //   const array = document.querySelectorAll("#parralax")
+    //   array[0].style.transform = `translateY(${distance * -0.1}px)`
+    // }
     // parallaxScroller() {
     //   // const distance = window.scrollY
     //   const array = document.querySelector("#parralax")
@@ -122,4 +122,7 @@ export default {
       .imageGrid-Item_Placeholder
         @media screen and ( min-width: $breakpoint-mobile)
           margin-bottom: var(--spacing-three)
+    li:only-child, li:last-child:nth-child(odd)
+      flex-basis: 100%
+      width: random(30) + 50%
 </style>
