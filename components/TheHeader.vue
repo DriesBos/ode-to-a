@@ -76,7 +76,6 @@ export default {
     window.addEventListener("scroll", this.singlePageArrowColor)
     $(".hovered").on("mouseover", this.changeCursor)
     $(".hovered").on("mouseleave", this.removeChangeCursor)
-    $(".projectList-Single").on("mouseenter", this.changeActiveState)
   },
   destroyed() {
     window.removeEventListener("scroll", this.singlePageArrowColor)
@@ -84,9 +83,6 @@ export default {
     $(".hovered").off("mouseleave", this.removeChangeCursor)
   },
   methods: {
-    changeActiveState() {
-      $(".projectList-Single").removeClass("active")
-    },
     routeCheck() {
       if (
         this.$route.name === "brands-slug" ||

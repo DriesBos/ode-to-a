@@ -14,9 +14,20 @@
 </template>
 
 <script>
+import JQuery from "jquery"
+let $ = JQuery
+
 export default {
   props: {
     blok: Object
+  },
+  mounted() {
+    $(".projectList-Single").on("mouseenter", this.changeActiveState)
+  },
+  methods: {
+    changeActiveState() {
+      $(".projectList-Single").removeClass("active")
+    }
   }
 }
 </script>
