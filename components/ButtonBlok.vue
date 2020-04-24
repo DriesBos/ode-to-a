@@ -7,7 +7,7 @@
   >
     <div class="buttonBlok-Item">
       <a :href="blok.hyperlink.cached_url">
-        <h3>{{ blok.text }}</h3>
+        <h5>{{ blok.text }}</h5>
       </a>
     </div>
   </section>
