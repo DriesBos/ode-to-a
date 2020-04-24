@@ -7,8 +7,9 @@
 const marked = require("marked")
 // const renderer = new marked.Renderer()
 marked.setOptions({
-  // renderer: new marked.Renderer(),
-  breaks: true
+  renderer: new marked.Renderer(),
+  breaks: true,
+  gfm: true
 })
 
 export default {
@@ -26,7 +27,3 @@ export default {
   }
 }
 </script>
-
-<style lang="sass" scoped>
-// Prefer style handling by cascading css (typography.sass) as much as possible.
-</style>
