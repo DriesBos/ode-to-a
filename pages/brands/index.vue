@@ -44,12 +44,7 @@ export default {
       story: {
         content: {}
       }
-      // brands: {}
-      // brandpage: {}
     }
-  },
-  mounted() {
-    // this.arrayLoop(this.stories)
   },
   head() {
     return {
