@@ -67,8 +67,6 @@ export default {
     > div
       margin-right: 25vmin
     svg
-      fill: rgba(0,0,0,0)
-      stroke: currentColor
       height: 30vmin
       overflow: visible
 
