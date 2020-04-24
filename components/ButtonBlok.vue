@@ -2,7 +2,7 @@
   <!-- prettier-ignore -->
   <section
     v-editable="blok"
-    class="buttonBlok"
+    class="buttonBlok hovered"
     :class="{ fullscreen: blok.fullscreen, capslock: blok.capslock }"
   >
     <div class="buttonBlok-Item">
@@ -35,15 +35,14 @@ export default {
   padding-left: var(--side-spacing)
   padding-right: var(--side-spacing)
   &-Item
-    padding: 1.2rem 1.2rem
-    border: 2px solid var(--current-color)
+    padding: 3rem 4rem
+    background: var(--current-color)
     border-radius: 1000px
-    color: var(--current-color)
+    color: var(--second-color)
+    transition: color $transition-hover, background $transition-hover
     &:hover
-      text-decoration: underline
+      background: var(--second-color)
+      color: var(--current-color)
     h3
-      border: 2px solid var(--current-color)
-      border-radius: 1000px
-      padding: 2rem 3rem
       text-align: center
 </style>
