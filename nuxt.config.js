@@ -33,16 +33,10 @@ module.exports = {
     link: [
       {
         rel: "icon",
-        type: "image/png",
-        sizes: "32x32",
-        href: "/favicon-32x32.png"
-      },
-      {
-        rel: "icon",
         id: "favicon",
         type: "image/png",
         sizes: "16x16",
-        href: "/0.png"
+        href: "/favicon.png"
       }
     ]
   },
