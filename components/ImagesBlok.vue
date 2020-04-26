@@ -125,4 +125,9 @@ export default {
       flex-basis: 100%
       .imageGrid-Item_Placeholder
         width: random(20) + 40%
+        @media screen and ( max-width: $breakpoint-mobile)
+          width: 100%
+          margin-top: 0
+          margin-bottom: var(--spacing-one)
+          margin-left: 0
 </style>

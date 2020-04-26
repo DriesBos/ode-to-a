@@ -72,9 +72,14 @@ export default {
   position: relative
   display: flex
   justify-content: center
+  padding-left: var(--spacing-two)
+  padding-right: var(--spacing-two)
+  margin-bottom: var(--spacing-one)
   &-Container
     position: relative
     width: random(20) + 50%
+    @media screen and ( max-width: $breakpoint-mobile)
+      width: 100%
   &-AspectRatioBox
     height: 0
     padding-top: 56.25%
