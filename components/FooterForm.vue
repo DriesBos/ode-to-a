@@ -100,6 +100,7 @@ export default {
     input
       width: 100%
       border-bottom: 2px solid currentColor
+      border-radius: 0
       text-transform: uppercase
       &::placeholder
         color: currentColor
