@@ -37,7 +37,7 @@ export default {
       const currentScrollPosition =
         window.pageYOffset || document.documentElement.scrollTop
       if (
-        currentScrollPosition > window.innerHeight * 0.7 ||
+        currentScrollPosition > window.innerHeight * 0.8 ||
         currentScrollPosition === 0
       ) {
         this.filtered = true
