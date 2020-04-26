@@ -31,17 +31,12 @@ export default {
   watch: {
     $route() {
       this.setpageColor()
+      this.customCursor()
     }
   },
   mounted() {
     this.setpageColor()
     this.customCursor()
-    $(".hovered").on("mouseover", this.changeCursor)
-    $(".hovered").on("mouseleave", this.removeChangeCursor)
-  },
-  destroyed() {
-    $(".hovered").off("mouseover", this.changeCursor)
-    $(".hovered").off("mouseleave", this.removeChangeCursor)
   },
   methods: {
     setpageColor() {
@@ -53,8 +48,8 @@ export default {
         this.pageColor = "yellow"
       } else if (
         this.$route.path === "/brands" ||
-        this.$route.name === "brands-slug" ||
-        this.$route.path === "/brands/"
+        this.$route.path === "/brands/" ||
+        this.$route.name === "brands-slug"
       ) {
         this.pageColor = "blue"
       } else if (
@@ -81,14 +76,6 @@ export default {
         })
       }
       $(window).on("mousemove", moveCursor)
-    },
-    changeCursor() {
-      let $cursor = $(".cursor")
-      $cursor.addClass("hovers-container")
-    },
-    removeChangeCursor() {
-      let $cursor = $(".cursor")
-      $cursor.removeClass("hovers-container")
     }
   }
 }
