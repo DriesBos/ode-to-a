@@ -9,7 +9,7 @@ import ArtistItem from "~/components/ArtistItem.vue"
 import ListsItem from "~/components/ListsItem.vue"
 import ListsContainer from "~/components/ListsContainer.vue"
 import LandingBlok from "~/components/LandingBlok.vue"
-import VideoLandingBlok from "~/components/VideoLandingBlok.vue"
+import VideoBlok from "~/components/VideoBlok.vue"
 import Page from "~/components/Page.vue"
 import PageProject from "~/components/PageProject.vue"
 import TextBlok from "~/components/TextBlok.vue"
@@ -28,7 +28,7 @@ Vue.component("blok-artist-item", ArtistItem)
 Vue.component("blok-lists-item", ListsItem)
 Vue.component("blok-lists-container", ListsContainer)
 Vue.component("blok-landing-blok", LandingBlok)
-Vue.component("blok-video-landing-blok", VideoLandingBlok)
+Vue.component("blok-video-blok", VideoBlok)
 Vue.component("blok-page", Page)
 Vue.component("blok-page-project", PageProject)
 Vue.component("blok-text-blok", TextBlok)

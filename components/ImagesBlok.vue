@@ -22,7 +22,6 @@ export default {
     }
   },
   mounted() {
-    // window.addEventListener("scroll", this.parallaxScroller)
     const targets = document.querySelectorAll(".imageGrid-Item_Placeholder")
     const lazyFilter = target => {
       this.observer = new IntersectionObserver(
@@ -101,7 +100,7 @@ export default {
           overflow: visible
           mix-blend-mode: multiply
         &.filter
-          background-color: var(--current-color)
+          background-color: var(--filter-color)
     @for $i from 1 through 100
       li:nth-child(#{$i})
         .imageGrid-Item_Placeholder
