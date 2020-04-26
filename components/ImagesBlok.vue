@@ -22,6 +22,7 @@ export default {
     }
   },
   mounted() {
+    // Filter on intersect
     const targets = document.querySelectorAll(".imageGrid-Item_Placeholder")
     const lazyFilter = target => {
       this.observer = new IntersectionObserver(
@@ -39,33 +40,6 @@ export default {
       this.observer.observe(target)
     }
     targets.forEach(lazyFilter)
-  },
-  destroyed() {
-    // this.observer.disconnect()
-    // window.removeEventListener("scroll", this.parallaxScroller)
-  },
-  methods: {
-    // parallaxScroller() {
-    //   const distance = window.scrollY
-    //   const array = document.querySelectorAll("#parralax")
-    //   array[0].style.transform = `translateY(${distance * -0.1}px)`
-    // }
-    // parallaxScroller() {
-    //   // const distance = window.scrollY
-    //   const array = document.querySelector("#parralax")
-    //   const observer = new IntersectionObserver(entries => {
-    //     entries.forEach(entry => {
-    //       if (entry.isIntersecting) {
-    //         // entry.target.style.transform = `translateY(${distance * -0.1}px)`
-    //         console.log(entry)
-    //       }
-    //     })
-    //   })
-    //   // array.forEach(el => {
-    //   //   observer.observe(el)
-    //   // })
-    //   observer.observe(array)
-    // },
   }
 }
 </script>
