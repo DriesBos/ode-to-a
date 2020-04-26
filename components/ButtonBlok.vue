@@ -43,8 +43,7 @@ export default {
     &:hover
       background: var(--second-color)
       color: var(--current-color)
-    h3
+    h5
       text-align: center
       transform: translateY(-0.1rem)
-      line-height: 1
 </style>
