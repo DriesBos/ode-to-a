@@ -13,10 +13,22 @@
       data-netlify-honeypot="bot-field"
     >
       <input type="hidden" name="form-name" value="contact" />
-      <input required type="text" name="name" placeholder="NAME" />
-      <input required type="email" name="email" placeholder="EMAIL" />
-      <input type="text" name="city" placeholder="CITY" />
-      <input required type="text" name="message" placeholder="FIRE AWAY" />
+      <input required type="text" name="name" placeholder="NAME" title="type your name — required" />
+      <input
+        required
+        type="email"
+        name="email"
+        placeholder="EMAIL"
+        title="type your email — required"
+      />
+      <input type="text" name="city" placeholder="CITY" title="type your city" />
+      <input
+        required
+        type="text"
+        name="message"
+        placeholder="FIRE AWAY"
+        title="type your message — required"
+      />
     </form>
     <div class="footerform-Buttons">
       <button type="submit" class="hovered" title="send">

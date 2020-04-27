@@ -5,7 +5,7 @@
     class="buttonBlok hovered"
     :class="{ fullscreen: blok.fullscreen, capslock: blok.capslock }"
   >
-    <div class="buttonBlok-Item">
+    <div class="buttonBlok-Item" :title="blok.text">
       <a :href="blok.hyperlink.cached_url">
         <h5>{{ blok.text }}</h5>
       </a>
