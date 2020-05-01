@@ -45,10 +45,16 @@
         <a
           class="hovered"
           href="https://goo.gl/maps/QnLbb1psM5Gdyw3e6"
+          target="_blank"
           title="opens Google Maps"
         >MEET US</a>
         <a class="hovered" href="tel:0031630108213" title="06 30 10 82 13">CALL US</a>
-        <a class="hovered" href="https://www.instagram.com/odetoa__/" title="instagram">FOLLOW US</a>
+        <a
+          class="hovered"
+          href="https://www.instagram.com/odetoa__/"
+          target="_blank"
+          title="instagram"
+        >FOLLOW US</a>
         <h5 class="hovered" @click="toggleTerms">TERMS</h5>
       </div>
     </div>

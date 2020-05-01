@@ -6,7 +6,7 @@
     :class="{ fullscreen: blok.fullscreen, capslock: blok.capslock }"
   >
     <div class="buttonBlok-Item" :title="blok.text">
-      <a :href="blok.hyperlink.cached_url">
+      <a :href="blok.hyperlink.cached_url" target="_blank">
         <h5>{{ blok.text }}</h5>
       </a>
     </div>
