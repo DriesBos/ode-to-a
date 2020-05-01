@@ -77,7 +77,7 @@ export default {
     text-transform: uppercase
     display: block
     font-size: 8vw
-  h3.content
+  h3.content, h3.dash
     display: inline
     text-transform: uppercase
     color: rgba($color-blue, 0)
@@ -87,6 +87,7 @@ export default {
     overflow-wrap: break-word
     hyphens: none
     font-size: 8vw
+  h3.content
     &:hover
       @media (hover: hover)
         color: var(--current-color)
@@ -108,7 +109,7 @@ export default {
         height: 100%
         object-fit: cover
     &.active
-      h3
+      h3.content
         color: var(--current-color)
         -webkit-text-stroke: 1px rgba($color-blue, 0)
       .projectList-Single_Image

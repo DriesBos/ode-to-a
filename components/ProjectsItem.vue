@@ -7,7 +7,7 @@
     :class="{ active: isActive }"
   >
     <nuxt-link :to="blok.hyperlink.cached_url" tag="h3" class="content">{{ blok.title }}</nuxt-link>
-    <h3 class="dash content">—&nbsp;</h3>
+    <h3 class="dash">—&nbsp;</h3>
     <div v-lazy-container="{ selector: 'img' }" class="vueLazy projectList-Single_Image">
       <img
         v-if="blok.image"
