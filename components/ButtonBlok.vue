@@ -30,12 +30,12 @@ export default {
   justify-content: center
   align-items: center
   width: 100%
-  padding-top: var(--spacing-three)
-  padding-bottom: var(--spacing-three)
+  padding-top: var(--spacing-one)
+  padding-bottom: var(--spacing-one)
   padding-left: var(--side-spacing)
   padding-right: var(--side-spacing)
   &-Item
-    padding: 3rem 4rem
+    padding: 1rem 1.5rem
     background: var(--current-color)
     border-radius: 1000px
     color: var(--second-color)
