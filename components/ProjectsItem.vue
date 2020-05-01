@@ -1,8 +1,8 @@
 <template>
   <!-- prettier-ignore -->
   <span
-    v-editable="blok"
     :id="blok.title"
+    v-editable="blok"
     class="projectList-Single hovered"
     :class="{ active: isActive }"
   >
