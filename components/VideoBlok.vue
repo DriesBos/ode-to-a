@@ -4,11 +4,12 @@
     <div class="videoItem-Container">
       <div class="videoItem-AspectRatioBox">
         <iframe
-          :src="vimeoUrl"
+          :src="vimeoUrl + '?autoplay=1&loop=1&autopause=0'"
           width="400"
           height="300"
           frameborder="0"
           allow="autoplay; fullscreen"
+          autoplay="1"
           background="true"
           byline="false"
           color="#ffffff"
