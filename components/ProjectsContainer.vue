@@ -76,7 +76,9 @@ export default {
     font-family: "DINRg", Helvetica, Arial, sans-serif
     text-transform: uppercase
     display: block
-    font-size: 8vw
+    font-size: 4vw
+    @media screen and ( max-width: $breakpoint-mobile)
+      font-size: 1.33rem
   h3.content, h3.dash
     display: inline
     text-transform: uppercase
