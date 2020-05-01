@@ -174,5 +174,10 @@ module.exports = {
       }
     }
   },
-  buildModules: [["@nuxt/typescript-build"]]
+  buildModules: [["@nuxt/typescript-build"],    [
+    "@nuxtjs/google-analytics",
+    {
+      id: "UA-165303247-1"
+    }
+  ]]
 }

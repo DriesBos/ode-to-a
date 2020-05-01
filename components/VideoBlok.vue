@@ -4,7 +4,7 @@
     <div class="videoItem-Container">
       <div class="videoItem-AspectRatioBox">
         <iframe
-          :src="vimeoUrl + '?autoplay=1&loop=1&autopause=0'"
+          :src="vimeoUrl + '?autoplay=1&loop=1&autopause=0&muted=1'"
           width="400"
           height="300"
           frameborder="0"
