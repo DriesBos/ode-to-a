@@ -3,7 +3,7 @@
   <section v-editable="blok" class="imageGrid">
     <ul>
       <li v-for="image in blok.image" :key="image.filename" class="imageGrid-Item">
-        <div id="parralax" class="imageGrid-Item_Placeholder">
+        <div class="imageGrid-Item_Placeholder">
           <img :src="image.filename" />
         </div>
       </li>
@@ -12,34 +12,87 @@
 </template>
 
 <script>
+// import { gsap } from "gsap"
+// import { ScrollToPlugin } from "gsap/ScrollToPlugin"
+// import { ScrollTrigger } from "gsap/ScrollTrigger"
+
+// gsap.registerPlugin(ScrollToPlugin, ScrollTrigger)
+
 export default {
   props: {
     blok: Object
   },
   data() {
     return {
-      observer: null
+      // observerOne: null,
+      // observerTwo: null
     }
   },
+  // prettier-ignore
   mounted() {
-    // Filter on intersect
-    const targets = document.querySelectorAll(".imageGrid-Item_Placeholder")
-    const lazyFilter = target => {
-      this.observer = new IntersectionObserver(
-        entries => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.remove("filter")
-            } else {
-              entry.target.classList.add("filter")
-            }
-          })
-        },
-        { threshold: 0.5 }
-      )
-      this.observer.observe(target)
-    }
-    targets.forEach(lazyFilter)
+    // this.IntersectionObserverMixin(
+    //   ".imageGrid-Item_Placeholder", "filter", this.observerOne, 0.5)
+    // this.IntersectionObserverParallax(
+    //   ".imageGrid-Item_Placeholder", "parallax", this.observerTwo, 0.5)
+  },
+  // prettier-ignore
+  methods: {
+    // IntersectionObserverMixin(node, addClass, observerName, treshhold) {
+    //   const elements = document.querySelectorAll(node)
+    //   const observerLoop = element => {
+    //     this.observerName = new IntersectionObserver(
+    //       // Callback
+    //       entries => {
+    //         entries.forEach(entry => {
+    //           if (entry.isIntersecting) {
+    //             entry.target.classList.add(addClass)
+    //           } else {
+    //             entry.target.classList.remove(addClass)
+    //           }
+    //         })
+    //       },
+    //       // Options
+    //       { threshold: treshhold }
+    //     )
+    //     this.observerName.observe(element)
+    //   }
+    //   elements.forEach(observerLoop)
+    // },
+    // IntersectionObserverParallax(node, addClass, observerName, treshhold) {
+    //   const elements = document.querySelectorAll(node)
+    //   const observerLoop = element => {
+    //     this.observerName = new IntersectionObserver(
+    //       // Callback
+    //       entries => {
+    //         entries.forEach(entry => {
+    //           if (entry.isIntersecting) {
+    //             // var multiplier = entry.intersectionRatio * 100
+    //             // entry.target.setAttribute('style', `transform: translate3d(0, ${multiplier}px, 0)`)
+    //             entry.target.classList.add(addClass)
+    //             window.addEventListener('scroll', this.onScroll(entry), { capture: false, passive: true})
+    //           } else {
+    //             entry.target.classList.remove(addClass)
+    //             window.removeEventListener('scroll', this.onScroll(entry), { capture: false, passive: true})
+    //           }
+    //         })
+    //       },
+    //       // Options
+    //       { threshold: treshhold }
+    //     )
+    //     this.observerName.observe(element)
+    //   }
+    //   elements.forEach(observerLoop)
+    // },
+    // onScroll(el) {
+    //   // el.intersectionRatio
+    //   var multiplier = el.intersectionRatio * 100
+    //   // el.target.style.setProperty('--y', `${multiplier}px`)
+    //   el.target.setAttribute('style', `transform: translate3d(0, ${multiplier}px, 0)`)
+    //   // el.intersectionRatio === 0.05) {
+    //   //   console.log("kick it")
+    //   // }
+    //   // console.log(el.target)
+    // }
   }
 }
 </script>
@@ -65,23 +118,27 @@ export default {
       .imageGrid-Item_Placeholder
         position: relative
         overflow: visible
-        background-color: rgba(0,0,0,0)
+        background-color: var(--filter-color)
         transition: background-color $transition-filter
-        will-change: background-color
+        will-change: background-color, transform
         img
           width: 100%
           height: auto
           overflow: visible
           mix-blend-mode: multiply
         &.filter
-          background-color: var(--filter-color)
+          background-color: rgba(0,0,0,0)
+        &.parallax
+          border: 2px solid green
     @for $i from 1 through 100
       li:nth-child(#{$i})
         .imageGrid-Item_Placeholder
+          --y: 0
           width: random(45) + 50%
           margin-top: random(200) + px
           margin-bottom: random(200) + px
           margin-left: random(100) - 100 + px
+          transform: translateY(calc( #{var(--y) } * 0.3 ))
           @media screen and ( max-width: $breakpoint-mobile)
             width: 100%
             margin-top: 0

@@ -175,7 +175,6 @@ module.exports = {
     }
   },
   buildModules: [
-    ["@nuxt/typescript-build"],    
     [
       "@nuxtjs/google-analytics",
       {
