@@ -172,7 +172,9 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
-    }
+    },
+    // Transpile GSAP for server side rendering
+    transpile: ["gsap"]
   },
   buildModules: [
     [
