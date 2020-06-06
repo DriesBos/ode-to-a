@@ -46,17 +46,28 @@ export default {
     parallax() {
       var list = document.querySelectorAll(".imageGrid-Item")
       list.forEach((el, index) => {
-        if (index === 0 || index === 3 || index === 4) return
-        gsap.to(el, {
-          scrollTrigger: {
-            trigger: el, // start the animation when ".box" enters the viewport (once)
-            scrub: 1, // Seconds to catch up after scroll stop
-            // markers: {startColor: "green", endColor: "red", fontSize: "12px"},
-          },
-          yPercent: this.randomNumber(0, -20),
-          ease: "expo.out:",
-          onComplete: () => ScrollTrigger.refresh()
-        })
+        if (index === 0 || index === 3 || index === 4) {
+         gsap.to(el, {
+            scrollTrigger: {
+              trigger: el, // start the animation when ".box" enters the viewport (once)
+              scrub: 1, // Seconds to catch up after scroll stop
+              // markers: {startColor: "green", endColor: "red", fontSize: "12px"},
+            },
+            yPercent: 5,
+            ease: "expo.out:",
+            onComplete: () => ScrollTrigger.refresh()
+          })        } else {
+          gsap.to(el, {
+            scrollTrigger: {
+              trigger: el, // start the animation when ".box" enters the viewport (once)
+              scrub: 1, // Seconds to catch up after scroll stop
+              // markers: {startColor: "green", endColor: "red", fontSize: "12px"},
+            },
+            yPercent: this.randomNumber(0, -20),
+            ease: "expo.out:",
+            onComplete: () => ScrollTrigger.refresh()
+          })
+        }
       })
     },
     IntersectionObserverMixin(node, addClass, observerName, treshhold) {
