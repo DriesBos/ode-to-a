@@ -12,7 +12,7 @@ module.exports = {
     "eslint:recommended", // Switch this one to typescript if needed
     "prettier/vue",
     "plugin:vue/recommended", // Can switch to basic or strongly recommended
-    "plugin:prettier/recommended",
+    "plugin:prettier/recommended"
   ],
   // required to lint *.vue files
   plugins: ["vue", "prettier"],
@@ -24,6 +24,7 @@ module.exports = {
     "prettier/prettier": ["error", { semi: false }],
     "vue/require-default-prop": "off",
     "vue/no-v-html": "off",
+    "vue/component-name-in-template-casing": ["error", "PascalCase"],
     "no-shadow": "off"
   }
 }
