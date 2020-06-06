@@ -4,7 +4,7 @@
     <ul>
       <li v-for="image in blok.image" :key="image.filename" class="imageGrid-Item">
         <div class="imageGrid-Item_Placeholder">
-          <img :src="image.filename" />
+          <img :src="image.filename">
         </div>
       </li>
     </ul>
@@ -12,11 +12,11 @@
 </template>
 
 <script>
-// import { gsap } from "gsap"
-// import { ScrollToPlugin } from "gsap/ScrollToPlugin"
-// import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { gsap } from "gsap"
+import { ScrollToPlugin } from "gsap/ScrollToPlugin"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 
-// gsap.registerPlugin(ScrollToPlugin, ScrollTrigger)
+gsap.registerPlugin(ScrollToPlugin, ScrollTrigger)
 
 export default {
   props: {
@@ -24,40 +24,61 @@ export default {
   },
   data() {
     return {
-      // observerOne: null,
+      observerOne: null
       // observerTwo: null
     }
   },
   // prettier-ignore
   mounted() {
-    // this.IntersectionObserverMixin(
-    //   ".imageGrid-Item_Placeholder", "filter", this.observerOne, 0.5)
+    this.parallax()
+    this.IntersectionObserverMixin(
+      ".imageGrid-Item_Placeholder", "filter", this.observerOne, 0.5)
     // this.IntersectionObserverParallax(
     //   ".imageGrid-Item_Placeholder", "parallax", this.observerTwo, 0.5)
   },
   // prettier-ignore
   methods: {
-    // IntersectionObserverMixin(node, addClass, observerName, treshhold) {
-    //   const elements = document.querySelectorAll(node)
-    //   const observerLoop = element => {
-    //     this.observerName = new IntersectionObserver(
-    //       // Callback
-    //       entries => {
-    //         entries.forEach(entry => {
-    //           if (entry.isIntersecting) {
-    //             entry.target.classList.add(addClass)
-    //           } else {
-    //             entry.target.classList.remove(addClass)
-    //           }
-    //         })
-    //       },
-    //       // Options
-    //       { threshold: treshhold }
-    //     )
-    //     this.observerName.observe(element)
-    //   }
-    //   elements.forEach(observerLoop)
-    // },
+    randomNumber(min, max) {
+      if (max == null) { max = min; min = 0 }
+      if (min > max) { var tmp = min; min = max; max = tmp }
+      return min + (max - min) * Math.random()
+    },
+    parallax() {
+      var list = document.querySelectorAll(".imageGrid-Item")
+      list.forEach((el) => {
+        gsap.to(el, {
+          scrollTrigger: {
+            trigger: el, // start the animation when ".box" enters the viewport (once)
+            scrub: 1, // Seconds to catch up after scroll stop
+            // markers: {startColor: "green", endColor: "red", fontSize: "12px"},
+          },
+          yPercent: this.randomNumber(0, -20),
+          ease: "expo.out:",
+          onComplete: () => ScrollTrigger.refresh()
+        })
+      })
+    },
+    IntersectionObserverMixin(node, addClass, observerName, treshhold) {
+      const elements = document.querySelectorAll(node)
+      const observerLoop = element => {
+        this.observerName = new IntersectionObserver(
+          // Callback
+          entries => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add(addClass)
+              } else {
+                entry.target.classList.remove(addClass)
+              }
+            })
+          },
+          // Options
+          { threshold: treshhold }
+        )
+        this.observerName.observe(element)
+      }
+      elements.forEach(observerLoop)
+    },
     // IntersectionObserverParallax(node, addClass, observerName, treshhold) {
     //   const elements = document.querySelectorAll(node)
     //   const observerLoop = element => {
