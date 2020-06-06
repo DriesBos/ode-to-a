@@ -45,7 +45,8 @@ export default {
     },
     parallax() {
       var list = document.querySelectorAll(".imageGrid-Item")
-      list.forEach((el) => {
+      list.forEach((el, index) => {
+        if (index === 0 || index === 3 || index === 4) return
         gsap.to(el, {
           scrollTrigger: {
             trigger: el, // start the animation when ".box" enters the viewport (once)
