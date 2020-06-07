@@ -1,6 +1,6 @@
 <template>
   <!-- prettier-ignore -->
-  <section v-editable="blok" class="imageGrid">
+  <section :id="blok._uid" v-editable="blok" class="imageGrid">
     <ul>
       <li v-for="image in blok.image" :key="image.filename" class="imageGrid-Item">
         <div class="imageGrid-Item_Placeholder">
@@ -28,42 +28,53 @@ export default {
       // observerTwo: null
     }
   },
-  // prettier-ignore
   mounted() {
     this.parallax()
     this.IntersectionObserverMixin(
-      ".imageGrid-Item_Placeholder", "filter", this.observerOne, 0.5)
-    // this.IntersectionObserverParallax(
-    //   ".imageGrid-Item_Placeholder", "parallax", this.observerTwo, 0.5)
+      ".imageGrid-Item_Placeholder",
+      "filter",
+      this.observerOne,
+      0.5
+    )
   },
-  // prettier-ignore
   methods: {
     randomNumber(min, max) {
-      if (max == null) { max = min; min = 0 }
-      if (min > max) { var tmp = min; min = max; max = tmp }
+      if (max == null) {
+        max = min
+        min = 0
+      }
+      if (min > max) {
+        var tmp = min
+        min = max
+        max = tmp
+      }
       return min + (max - min) * Math.random()
     },
     parallax() {
-      var list = document.querySelectorAll(".imageGrid-Item")
-      list.forEach((el, index) => {
-        if (index === 0 || index === 3 || index === 4) {
-         gsap.to(el, {
-            scrollTrigger: {
-              trigger: el, // start the animation when ".box" enters the viewport (once)
-              scrub: 1, // Seconds to catch up after scroll stop
-              // markers: {startColor: "green", endColor: "red", fontSize: "12px"},
-            },
-            yPercent: 5,
-            ease: "expo.out:",
-            onComplete: () => ScrollTrigger.refresh()
-          })        } else {
+      var container = document.getElementById(this.blok._uid)
+      var arr = container.querySelectorAll("li")
+      arr.forEach((el, index) => {
+        if (index === 3 || index === 4) {
           gsap.to(el, {
             scrollTrigger: {
               trigger: el, // start the animation when ".box" enters the viewport (once)
-              scrub: 1, // Seconds to catch up after scroll stop
+              scrub: 0.66 // Seconds to catch up after scroll stop
               // markers: {startColor: "green", endColor: "red", fontSize: "12px"},
             },
-            yPercent: this.randomNumber(0, -20),
+            yPercent: this.randomNumber(-5, -7),
+            ease: "expo.out:",
+            onComplete: () => ScrollTrigger.refresh()
+          })
+        } else if (index === 0) {
+          return
+        } else {
+          gsap.to(el, {
+            scrollTrigger: {
+              trigger: el, // start the animation when ".box" enters the viewport (once)
+              scrub: 0.66 // Seconds to catch up after scroll stop
+              // markers: {startColor: "green", endColor: "red", fontSize: "12px"},
+            },
+            yPercent: this.randomNumber(-12, -18),
             ease: "expo.out:",
             onComplete: () => ScrollTrigger.refresh()
           })
@@ -90,42 +101,7 @@ export default {
         this.observerName.observe(element)
       }
       elements.forEach(observerLoop)
-    },
-    // IntersectionObserverParallax(node, addClass, observerName, treshhold) {
-    //   const elements = document.querySelectorAll(node)
-    //   const observerLoop = element => {
-    //     this.observerName = new IntersectionObserver(
-    //       // Callback
-    //       entries => {
-    //         entries.forEach(entry => {
-    //           if (entry.isIntersecting) {
-    //             // var multiplier = entry.intersectionRatio * 100
-    //             // entry.target.setAttribute('style', `transform: translate3d(0, ${multiplier}px, 0)`)
-    //             entry.target.classList.add(addClass)
-    //             window.addEventListener('scroll', this.onScroll(entry), { capture: false, passive: true})
-    //           } else {
-    //             entry.target.classList.remove(addClass)
-    //             window.removeEventListener('scroll', this.onScroll(entry), { capture: false, passive: true})
-    //           }
-    //         })
-    //       },
-    //       // Options
-    //       { threshold: treshhold }
-    //     )
-    //     this.observerName.observe(element)
-    //   }
-    //   elements.forEach(observerLoop)
-    // },
-    // onScroll(el) {
-    //   // el.intersectionRatio
-    //   var multiplier = el.intersectionRatio * 100
-    //   // el.target.style.setProperty('--y', `${multiplier}px`)
-    //   el.target.setAttribute('style', `transform: translate3d(0, ${multiplier}px, 0)`)
-    //   // el.intersectionRatio === 0.05) {
-    //   //   console.log("kick it")
-    //   // }
-    //   // console.log(el.target)
-    // }
+    }
   }
 }
 </script>
