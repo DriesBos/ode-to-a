@@ -10,6 +10,22 @@
       </ul>
       <!-- prettier-ignore -->
       <ul
+        v-if="this.$route.name === 'home-slug'"
+        class="header-Single"
+        :class="{ active: arrowFilled }"
+      >
+        <nuxt-link :to="{ name: 'index' }" tag="li">
+          <svg viewBox="0 0 46.65 37.7">
+            <g data-name="Laag 2">
+              <path
+                d="M27.8,37.7H17.55l15.2-15H0V15H32.75L17.55,0H27.8L46.65,18.85Z"
+                data-name="Laag 1"
+              />
+            </g>
+          </svg>
+        </nuxt-link>
+      </ul>
+      <ul
         v-if="this.$route.name === 'brands-slug'"
         class="header-Single"
         :class="{ active: arrowFilled }"
@@ -41,6 +57,22 @@
           </svg>
         </nuxt-link>
       </ul>
+      <ul
+        v-if="this.$route.name === 'people-slug'"
+        class="header-Single"
+        :class="{ active: arrowFilled }"
+      >
+        <nuxt-link :to="{ name: 'people' }" tag="li">
+          <svg viewBox="0 0 46.65 37.7">
+            <g data-name="Laag 2">
+              <path
+                d="M27.8,37.7H17.55l15.2-15H0V15H32.75L17.55,0H27.8L46.65,18.85Z"
+                data-name="Laag 1"
+              />
+            </g>
+          </svg>
+        </nuxt-link>
+      </ul>
     </nav>
   </header>
 </template>
@@ -56,16 +88,7 @@ export default {
   },
   watch: {
     $route() {
-      if (
-        this.$route.name === "brands-slug" ||
-        this.$route.name === "art-slug" ||
-        this.$route.name === "succes" ||
-        this.$route.name === "slug" // 404 Page
-      ) {
-        this.showHeader = false
-      } else {
-        this.showHeader = true
-      }
+      this.routeCheck()
     }
   },
   mounted() {
@@ -78,14 +101,14 @@ export default {
   methods: {
     routeCheck() {
       if (
-        this.$route.name === "brands-slug" ||
-        this.$route.name === "art-slug" ||
-        this.$route.name === "succes" ||
-        this.$route.name === "slug"
+        this.$route.name === "index" ||
+        this.$route.name === "brands" ||
+        this.$route.name === "art" ||
+        this.$route.name === "people"
       ) {
-        this.showHeader = false
-      } else {
         this.showHeader = true
+      } else {
+        this.showHeader = false
       }
     },
     singlePageArrowColor() {

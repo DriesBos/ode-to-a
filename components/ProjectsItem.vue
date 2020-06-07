@@ -6,7 +6,9 @@
     class="projectList-Single hovered"
     :class="{ active: isActive }"
   >
-    <nuxt-link :to="blok.hyperlink.cached_url" tag="h3" class="content">{{ blok.title }}</nuxt-link>
+    <nuxt-link v-if="blok.hyperlink.linktype === 'story'" :to="blok.hyperlink.cached_url" class="content">{{ blok.title }}</nuxt-link>
+    <a v-if="blok.hyperlink.linktype === 'url'" :href="blok.hyperlink.cached_url" class="content">{{ blok.title }}</a>
+
     <h3 class="dash">—&nbsp;</h3>
     <div v-lazy-container="{ selector: 'img' }" class="vueLazy projectList-Single_Image">
       <img
@@ -44,6 +46,7 @@ export default {
     }
   },
   mounted() {
+    console.log(this.blok)
     window.addEventListener("scroll", this.ifViewportCenter)
   },
   destroyed() {

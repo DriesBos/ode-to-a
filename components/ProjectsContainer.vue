@@ -81,7 +81,7 @@ export default {
     font-size: 4vw
     @media screen and ( max-width: $breakpoint-mobile)
       font-size: 1.33rem
-  h3.content, h3.dash
+  h3.content, h3.dash, a.content, a.dash
     display: inline
     text-transform: uppercase
     color: rgba($color-blue, 0)
@@ -91,7 +91,7 @@ export default {
     overflow-wrap: break-word
     hyphens: none
     font-size: 8vw
-  h3.content
+  h3.content, a.content
     &:hover
       @media (hover: hover)
         color: var(--current-color)
@@ -113,7 +113,7 @@ export default {
         height: 100%
         object-fit: cover
     &.active
-      h3.content
+      h3.content, a.content
         color: var(--current-color)
         -webkit-text-stroke: 1px rgba($color-blue, 0)
       .projectList-Single_Image

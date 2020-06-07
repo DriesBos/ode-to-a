@@ -48,7 +48,7 @@
           target="_blank"
           title="opens Google Maps"
         >MEET US</a>
-        <a class="hovered" href="tel:0031630108213" title="06 30 10 82 13">CALL US</a>
+        <a class="hovered" href="tel:0031630108213" title="+31 630 108 213">CALL US</a>
         <a
           class="hovered"
           href="https://www.instagram.com/odetoa__/"
