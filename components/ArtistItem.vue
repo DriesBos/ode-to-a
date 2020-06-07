@@ -22,7 +22,7 @@
         "
         sizes="50vw"
         :data-src="`${transformImage(blok.image, '1440')}`"
-      />
+      >
     </div>
   </nuxt-link>
 </template>

@@ -5,7 +5,7 @@
       v-if="story.content.component"
       :key="story.content._uid"
       :blok="story.content"
-    ></component>
+    />
   </section>
 </template>
 

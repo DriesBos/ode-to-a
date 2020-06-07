@@ -6,7 +6,7 @@
     :class="{ fullscreen: blok.fullscreen, textCenter: blok.left_alignment, capslock: blok.capslock }"
   >
     <div class="graphic" :class="blok.graphic_alignment">
-      <img v-if="blok.graphic" :src="blok.graphic" />
+      <img v-if="blok.graphic" :src="blok.graphic">
     </div>
     <markdown v-if="blok.text" class="textBlok-Item textBlok-Main" :input="blok.text" />
     <markdown

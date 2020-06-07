@@ -9,7 +9,7 @@
       v-for="blok in blok.body"
       :key="blok._uid"
       :blok="blok"
-    ></component>
+    />
   </section>
 </template>
 

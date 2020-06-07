@@ -28,7 +28,7 @@
         "
         sizes="100vw"
         :data-src="`${transformImage(blok.image, '1440')}`"
-      />
+      >
     </div>
   </span>
 </template>

@@ -1,14 +1,16 @@
 <template>
   <!-- prettier-ignore -->
   <section v-editable="blok" class="projectList">
-    <h3 v-if="blok.title" class="DINRg">{{ blok.title }}</h3>
+    <h3 v-if="blok.title" class="DINRg">
+      {{ blok.title }}
+    </h3>
     <ul class="projectList-Container">
       <component
         :is="blok.component | dashify"
         v-for="blok in blok.list"
         :key="blok._uid"
         :blok="blok"
-      ></component>
+      />
     </ul>
   </section>
 </template>

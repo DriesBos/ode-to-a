@@ -20,7 +20,7 @@
           playsinline="true"
           portrait="false"
           title="false"
-        ></iframe>
+        />
       </div>
     </div>
   </section>

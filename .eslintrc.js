@@ -25,6 +25,8 @@ module.exports = {
     "vue/require-default-prop": "off",
     "vue/no-v-html": "off",
     "vue/component-name-in-template-casing": ["error", "PascalCase"],
-    "no-shadow": "off"
+    "no-shadow": "off",
+    "vue/singleline-html-element-content-newline": "off",
+    "vue/multiline-html-element-content-newline": "off"
   }
 }
