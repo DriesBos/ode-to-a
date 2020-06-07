@@ -124,6 +124,7 @@ export default {
       flex-basis: 50%
       @media screen and ( max-width: $breakpoint-mobile)
         flex-basis: 100%
+        transform: translate(0, 0) !important
       .imageGrid-Item_Placeholder
         position: relative
         overflow: visible
@@ -137,8 +138,6 @@ export default {
           mix-blend-mode: multiply
         &.filter
           background-color: rgba(0,0,0,0)
-        &.parallax
-          border: 2px solid green
     @for $i from 1 through 100
       li:nth-child(#{$i})
         .imageGrid-Item_Placeholder
