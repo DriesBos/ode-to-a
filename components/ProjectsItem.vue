@@ -46,7 +46,7 @@ export default {
     }
   },
   mounted() {
-    console.log(this.blok)
+    // console.log(this.blok)
     window.addEventListener("scroll", this.ifViewportCenter)
   },
   destroyed() {
