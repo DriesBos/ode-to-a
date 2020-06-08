@@ -4,6 +4,7 @@
     <div class="videoItem-Container">
       <div class="videoItem-AspectRatioBox">
         <iframe
+          class="skewVideo"
           :src="vimeoUrl + '?autoplay=1&loop=1&autopause=0&muted=1'"
           width="400"
           height="300"
@@ -27,6 +28,11 @@
 </template>
 
 <script>
+import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+
+gsap.registerPlugin(ScrollTrigger)
+
 export default {
   props: {
     blok: Object
@@ -38,6 +44,7 @@ export default {
   },
   mounted() {
     this.vimeoParser()
+    this.skewVideo(3)
     const targets = document.querySelectorAll(".videoItem-AspectRatioBox")
     const lazyFilter = target => {
       this.observer = new IntersectionObserver(
@@ -61,6 +68,29 @@ export default {
       this.vimeoUrl =
         "https://player.vimeo.com/video/" +
         this.blok.vimeo_plugin.vimeo_oembed.response.video_id
+    },
+    skewVideo(range) {
+      let proxy = { skew: 0 },
+        skewSetter = gsap.quickSetter(".skewVideo", "skewY", "deg"), // fast
+        clamp = gsap.utils.clamp(`-${range}`, range) // don't let the skew go beyond 20 degrees.
+      ScrollTrigger.create({
+        onUpdate: self => {
+          let skew = clamp(self.getVelocity() / -300)
+          // only do something if the skew is MORE severe. Remember, we're always tweening back to 0, so if the user slows their scrolling quickly, it's more natural to just let the tween handle that smoothly rather than jumping to the smaller skew.
+          if (Math.abs(skew) > Math.abs(proxy.skew)) {
+            proxy.skew = skew
+            gsap.to(proxy, {
+              skew: 0,
+              duration: 0.8,
+              ease: "power3",
+              overwrite: true,
+              onUpdate: () => skewSetter(proxy.skew)
+            })
+          }
+        }
+      })
+      // make the right edge "stick" to the scroll bar. force3D: true improves performance
+      gsap.set(".skewElem", { transformOrigin: "right center", force3D: true })
     }
   }
 }
