@@ -60,7 +60,6 @@ export default {
 
 <style lang="sass">
 @import '~assets/styles/variables'
-
 .textBlok
   display: flex
   flex-direction: column
@@ -74,4 +73,10 @@ export default {
   overflow: hidden
   &-Item
     width: 100%
+
+// .view-Single
+//   .textBlok
+//     border: 1px solid red
+//     padding-top: 0
+//     padding-bottom: 0
 </style>

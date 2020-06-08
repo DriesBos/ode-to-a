@@ -54,14 +54,14 @@ export default {
     }
   },
   mounted() {
-    this.parallax()
-    this.skewImage(3)
     this.IntersectionObserverMixin(
       ".imageGrid-Item_Placeholder",
       "filter",
       this.observerOne,
       0.5
     )
+    this.parallax()
+    this.skewImage(3)
   },
   methods: {
     randomNumber(min, max) {
@@ -79,34 +79,50 @@ export default {
     parallax() {
       var container = document.getElementById(this.blok._uid)
       var arr = container.querySelectorAll("li")
-      arr.forEach((el, index) => {
-        if (index === 3 || index === 4) {
-          gsap.to(el, {
-            scrollTrigger: {
-              trigger: el, // start the animation when ".box" enters the viewport (once)
-              scrub: 0.66 // Seconds to catch up after scroll stop
-              // markers: {startColor: "green", endColor: "red", fontSize: "12px"},
-            },
-            yPercent: this.randomNumber(-5, -7),
-            ease: "expo.out:",
-            onComplete: () => ScrollTrigger.refresh()
-          })
-        } else if (index === 0) {
-          return
-        } else {
-          gsap.to(el, {
-            scrollTrigger: {
-              trigger: el, // start the animation when ".box" enters the viewport (once)
-              scrub: 0.66 // Seconds to catch up after scroll stop
-              // markers: {startColor: "green", endColor: "red", fontSize: "12px"},
-            },
-            yPercent: this.randomNumber(-12, -18),
-            ease: "expo.out:",
-            onComplete: () => ScrollTrigger.refresh()
-          })
-        }
+      arr.forEach(el => {
+        gsap.to(el, {
+          scrollTrigger: {
+            trigger: el, // start the animation when ".box" enters the viewport (once)
+            scrub: 0.66 // Seconds to catch up after scroll stop
+            // markers: {startColor: "green", endColor: "red", fontSize: "12px"},
+          },
+          yPercent: this.randomNumber(-10, -50),
+          ease: "expo.out:",
+          onComplete: () => ScrollTrigger.refresh()
+        })
       })
     },
+    // parallax() {
+    //   var container = document.getElementById(this.blok._uid)
+    //   var arr = container.querySelectorAll("li")
+    //   arr.forEach((el, index) => {
+    //     if (index === 3 || index === 4) {
+    //       gsap.to(el, {
+    //         scrollTrigger: {
+    //           trigger: el, // start the animation when ".box" enters the viewport (once)
+    //           scrub: 0.66 // Seconds to catch up after scroll stop
+    //           // markers: {startColor: "green", endColor: "red", fontSize: "12px"},
+    //         },
+    //         yPercent: this.randomNumber(-10, -20),
+    //         ease: "expo.out:",
+    //         onComplete: () => ScrollTrigger.refresh()
+    //       })
+    //     } else if (index === 0) {
+    //       return
+    //     } else {
+    //       gsap.to(el, {
+    //         scrollTrigger: {
+    //           trigger: el, // start the animation when ".box" enters the viewport (once)
+    //           scrub: 0.66 // Seconds to catch up after scroll stop
+    //           // markers: {startColor: "green", endColor: "red", fontSize: "12px"},
+    //         },
+    //         yPercent: this.randomNumber(-30, -50),
+    //         ease: "expo.out:",
+    //         onComplete: () => ScrollTrigger.refresh()
+    //       })
+    //     }
+    //   })
+    // },
     IntersectionObserverMixin(node, addClass, observerName, treshhold) {
       const elements = document.querySelectorAll(node)
       const observerLoop = element => {
@@ -198,10 +214,10 @@ export default {
       li:nth-child(#{$i})
         .imageGrid-Item_Placeholder
           --y: 0
-          width: random(45) + 50%
-          margin-top: random(200) + px
-          margin-bottom: random(200) + px
-          margin-left: random(100) - 100 + px
+          width: random(40) + 50%
+          margin-top: random(200) - 100 + px
+          margin-bottom: random(100) + px
+          margin-left: random(200) - 100 + px
           transform: translateY(calc( #{var(--y) } * 0.3 ))
           @media screen and ( max-width: $breakpoint-mobile)
             width: 100%
@@ -219,7 +235,7 @@ export default {
     li:only-child, li:last-child:nth-child(odd)
       flex-basis: 100%
       .imageGrid-Item_Placeholder
-        width: random(20) + 40%
+        width: random(20) + 60%
         @media screen and ( max-width: $breakpoint-mobile)
           width: 100%
           margin-top: 0
