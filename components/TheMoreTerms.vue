@@ -43,12 +43,12 @@ export default {
       this.$emit("clicked")
     },
     TermsCursor() {
-      let $cursor = $(".cursor")
-      $cursor.addClass("terms")
+      let cursor = document.querySelector(".cursor")
+      cursor.classList.add("terms")
     },
     removeTermsCursor() {
-      let $cursor = $(".cursor")
-      $cursor.removeClass("terms")
+      let cursor = document.querySelector(".cursor")
+      cursor.classList.remove("terms")
     }
   }
 }

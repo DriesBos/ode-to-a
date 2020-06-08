@@ -28,7 +28,7 @@ export default {
   },
   methods: {
     changeActiveState() {
-      $(".projectList-Single").removeClass("active")
+      document.querySelector(".projectList-Single").classList.remove("active")
     }
   }
 }

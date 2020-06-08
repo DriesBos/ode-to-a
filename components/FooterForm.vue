@@ -88,12 +88,12 @@ export default {
       this.isOpenTerms = !this.isOpenTerms
     },
     FooterCursor() {
-      let $cursor = $(".cursor")
-      $cursor.addClass("footer")
+      let cursor = document.querySelector(".cursor")
+      cursor.classList.add("footer")
     },
     removeFooterCursor() {
-      let $cursor = $(".cursor")
-      $cursor.removeClass("footer")
+      let cursor = document.querySelector(".cursor")
+      cursor.classList.remove("footer")
     }
   }
 }
