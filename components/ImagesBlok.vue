@@ -61,7 +61,7 @@ export default {
       0.5
     )
     this.parallax()
-    this.skewImage(3)
+    // this.skewImage(3)
   },
   methods: {
     randomNumber(min, max) {

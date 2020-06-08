@@ -44,7 +44,7 @@ export default {
   },
   mounted() {
     this.vimeoParser()
-    this.skewVideo(3)
+    // this.skewVideo(3)
     const targets = document.querySelectorAll(".videoItem-AspectRatioBox")
     const lazyFilter = target => {
       this.observer = new IntersectionObserver(

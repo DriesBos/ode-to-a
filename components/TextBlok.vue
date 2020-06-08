@@ -28,7 +28,7 @@ export default {
     blok: Object
   },
   mounted() {
-    this.skewGraphic(3)
+    // this.skewGraphic(3)
   },
   methods: {
     skewGraphic(range) {
