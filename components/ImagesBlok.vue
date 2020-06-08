@@ -4,7 +4,33 @@
     <ul>
       <li v-for="image in blok.image" :key="image.filename" class="imageGrid-Item skewElem">
         <div class="imageGrid-Item_Placeholder">
-          <img :src="image.filename" />
+          <div v-lazy-container="{ selector: 'img' }" class="vueLazy">
+            <img
+              v-if="image.filename"
+              :srcset="
+                `${transformImage(
+                  image.filename,
+                  '2880x0/filters:format(jpg):quality(75)'
+                )} 2880w, ${transformImage(
+                  image.filename,
+                  '2560x0/filters:format(jpg):quality(75)'
+                )} 2560w, ${transformImage(
+                  image.filename,
+                  '1920x0/filters:format(jpg):quality(75)'
+                )} 1920w, ${transformImage(
+                  image.filename,
+                  '1680x0/filters:format(jpg):quality(75)'
+                )} 1680w, ${transformImage(
+                  image.filename,
+                  '1370x0/filters:format(jpg):quality(75)'
+                )} 1370w, ${transformImage(
+                  image.filename,
+                  '900x0/filters:format(jpg):quality(75)'
+                )} 900w`
+              " sizes="(max-width: 800px) 100vw, 50vw"
+              :data-src="`${transformImage(image.filename, '800x0/filters:format(jpg):quality(75)')}`"
+            >
+          </div>
         </div>
       </li>
     </ul>
@@ -125,6 +151,13 @@ export default {
       })
       // make the right edge "stick" to the scroll bar. force3D: true improves performance
       gsap.set(".skewElem", { transformOrigin: "right center", force3D: true })
+    },
+    transformImage(image, option) {
+      if (!image) return ""
+      if (!option) return ""
+      let imageService = "//img2.storyblok.com/"
+      let path = image.replace("//a.storyblok.com", "")
+      return imageService + option + path
     }
   }
 }
