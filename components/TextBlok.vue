@@ -28,7 +28,7 @@ export default {
     blok: Object
   },
   mounted() {
-    this.skewGraphic(10)
+    this.skewGraphic(3)
   },
   methods: {
     skewGraphic(range) {
@@ -43,7 +43,7 @@ export default {
             proxy.skew = skew
             gsap.to(proxy, {
               skew: 0,
-              duration: 2,
+              duration: 0.8,
               ease: "power3",
               overwrite: true,
               onUpdate: () => skewSetter(proxy.skew)
