@@ -74,9 +74,8 @@ export default {
   &-Item
     width: 100%
 
-// .view-Single
-//   .textBlok
-//     border: 1px solid red
-//     padding-top: 0
-//     padding-bottom: 0
+.view-Single
+  .textBlok
+    padding-top: 0
+    padding-bottom: 0
 </style>

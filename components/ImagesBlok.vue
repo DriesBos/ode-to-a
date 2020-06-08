@@ -231,7 +231,7 @@ export default {
     li:last-child, li:nth-last-child(2)
       .imageGrid-Item_Placeholder
         @media screen and ( min-width: $breakpoint-mobile)
-          margin-bottom: var(--spacing-three)
+          margin-bottom: 0
     li:only-child, li:last-child:nth-child(odd)
       flex-basis: 100%
       .imageGrid-Item_Placeholder
