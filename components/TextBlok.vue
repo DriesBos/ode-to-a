@@ -6,7 +6,7 @@
     :class="{ fullscreen: blok.fullscreen, textCenter: blok.left_alignment, capslock: blok.capslock }"
   >
     <div class="graphic" :class="blok.graphic_alignment">
-      <img v-if="blok.graphic" :src="blok.graphic" class="skewGraphic">
+      <img v-if="blok.graphic" :src="blok.graphic" class="skewGraphic" />
     </div>
     <markdown v-if="blok.text" class="textBlok-Item textBlok-Main" :input="blok.text" />
     <markdown
@@ -74,8 +74,14 @@ export default {
   &-Item
     width: 100%
 
-.view-Single
-  .textBlok
-    padding-top: 0
-    padding-bottom: 0
+@media screen and ( min-width: $breakpoint-mobile)
+  .view-Single
+    .textBlok
+      padding-top: 0
+      padding-bottom: 0
+
+@media screen and ( max-width: $breakpoint-mobile)
+  .view-Single
+    .textBlok
+      padding-bottom: 3em
 </style>
