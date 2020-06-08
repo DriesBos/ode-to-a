@@ -1,5 +1,16 @@
 @import '~assets/styles/variables'
 
+// Lazy Load
+.vueLazy img
+  opacity: 0
+  transition: opacity .25s ease-in-out
+
+img[lazy=loading]
+  background: red
+
+img[lazy=loaded]
+  opacity: 1
+
 // OPTIONS
 .yellow, .view-Home
   color: $color-yellow
