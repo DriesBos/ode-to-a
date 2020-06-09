@@ -74,11 +74,11 @@ export default {
   &-Item
     width: 100%
 
-@media screen and ( min-width: $breakpoint-mobile)
-  .view-Single
-    .textBlok
-      padding-top: 0
-      padding-bottom: 0
+// @media screen and ( min-width: $breakpoint-mobile)
+//   .view-Single
+//     .textBlok
+//       padding-top: 0
+//       padding-bottom: 0
 
 @media screen and ( max-width: $breakpoint-mobile)
   .view-Single
