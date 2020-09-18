@@ -261,7 +261,7 @@ export default {
   font-family: 'DINBk', Helvetica, Arial, sans-serif
   font-size: 5vw
   color: var(--current-color)
-  z-index: 999
+  z-index: 899
   pointer-events: none
   opacity: 0 // Changed with JavaScript
   svg

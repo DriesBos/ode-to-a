@@ -133,7 +133,7 @@ export default {
   left: 0
   bottom: 0
   width: 100%
-  z-index: 800
+  z-index: 699
   pointer-events: none
   nav
     width: 100%
