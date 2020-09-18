@@ -246,8 +246,6 @@ export default {
         html.scrollHeight,
         html.offsetHeight
       )
-      var windowHeight = window.innerHeight
-      console.log(docHeight, windowHeight, docHeight / windowHeight)
       gsap.to(path, {
         attr: { startOffset: -docHeight / 2 },
         ease: "none",
@@ -262,7 +260,9 @@ export default {
         document.body.scrollTop || document.documentElement.scrollTop
       if (position > window.innerHeight) {
         text.classList.add("inactive")
+        text.classList.remove("active")
       } else {
+        text.classList.add("active")
         text.classList.remove("inactive")
       }
     }
@@ -295,6 +295,9 @@ export default {
     fill: currentColor
     stroke: rgba(0,0,0,0)
     transition: fill $transition-carousel, stroke $transition-carousel
+    &.active
+      fill: currentColor
+      stroke: rgba(0,0,0,0)
     &.inactive
       fill: rgba(0,0,0,0)
       stroke: currentColor
