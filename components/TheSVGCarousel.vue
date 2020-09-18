@@ -178,6 +178,8 @@
 </template>
 
 <script>
+import { gsap } from "gsap"
+
 export default {
   watch: {
     $route() {
@@ -201,11 +203,12 @@ export default {
   },
   mounted() {
     this.setRatioAndPath()
+    this.setScrollTrigger()
     window.addEventListener("resize", this.setRatioAndPath)
-    window.addEventListener("scroll", this.onScroll)
+    window.addEventListener("scroll", this.onScrollOpacity)
   },
   destroyed() {
-    window.removeEventListener("scroll", this.onScroll())
+    window.removeEventListener("scroll", this.onScrollOpacity)
     window.removeEventListener("resize", this.setRatioAndPath)
   },
   methods: {
@@ -214,6 +217,7 @@ export default {
       let height = window.innerHeight
       let lastHeight = window.innerWidth * 0.016
       let shape = document.getElementById("theSvg")
+      // Setting the width/height on the SVG viewbox
       shape.setAttribute("viewBox", `0 0 ${width} ${height}`)
       let path = document.getElementById("thePath")
       let d = `M 0 0 L ${width} 0 L ${width} ${height} L 0 ${height} L 0 ${lastHeight}`
@@ -230,12 +234,32 @@ export default {
         }, 50)
       }
     },
-    onScroll() {
+    setScrollTrigger() {
       let path = document.getElementById("text-path")
+      // Calc document height
+      var body = document.body
+      var html = document.documentElement
+      var docHeight = Math.max(
+        body.scrollHeight,
+        body.offsetHeight,
+        html.clientHeight,
+        html.scrollHeight,
+        html.offsetHeight
+      )
+      var windowHeight = window.innerHeight
+      console.log(docHeight, windowHeight, docHeight / windowHeight)
+      gsap.to(path, {
+        attr: { startOffset: -docHeight / 2 },
+        ease: "none",
+        scrollTrigger: {
+          scrub: 0
+        }
+      })
+    },
+    onScrollOpacity() {
       let text = document.getElementById("theSvg")
       let position =
         document.body.scrollTop || document.documentElement.scrollTop
-      path.setAttribute("startOffset", -8000 + position / 2)
       if (position > window.innerHeight) {
         text.classList.add("inactive")
       } else {
