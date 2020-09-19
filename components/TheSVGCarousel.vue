@@ -254,19 +254,6 @@ export default {
     },
     onScrollOpacity() {
       let text = document.getElementById("theSvg")
-      // let landing = document.querySelector(".landinggraphicitem")
-      // gsap.to(text, {
-      //   fill: "none",
-      //   stroke: "currentColor",
-      //   ease: "none",
-      //   duration: 1,
-      //   scrollTrigger: {
-      //     trigger: landing,
-      //     scrub: true,
-      //     start: "bottom top",
-      //     markers: true
-      //   }
-      // })
       let position =
         document.body.scrollTop || document.documentElement.scrollTop
       if (position > window.innerHeight) {
