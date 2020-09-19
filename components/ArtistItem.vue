@@ -38,6 +38,7 @@ export default {
     }
   },
   mounted() {
+    // console.log("ARTISTITEM", this.blok)
     const targets = document.querySelectorAll(".artList-Item_Placeholder")
     const lazyFilter = target => {
       this.observer = new IntersectionObserver(

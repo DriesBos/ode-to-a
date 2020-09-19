@@ -6,7 +6,7 @@
     :class="{ fullscreen: blok.fullscreen, textCenter: blok.left_alignment, capslock: blok.capslock }"
   >
     <div class="graphic" :class="blok.graphic_alignment">
-      <img v-if="blok.graphic" :src="blok.graphic" class="skewGraphic" />
+      <img v-if="blok.graphic" :src="blok.graphic" class="skewGraphic" :alt="blok.text" />
     </div>
     <markdown v-if="blok.text" class="textBlok-Item textBlok-Main" :input="blok.text" />
     <markdown
@@ -28,7 +28,7 @@ export default {
     blok: Object
   },
   mounted() {
-    // this.skewGraphic(3)
+    // console.log("TEXTBLOK", this.blok)
   },
   methods: {
     skewGraphic(range) {

@@ -49,7 +49,7 @@ export default {
     }
   },
   mounted() {
-    console.log("BRAND SINGLE STORY", this.story)
+    // console.log("BRAND SINGLE STORY", this.story)
   },
   head() {
     return {

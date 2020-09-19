@@ -15,6 +15,7 @@
     <div v-lazy-container="{ selector: 'img' }" class="vueLazy projectList-Single_Image">
       <img
         v-if="blok.image"
+        :alt="blok.title"
         :srcset="
           `${transformImage(
             blok.image,
@@ -54,7 +55,7 @@ export default {
     }
   },
   mounted() {
-    // console.log(this.blok)
+    // console.log("PROJECTSITEM", this.blok)
     window.addEventListener("scroll", this.ifViewportCenter)
   },
   destroyed() {

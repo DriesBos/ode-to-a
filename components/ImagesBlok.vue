@@ -7,6 +7,7 @@
           <div v-lazy-container="{ selector: 'img' }" class="vueLazy">
             <img
               v-if="image.filename"
+              alt=""
               :srcset="
                 `${transformImage(
                   image.filename,
@@ -53,6 +54,7 @@ export default {
     }
   },
   mounted() {
+    // console.log("IMAGESBLOK", this.blok)
     this.IntersectionObserverMixin(
       ".imageGrid-Item_Placeholder",
       "filter",

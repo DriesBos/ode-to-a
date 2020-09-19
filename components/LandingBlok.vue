@@ -4,6 +4,7 @@
     <div v-lazy-container="{ selector: 'img' }" class="vueLazy">
       <img
         v-if="blok.image"
+        :alt="blok.title"
         :srcset="
           `${transformImage(
             blok.image,
@@ -46,6 +47,7 @@ export default {
   },
   mounted() {
     this.applyFilter()
+    // console.log("LANDINGBLOK", this.blok)
     window.addEventListener("scroll", this.applyFilter)
   },
   destroyed() {
