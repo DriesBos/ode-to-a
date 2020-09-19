@@ -7,25 +7,25 @@
         :srcset="
           `${transformImage(
             blok.image,
-            '2880x0/filters:format(jpg):quality(65)'
+            '2880x0/filters:format(jpg):quality(50)'
           )} 2880w, ${transformImage(
             blok.image,
-            '2560x0/filters:format(jpg):quality(65)'
+            '2560x0/filters:format(jpg):quality(50)'
           )} 2560w, ${transformImage(
             blok.image,
-            '1920x0/filters:format(jpg):quality(65)'
+            '1920x0/filters:format(jpg):quality(50)'
           )} 1920w, ${transformImage(
             blok.image,
-            '1680x0/filters:format(jpg):quality(65)'
+            '1680x0/filters:format(jpg):quality(50)'
           )} 1680w, ${transformImage(
             blok.image,
-            '1370x0/filters:format(jpg):quality(65)'
+            '1370x0/filters:format(jpg):quality(50)'
           )} 1370w, ${transformImage(
             blok.image,
-            '900x0/filters:format(jpg):quality(65)'
+            '900x0/filters:format(jpg):quality(50)'
           )} 900w`
         " sizes="100vw"
-        :data-src="`${transformImage(blok.image, '1600x0/filters:format(jpg):quality(65)')}`"
+        :data-src="`${transformImage(blok.image, '1600x0/filters:format(jpg):quality(50)')}`"
       >
     </div>
     <div class="landingItem-Text">
