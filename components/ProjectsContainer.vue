@@ -53,7 +53,6 @@ export default {
   padding-bottom: var(--spacing-three)
   padding-left: var(--side-spacing)
   padding-right: var(--side-spacing)
-  border: 2px solid red
   .projectList-Container
     width: 100%
     display: flex
@@ -70,9 +69,6 @@ export default {
     overflow-wrap: anywhere
     hyphens: auto
     text-align: center
-    border: 2px solid green
-    .content
-      border: 2px solid purple
     &:last-child
       .dash
         display: none
