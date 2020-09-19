@@ -1,6 +1,12 @@
 <template>
-  <div class="view view-Single view-peopleSingle">
-    <blok-page-project :blok="story.content" />
+  <div class="view view-Single view-PeopleSingle">
+    <!-- <blok-page-project :blok="story.content" /> -->
+    <component
+      :is="story.content.component | dashify"
+      v-if="story.content.component"
+      :key="story.content._uid"
+      :blok="story.content"
+    />
     <blok-footer-form />
   </div>
 </template>
@@ -42,7 +48,9 @@ export default {
       story: { content: {} }
     }
   },
-  mounted() {},
+  mounted() {
+    console.log("PEOPLE SINGLE STORY", this.story)
+  },
   head() {
     return {
       title: this.story.content.SEO.title || this.story.name,

@@ -50,7 +50,6 @@ export default {
   data() {
     return {
       observerOne: null
-      // observerTwo: null
     }
   },
   mounted() {
@@ -61,7 +60,6 @@ export default {
       0.5
     )
     this.parallax()
-    // this.skewImage(3)
   },
   methods: {
     randomNumber(min, max) {
@@ -84,7 +82,6 @@ export default {
           scrollTrigger: {
             trigger: el, // start the animation when ".box" enters the viewport (once)
             scrub: 0.66 // Seconds to catch up after scroll stop
-            // markers: {startColor: "green", endColor: "red", fontSize: "12px"},
           },
           yPercent: this.randomNumber(-10, -50),
           ease: "expo.out:",
@@ -92,37 +89,6 @@ export default {
         })
       })
     },
-    // parallax() {
-    //   var container = document.getElementById(this.blok._uid)
-    //   var arr = container.querySelectorAll("li")
-    //   arr.forEach((el, index) => {
-    //     if (index === 3 || index === 4) {
-    //       gsap.to(el, {
-    //         scrollTrigger: {
-    //           trigger: el, // start the animation when ".box" enters the viewport (once)
-    //           scrub: 0.66 // Seconds to catch up after scroll stop
-    //           // markers: {startColor: "green", endColor: "red", fontSize: "12px"},
-    //         },
-    //         yPercent: this.randomNumber(-10, -20),
-    //         ease: "expo.out:",
-    //         onComplete: () => ScrollTrigger.refresh()
-    //       })
-    //     } else if (index === 0) {
-    //       return
-    //     } else {
-    //       gsap.to(el, {
-    //         scrollTrigger: {
-    //           trigger: el, // start the animation when ".box" enters the viewport (once)
-    //           scrub: 0.66 // Seconds to catch up after scroll stop
-    //           // markers: {startColor: "green", endColor: "red", fontSize: "12px"},
-    //         },
-    //         yPercent: this.randomNumber(-30, -50),
-    //         ease: "expo.out:",
-    //         onComplete: () => ScrollTrigger.refresh()
-    //       })
-    //     }
-    //   })
-    // },
     IntersectionObserverMixin(node, addClass, observerName, treshhold) {
       const elements = document.querySelectorAll(node)
       const observerLoop = element => {
@@ -144,35 +110,13 @@ export default {
       }
       elements.forEach(observerLoop)
     },
-    skewImage(range) {
-      let proxy = { skew: 0 },
-        skewSetter = gsap.quickSetter(".skewElem", "skewY", "deg"), // fast
-        clamp = gsap.utils.clamp(`-${range}`, range) // don't let the skew go beyond 20 degrees.
-      ScrollTrigger.create({
-        onUpdate: self => {
-          let skew = clamp(self.getVelocity() / -300)
-          // only do something if the skew is MORE severe. Remember, we're always tweening back to 0, so if the user slows their scrolling quickly, it's more natural to just let the tween handle that smoothly rather than jumping to the smaller skew.
-          if (Math.abs(skew) > Math.abs(proxy.skew)) {
-            proxy.skew = skew
-            gsap.to(proxy, {
-              skew: 0,
-              duration: 0.8,
-              ease: "power3",
-              overwrite: true,
-              onUpdate: () => skewSetter(proxy.skew)
-            })
-          }
-        }
-      })
-      // make the right edge "stick" to the scroll bar. force3D: true improves performance
-      gsap.set(".skewElem", { transformOrigin: "right center", force3D: true })
-    },
     transformImage(image, option) {
       if (!image) return ""
       if (!option) return ""
       let imageService = "//img2.storyblok.com/"
-      let path = image.replace("//a.storyblok.com", "")
-      return imageService + option + path
+      let pathOne = image.replace("https://a.storyblok.com", "")
+      let pathTwo = pathOne.replace("//a.storyblok.com", "")
+      return imageService + option + pathTwo
     }
   }
 }
