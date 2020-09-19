@@ -47,13 +47,15 @@
           href="https://goo.gl/maps/QnLbb1psM5Gdyw3e6"
           target="_blank"
           title="opens Google Maps"
+          rel="noreferrer"
         >MEET US</a>
-        <a class="hovered" href="tel:0031630108213" title="+31 630 108 213">CALL US</a>
+        <a class="hovered" href="tel:0031630108213" title="+31 630 108 213" rel="noreferrer">CALL US</a>
         <a
           class="hovered"
           href="https://www.instagram.com/odetoa__/"
           target="_blank"
           title="instagram"
+          rel="noreferrer"
         >FOLLOW US</a>
         <h5 class="hovered" @click="toggleTerms">TERMS</h5>
       </div>
