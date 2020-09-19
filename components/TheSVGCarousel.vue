@@ -191,9 +191,6 @@ export default {
         this.$route.name === "people"
       ) {
         setTimeout(function() {
-          document.getElementById("text-path").setAttribute("startOffset", 0)
-        }, 40)
-        setTimeout(function() {
           carousel.style.opacity = "1"
         }, 50)
       } else {
@@ -204,12 +201,13 @@ export default {
   mounted() {
     this.setRatioAndPath()
     this.setScrollTrigger()
+    // this.onScrollOpacity()
     window.addEventListener("resize", this.setRatioAndPath)
     window.addEventListener("scroll", this.onScrollOpacity)
   },
   destroyed() {
-    window.removeEventListener("scroll", this.onScrollOpacity)
     window.removeEventListener("resize", this.setRatioAndPath)
+    window.removeEventListener("scroll", this.onScrollOpacity)
   },
   methods: {
     setRatioAndPath() {
@@ -256,6 +254,19 @@ export default {
     },
     onScrollOpacity() {
       let text = document.getElementById("theSvg")
+      // let landing = document.querySelector(".landinggraphicitem")
+      // gsap.to(text, {
+      //   fill: "none",
+      //   stroke: "currentColor",
+      //   ease: "none",
+      //   duration: 1,
+      //   scrollTrigger: {
+      //     trigger: landing,
+      //     scrub: true,
+      //     start: "bottom top",
+      //     markers: true
+      //   }
+      // })
       let position =
         document.body.scrollTop || document.documentElement.scrollTop
       if (position > window.innerHeight) {
@@ -287,7 +298,7 @@ export default {
   color: var(--current-color)
   z-index: 899
   pointer-events: none
-  opacity: 0 // Changed with JavaScript
+  opacity: 0 // Changed via JavaScript
   svg
     height: 100%
     width: 100%
