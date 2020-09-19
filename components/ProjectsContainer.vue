@@ -53,7 +53,8 @@ export default {
   padding-bottom: var(--spacing-three)
   padding-left: var(--side-spacing)
   padding-right: var(--side-spacing)
-  ul
+  border: 2px solid red
+  .projectList-Container
     width: 100%
     display: flex
     align-items: center
@@ -67,10 +68,11 @@ export default {
     word-break: break-all
     overflow-wrap: break-word
     overflow-wrap: anywhere
-    -ms-line-break: anywhere
-    -webkit-line-break: anywhere
     hyphens: auto
     text-align: center
+    border: 2px solid green
+    .content
+      border: 2px solid purple
     &:last-child
       .dash
         display: none
