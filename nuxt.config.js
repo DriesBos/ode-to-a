@@ -9,7 +9,7 @@ module.exports = {
    ** Headers of the page
    */
   head: {
-    title: "Ode to A",
+    title: "ODE TO A",
     meta: [
       { charset: "utf-8" },
       {

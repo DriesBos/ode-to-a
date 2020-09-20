@@ -50,29 +50,8 @@ export default {
   },
   head() {
     return {
-      title: this.story.content.SEO.title || this.story.name,
-      meta: [
-        {
-          hid: "description",
-          name: "description",
-          content: this.story.content.SEO.description || this.story.name
-        }
-      ]
+      title: "ODE TO A — " + this.story.name.toUpperCase()
     }
   }
-  // methods: {
-  //   arrayLoop(array) {
-  //     this.brands = array.filter(function(el) {
-  //       if (el.content.component === "brand") {
-  //         return true
-  //       }
-  //     })
-  //     // this.brandpage = array.filter(function(el) {
-  //     //   if (el.content.component === "pagebrands") {
-  //     //     return true
-  //     //   }
-  //     // })
-  //   }
-  // }
 }
 </script>
