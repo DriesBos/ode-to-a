@@ -47,6 +47,7 @@ export default {
   display: flex
   flex-direction: column
   align-items: center
+  justify-content: center
   width: 100%
   min-height: 100vh
   padding-top: var(--spacing-three)
@@ -69,7 +70,6 @@ export default {
     overflow-wrap: anywhere
     hyphens: auto
     text-align: center
-    // border: 2px solid red
     width: 100%
     &:last-child
       .dash

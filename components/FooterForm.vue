@@ -112,7 +112,7 @@ export default {
 
 .footerform
   position: relative
-  z-index: 799
+  z-index: 999
   display: flex
   flex-direction: column
   background: var(--current-color)
