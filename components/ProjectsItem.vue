@@ -1,10 +1,11 @@
 <template>
   <!-- prettier-ignore -->
   <span
-    :id="blok.title"
+    :id="blok._uid"
     v-editable="blok"
     class="projectList-Single hovered"
-    :class="{ active: isActive }"
+    @mouseover="mouseEntered"
+    @mouseleave="mouseLeft"
   >
     <nuxt-link v-if="blok.hyperlink.linktype === 'story'" :to="blok.hyperlink.cached_url" class="content">{{ blok.title }}</nuxt-link>
     <a v-if="blok.hyperlink.linktype === 'url'" :href="blok.hyperlink.cached_url" class="content" rel="noreferrer">{{ blok.title }}</a>
@@ -55,7 +56,7 @@ export default {
     }
   },
   mounted() {
-    // console.log("PROJECTSITEM", this.blok)
+    console.log("PROJECTSITEM", this.blok)
     window.addEventListener("scroll", this.ifViewportCenter)
   },
   destroyed() {
@@ -74,16 +75,23 @@ export default {
       var windowHeight =
         window.innerHeight || document.documentElement.clientHeight
       var windowHalf = windowHeight / 2
-      var el = document.getElementById(this.blok.title)
+      var el = document.getElementById(this.blok._uid)
       var bounding = el.getBoundingClientRect()
       if (
         bounding.top - windowHalf <= 0 &&
         bounding.top - windowHalf >= 0 - bounding.height
       ) {
-        this.isActive = true
+        el.classList.add("active")
       } else {
-        this.isActive = false
+        el.classList.remove("active")
       }
+    },
+    mouseEntered() {
+      var allSingles = document.querySelectorAll(".projectList-Single")
+      allSingles.forEach(el => {
+        el.classList.remove("active")
+      })
+      document.getElementById(this.blok._uid).classList.add("active")
     }
   }
 }
