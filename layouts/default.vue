@@ -34,13 +34,17 @@ export default {
       this.customCursor()
     }
   },
-  mounted() {
+  created() {
     this.setpageColor()
+  },
+  mounted() {
     this.customCursor()
   },
   methods: {
     setpageColor() {
-      if (
+      if (this.$nuxt.nuxt.err) {
+        this.pageColor = "black"
+      } else if (
         this.$route.path === "/" ||
         this.$route.path === "/home" ||
         this.$route.path === "/home/"
