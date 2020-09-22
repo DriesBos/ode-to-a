@@ -31,8 +31,7 @@
       >
     </form>
     <div class="footerform-Buttons">
-      <input type="submit" class="hovered" title="send" @click="clicking">
-        TEST
+      <input type="submit" class="hovered" title="send" @click="clicking" />
         <svg viewBox="0 0 46.65 37.7">
           <g data-name="Laag 2">
             <path
@@ -41,7 +40,6 @@
             />
           </g>
         </svg>
-      </input>
       <div class="footerform-Buttons_Links">
         <a
           class="hovered"
