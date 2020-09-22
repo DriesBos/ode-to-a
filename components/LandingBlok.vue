@@ -78,7 +78,7 @@ export default {
 }
 </script>
 
-<style lang="sass" scoped>
+<style lang="sass">
 @import '~assets/styles/variables'
 
 .landingItem
@@ -124,7 +124,7 @@ export default {
     mix-blend-mode: multiply
   &.filter
     background-color: var(--filter-color)
-'general'  // .view-PeopleSingle
+  // .view-PeopleSingle
   //   .landingItem
   //     border: 5px solid red
   //     img
