@@ -29,17 +29,17 @@
         placeholder="FIRE AWAY"
         title="type your message — required"
       >
+      <input type="submit" class="hovered" title="send">
     </form>
     <div class="footerform-Buttons">
-      <input type="submit" class="hovered" title="send">
-      <svg viewBox="0 0 46.65 37.7">
+      <!-- <svg viewBox="0 0 46.65 37.7">
         <g data-name="Laag 2">
           <path
             d="M27.8,37.7H17.55l15.2-15H0V15H32.75L17.55,0H27.8L46.65,18.85Z"
             data-name="Laag 1"
           />
         </g>
-      </svg>
+      </svg> -->
       <div class="footerform-Buttons_Links">
         <a
           class="hovered"
