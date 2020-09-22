@@ -3,15 +3,10 @@
     <!-- prettier-ignore -->
     <section class="messageBlok">
       <div class="markdown messageBlok-Header">
-        <h1 class>TOO BAD</h1>
+        <h1>{{ general[0].content.error_page_title }}</h1>
       </div>
       <div class="markdown messageBlok-Text">
-        <p>
-          We can't find the page you're looking for.
-          You can check out our
-          <nuxt-link to="/brands">projects</nuxt-link>&nbsp;or feel out
-          <nuxt-link to="/">vibe</nuxt-link>
-        </p>
+        <markdown-item :input="general[0].content.error_page_text" />
       </div>
       <div class="messageBlok-Graphic">
         <div v-html="require('~/assets/images/logo-wide.svg?include')" />
@@ -88,7 +83,14 @@
 </template>
 
 <script>
+import { mapState } from "vuex"
+
 export default {
+  computed: {
+    ...mapState({
+      general: state => state.general.list
+    })
+  },
   head() {
     return {
       title: "404 ERROR",

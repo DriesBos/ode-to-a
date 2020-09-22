@@ -69,6 +69,8 @@ export default {
     overflow-wrap: anywhere
     hyphens: auto
     text-align: center
+    // border: 2px solid red
+    width: 100%
     &:last-child
       .dash
         display: none

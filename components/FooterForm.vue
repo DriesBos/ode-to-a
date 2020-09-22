@@ -2,7 +2,7 @@
   <!-- prettier-ignore -->
   <section class="footerform">
     <div class="footerform-Intro markdown">
-      <h3>Let’s talk! Be bold, don’t be shy.</h3>
+      <h3>{{ general[0].content.footer_text }}</h3>
     </div>
     <form
       class="footerform-Form"
@@ -44,17 +44,17 @@
       <div class="footerform-Buttons_Links">
         <a
           class="hovered"
-          href="https://goo.gl/maps/QnLbb1psM5Gdyw3e6"
+          :href="general[0].content.google_maps_link"
           target="_blank"
           title="opens Google Maps"
           rel="noreferrer"
         >MEET US</a>
-        <a class="hovered" href="tel:0031630108213" title="+31 630 108 213" rel="noreferrer">CALL US</a>
+        <a class="hovered" :href="'tel:00' + general[0].content.phonenumber" :title="'+' + general[0].content.phonenumber" rel="noreferrer">CALL US</a>
         <a
           class="hovered"
-          href="https://www.instagram.com/odetoa__/"
+          :href="general[0].content.social"
           target="_blank"
-          title="instagram"
+          title="social"
           rel="noreferrer"
         >FOLLOW US</a>
         <h5 class="hovered" @click="toggleTerms">TERMS</h5>
@@ -65,6 +65,7 @@
 </template>
 
 <script>
+import { mapState } from "vuex"
 import JQuery from "jquery"
 let $ = JQuery
 
@@ -76,6 +77,11 @@ export default {
     return {
       isOpenTerms: false
     }
+  },
+  computed: {
+    ...mapState({
+      general: state => state.general.list
+    })
   },
   mounted() {
     $(".footerform").on("mouseover", this.FooterCursor)

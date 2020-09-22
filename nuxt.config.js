@@ -3,8 +3,6 @@ const axios = require("axios")
 require("dotenv").config()
 
 module.exports = {
-  mode: "universal",
-
   /*
    ** Headers of the page
    */
@@ -46,6 +44,8 @@ module.exports = {
    */
   loading: false,
 
+  components: true,
+
   /*
    ** Global CSS
    */
@@ -67,13 +67,7 @@ module.exports = {
    ** Nuxt.js modules
    */
   modules: [
-    "@nuxtjs/pwa",
     "@nuxtjs/axios",
-    // ["@nuxtjs/google-tag-manager", { id: process.env.GOOGLE_GTM }],
-    [
-      "@bazzite/nuxt-optimized-images",
-      { optimizedImages: { optimizeImages: true, optimizeImagesInDev: true } } // Test compression by setting to true first
-    ],
     [
       "storyblok-nuxt",
       {
@@ -177,10 +171,19 @@ module.exports = {
     transpile: ["gsap"]
   },
   buildModules: [
+    "@nuxtjs/pwa",
     [
       "@nuxtjs/google-analytics",
       {
         id: "UA-165303247-1"
+      }
+    ],
+    [
+      "@aceforth/nuxt-optimized-images",
+      {
+        optimizedImages: {
+          optimizeImages: true
+        }
       }
     ]
   ]

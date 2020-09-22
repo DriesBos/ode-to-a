@@ -124,4 +124,9 @@ export default {
     mix-blend-mode: multiply
   &.filter
     background-color: var(--filter-color)
+'general'  // .view-PeopleSingle
+  //   .landingItem
+  //     border: 5px solid red
+  //     img
+  //       filter: greyscale(1)
 </style>
