@@ -10,7 +10,7 @@
       </ul>
       <!-- prettier-ignore -->
       <ul
-        v-if="this.$route.name === 'home-slug'"
+        v-if="this.$route.name === 'home-slug' && noErrorPage"
         class="header-Single"
         :class="{ active: arrowFilled }"
       >
@@ -26,7 +26,7 @@
         </nuxt-link>
       </ul>
       <ul
-        v-if="this.$route.name === 'brands-slug'"
+        v-if="this.$route.name === 'brands-slug' && noErrorPage"
         class="header-Single"
         :class="{ active: arrowFilled }"
       >
@@ -42,7 +42,7 @@
         </nuxt-link>
       </ul>
       <ul
-        v-if="this.$route.name === 'art-slug'"
+        v-if="this.$route.name === 'art-slug' && noErrorPage"
         class="header-Single"
         :class="{ active: arrowFilled }"
       >
@@ -58,7 +58,7 @@
         </nuxt-link>
       </ul>
       <ul
-        v-if="this.$route.name === 'people-slug'"
+        v-if="this.$route.name === 'people-slug' && noErrorPage"
         class="header-Single"
         :class="{ active: arrowFilled }"
       >
@@ -79,10 +79,10 @@
 
 <script>
 export default {
-  name: "TheHeader",
   data() {
     return {
       showHeader: false,
+      noErrorPage: true,
       arrowFilled: true
     }
   },
@@ -100,6 +100,11 @@ export default {
   },
   methods: {
     routeCheck() {
+      if (this.$nuxt.nuxt.err) {
+        this.noErrorPage = false
+      } else {
+        this.noErrorPage = true
+      }
       if (
         this.$route.name === "index" ||
         this.$route.name === "brands" ||

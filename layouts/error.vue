@@ -91,6 +91,11 @@ export default {
       general: state => state.general.list
     })
   },
+  mounted() {
+    window.onNuxtReady(() => {
+      window.$nuxt.error({ statusCode: 404 })
+    })
+  },
   head() {
     return {
       title: "404 ERROR",

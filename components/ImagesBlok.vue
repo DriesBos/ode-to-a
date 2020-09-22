@@ -54,7 +54,7 @@ export default {
     }
   },
   mounted() {
-    console.log("IMAGESBLOK", this.blok)
+    // console.log("IMAGESBLOK", this.blok)
     this.IntersectionObserverMixin(
       ".imageGrid-Item_Placeholder",
       "filter",
