@@ -29,17 +29,18 @@
         placeholder="FIRE AWAY"
         title="type your message — required"
       >
-      <input type="submit" class="hovered" title="send">
+      <button type="submit" class="hovered" title="send" @click="clicking">
+        <svg viewBox="0 0 46.65 37.7">
+          <g data-name="Laag 2">
+            <path
+              d="M27.8,37.7H17.55l15.2-15H0V15H32.75L17.55,0H27.8L46.65,18.85Z"
+              data-name="Laag 1"
+            />
+          </g>
+        </svg>
+      </button>
     </form>
     <div class="footerform-Buttons">
-      <!-- <svg viewBox="0 0 46.65 37.7">
-        <g data-name="Laag 2">
-          <path
-            d="M27.8,37.7H17.55l15.2-15H0V15H32.75L17.55,0H27.8L46.65,18.85Z"
-            data-name="Laag 1"
-          />
-        </g>
-      </svg> -->
       <div class="footerform-Buttons_Links">
         <a
           class="hovered"
@@ -137,6 +138,14 @@ export default {
       &::placeholder
         color: currentColor
         text-transform: uppercase
+    button
+      display: flex
+      align-items: center
+      align-self: flex-start
+      margin-top: var(--spacing-two)
+      svg
+        height: 2em
+        fill: currentColor
   &-Buttons
     display: flex
     flex-grow: 1
