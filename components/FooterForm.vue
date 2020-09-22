@@ -31,7 +31,8 @@
       >
     </form>
     <div class="footerform-Buttons">
-      <button type="submit" class="hovered" title="send">
+      <input type="submit" class="hovered" title="send" @click="clicking">
+        TEST
         <svg viewBox="0 0 46.65 37.7">
           <g data-name="Laag 2">
             <path
@@ -40,7 +41,7 @@
             />
           </g>
         </svg>
-      </button>
+      </input>
       <div class="footerform-Buttons_Links">
         <a
           class="hovered"
@@ -92,6 +93,9 @@ export default {
     $(".footerform").off("mouseleave", this.removeFooterCursor)
   },
   methods: {
+    clicking() {
+      console.log("clicked!")
+    },
     toggleTerms() {
       this.isOpenTerms = !this.isOpenTerms
     },
