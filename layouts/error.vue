@@ -1,13 +1,14 @@
 <template>
   <div class="view view-Message">
-    <!-- prettier-ignore -->
     <section class="messageBlok">
-      <div class="markdown messageBlok-Header">
-        <h1>{{ general[0].content.error_page_title }}</h1>
-      </div>
-      <div class="markdown messageBlok-Text">
-        <markdown-item :input="general[0].content.error_page_text" />
-      </div>
+      <markdown
+        class="messageBlok-Header"
+        :input="general[0].content.error_page_title"
+      />
+      <markdown
+        class="messageBlok-Text"
+        :input="general[0].content.error_page_text"
+      />
       <div class="messageBlok-Graphic">
         <div v-html="require('~/assets/images/logo-wide.svg?include')" />
         <div v-html="require('~/assets/images/logo-wide.svg?include')" />
