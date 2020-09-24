@@ -5,10 +5,9 @@
     v-editable="blok"
     class="projectList-Single hovered"
     @mouseover="mouseEntered"
-    @mouseleave="mouseLeft"
   >
-    <nuxt-link v-if="blok.hyperlink.linktype === 'story'" :to="blok.hyperlink.cached_url" class="content">{{ blok.title }}</nuxt-link>
-    <a v-if="blok.hyperlink.linktype === 'url'" :href="blok.hyperlink.cached_url" class="content" rel="noreferrer">{{ blok.title }}</a>
+    <nuxt-link v-if="blok.hyperlink.linktype === 'story'" :to="'/' + blok.hyperlink.cached_url" class="content">{{ blok.title }}</nuxt-link>
+    <a v-else :href="blok.hyperlink.cached_url" class="content" rel="noreferrer">{{ blok.title }}</a>
 
     <!-- <h3 class="dash">—&nbsp;</h3> -->
 
