@@ -27,9 +27,6 @@ export default {
   props: {
     blok: Object
   },
-  mounted() {
-    // console.log("TEXTBLOK", this.blok)
-  },
   methods: {
     skewGraphic(range) {
       let proxy = { skew: 0 },

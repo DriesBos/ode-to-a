@@ -38,7 +38,7 @@ export default {
     }
   },
   mounted() {
-    // console.log("ARTISTITEM", this.blok)
+    console.log("HYPERLINK ArtistITem", this.blok.hyperlink)
     const targets = document.querySelectorAll(".artList-Item_Placeholder")
     const lazyFilter = target => {
       this.observer = new IntersectionObserver(

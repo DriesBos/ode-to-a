@@ -47,7 +47,6 @@ export default {
   },
   mounted() {
     this.applyFilter()
-    // console.log("LANDINGBLOK", this.blok)
     window.addEventListener("scroll", this.applyFilter)
   },
   destroyed() {

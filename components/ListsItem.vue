@@ -19,9 +19,6 @@
 export default {
   props: {
     blok: Object
-  },
-  mounted() {
-    // console.log("LISTITEM", this.blok)
   }
 }
 </script>

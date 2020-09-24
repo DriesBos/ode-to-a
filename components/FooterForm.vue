@@ -29,7 +29,7 @@
         placeholder="FIRE AWAY"
         title="type your message — required"
       >
-      <button type="submit" class="hovered" title="send" @click="clicking">
+      <button type="submit" class="hovered" title="send">
         <svg viewBox="0 0 46.65 37.7">
           <g data-name="Laag 2">
             <path
@@ -92,9 +92,6 @@ export default {
     $(".footerform").off("mouseleave", this.removeFooterCursor)
   },
   methods: {
-    clicking() {
-      console.log("clicked!")
-    },
     toggleTerms() {
       this.isOpenTerms = !this.isOpenTerms
     },
