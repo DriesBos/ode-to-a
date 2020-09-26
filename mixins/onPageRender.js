@@ -11,7 +11,6 @@ export default {
   methods: {
     changeFavicon() {
       var favicon = document.getElementById("favicon")
-      console.log("HIT IT!", favicon)
       if (this.$route.name === "brands" || this.$route.name === "brands-slug") {
         favicon.href = "icon-blue.svg"
       } else if (
@@ -19,15 +18,12 @@ export default {
         this.$route.name === "art-slug"
       ) {
         favicon.href = "icon-red.svg"
-      } else if (
-        this.$route.name === "people" ||
-        this.$route.name === "people-slug"
-      ) {
+      } else if (this.$route.name === "people") {
         favicon.href = "icon-white.svg"
       } else if (this.$route.name === "index") {
         favicon.href = "icon-yellow.svg"
       } else {
-        favicon.href = "icon-black.svg"
+        favicon.href = "icon.svg"
       }
     }
   }
