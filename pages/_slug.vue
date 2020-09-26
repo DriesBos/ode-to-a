@@ -10,6 +10,8 @@
 </template>
 
 <script>
+import { mapState } from "vuex"
+
 export default {
   asyncData(context) {
     // Check if we are in the editor mode
@@ -33,9 +35,21 @@ export default {
   data() {
     return { story: { content: {} } }
   },
+  computed: {
+    ...mapState({
+      general: state => state.general.list
+    })
+  },
   head() {
     return {
-      title: "ODE TO A — " + this.story.name.toUpperCase()
+      title: this.story.name.toUpperCase() + " — ODE TO A",
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: this.general[0].content.site_description
+        }
+      ]
     }
   }
 }

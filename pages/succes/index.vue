@@ -10,6 +10,7 @@
 </template>
 
 <script>
+import { mapState } from "vuex"
 import storyblokLivePreview from "@/mixins/storyblokLivePreview"
 
 export default {
@@ -45,14 +46,19 @@ export default {
       story: { content: {} }
     }
   },
+  computed: {
+    ...mapState({
+      general: state => state.general.list
+    })
+  },
   head() {
     return {
-      title: this.story.content.SEO.title || this.story.name,
+      title: this.story.name.toUpperCase() + " — ODE TO A",
       meta: [
         {
           hid: "description",
           name: "description",
-          content: this.story.content.SEO.description || this.story.name
+          content: this.general[0].content.site_description
         }
       ]
     }
