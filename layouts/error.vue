@@ -1,5 +1,6 @@
 <template>
-  <div v-editable="error[0].content" class="page page-Error">
+  <!-- <div v-editable="error[0].content" class="page page-Error"> -->
+  <div class="page page-Error">
     <h1 v-if="error.statusCode === 404">Page not found</h1>
     <h1 v-else>An error occurred</h1>
     <nuxt-link to="/">Home page</nuxt-link>
@@ -22,12 +23,12 @@ export default {
   layout: "default", // you can set a custom layout for the error page
   computed: {
     ...mapState({
-      error: state => state.error.list,
+      errordata: state => state.error.list,
       general: state => state.general.list
     })
   },
   mounted() {
-    console.log(this.error, this.general)
+    console.log(this.error, this.general, this.errordata)
   },
   head() {
     return {
