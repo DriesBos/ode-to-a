@@ -55,7 +55,6 @@ export default {
     }
   },
   mounted() {
-    console.log("HYPERLINK ProjectsItem", this.blok.hyperlink)
     window.addEventListener("scroll", this.ifViewportCenter)
   },
   destroyed() {

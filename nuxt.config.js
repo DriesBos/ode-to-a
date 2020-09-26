@@ -32,9 +32,9 @@ module.exports = {
       {
         rel: "icon",
         id: "favicon",
-        type: "image/png",
-        sizes: "16x16",
-        href: "/favicon.png"
+        type: "image/svg+xml",
+        sizes: "any",
+        href: "/icon.svg"
       }
     ]
   },
@@ -138,7 +138,12 @@ module.exports = {
     transpile: ["gsap"]
   },
   buildModules: [
-    "@nuxtjs/pwa",
+    [
+      "@nuxtjs/pwa",
+      {
+        icon: false // disables the icon module
+      }
+    ],
     [
       "@nuxtjs/google-analytics",
       {

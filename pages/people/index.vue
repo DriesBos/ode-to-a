@@ -12,10 +12,11 @@
 
 <script>
 import { mapState } from "vuex"
+import onPageRender from "@/mixins/onPageRender"
 import storyblokLivePreview from "@/mixins/storyblokLivePreview"
 
 export default {
-  mixins: [storyblokLivePreview],
+  mixins: [storyblokLivePreview, onPageRender],
   asyncData(context) {
     let version =
       context.query._storyblok || context.isDev ? "draft" : "published"

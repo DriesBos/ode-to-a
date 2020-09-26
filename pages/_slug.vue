@@ -11,8 +11,11 @@
 
 <script>
 import { mapState } from "vuex"
+import onPageRender from "@/mixins/onPageRender"
+import storyblokLivePreview from "@/mixins/storyblokLivePreview"
 
 export default {
+  mixins: [storyblokLivePreview, onPageRender],
   asyncData(context) {
     // Check if we are in the editor mode
     let version =
