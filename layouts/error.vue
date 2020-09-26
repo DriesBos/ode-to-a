@@ -1,100 +1,25 @@
 <template>
-  <div class="view view-Message">
-    <section class="messageBlok">
-      <markdown
-        class="messageBlok-Header"
-        :input="general[0].content.error_page_title"
-      />
-      <markdown
-        class="messageBlok-Text"
-        :input="general[0].content.error_page_text"
-      />
-      <div class="messageBlok-Graphic">
-        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
-        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
-        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
-        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
-        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
-        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
-        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
-        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
-        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
-        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
-        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
-        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
-        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
-        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
-        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
-        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
-        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
-        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
-        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
-        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
-        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
-        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
-        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
-        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
-        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
-        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
-        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
-        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
-        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
-        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
-        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
-        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
-        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
-        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
-        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
-        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
-        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
-        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
-        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
-        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
-        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
-        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
-        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
-        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
-        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
-        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
-        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
-        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
-        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
-        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
-        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
-        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
-        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
-        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
-        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
-        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
-        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
-        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
-        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
-        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
-        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
-        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
-        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
-        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
-        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
-        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
-        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
-        <div v-html="require('~/assets/images/logo-wide.svg?include')" />
-      </div>
-    </section>
+  <div v-editable="error[0].content" class="page page-Error">
+    <component
+      :is="error[0].content.component | dashify"
+      v-if="error[0].content.component"
+      :key="error[0].content._uid"
+      :blok="error[0].content"
+    ></component>
   </div>
 </template>
 
 <script>
 import { mapState } from "vuex"
+import storyblokLivePreview from "@/mixins/storyblokLivePreview"
 
 export default {
+  mixins: [storyblokLivePreview],
+  layout: "default", // you can set a custom layout for the error page
   computed: {
     ...mapState({
+      error: state => state.error.list,
       general: state => state.general.list
-    })
-  },
-  mounted() {
-    window.onNuxtReady(() => {
-      window.$nuxt.error({ statusCode: 404 })
     })
   },
   head() {
