@@ -1,11 +1,12 @@
 <template>
   <div v-editable="error[0].content" class="page page-Error">
-    <component
+    <!-- <component
       :is="error[0].content.component | dashify"
       v-if="error[0].content.component"
       :key="error[0].content._uid"
       :blok="error[0].content"
-    ></component>
+    /> -->
+    <p>{{ error }}</p>
   </div>
 </template>
 
@@ -21,6 +22,9 @@ export default {
       error: state => state.error.list,
       general: state => state.general.list
     })
+  },
+  mounted() {
+    console.log(this.error, this.general)
   },
   head() {
     return {
