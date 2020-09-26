@@ -1,12 +1,14 @@
 <template>
   <div v-editable="error[0].content" class="page page-Error">
+    <h1 v-if="error.statusCode === 404">Page not found</h1>
+    <h1 v-else>An error occurred</h1>
+    <nuxt-link to="/">Home page</nuxt-link>
     <!-- <component
       :is="error[0].content.component | dashify"
       v-if="error[0].content.component"
       :key="error[0].content._uid"
       :blok="error[0].content"
     /> -->
-    <p>{{ error }}</p>
   </div>
 </template>
 
@@ -16,6 +18,7 @@ import storyblokLivePreview from "@/mixins/storyblokLivePreview"
 
 export default {
   mixins: [storyblokLivePreview],
+  props: ["error"],
   layout: "default", // you can set a custom layout for the error page
   computed: {
     ...mapState({
