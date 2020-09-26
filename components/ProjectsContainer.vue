@@ -60,9 +60,6 @@ export default {
     hyphens: auto
     text-align: center
     width: 100%
-    &:last-child
-      .dash
-        display: none
   .DINRg
     font-family: "DINRg", Helvetica, Arial, sans-serif
     text-transform: uppercase
@@ -90,13 +87,13 @@ export default {
   &-Single
     &_Image
       position: fixed
-      display: none
       top: 0
       left: 0
       right: 0
       bottom: 0
       pointer-events: none
       z-index: -2
+      opacity: 0
       img
         width: 100%
         height: 100%
@@ -106,10 +103,10 @@ export default {
         color: var(--current-color)
         -webkit-text-stroke: 1px rgba($color-blue, 0)
       .projectList-Single_Image
-        display: block
+        opacity: 1
     &:hover
       @media (hover: hover)
         .projectList-Single_Image
-          display: block
+          opacity: 1
           z-index: -1
 </style>

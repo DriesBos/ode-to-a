@@ -12,7 +12,7 @@
     <!-- <h3 class="dash">—&nbsp;</h3> -->
 
     <!-- prettier-ignore -->
-    <div v-lazy-container="{ selector: 'img' }" class="vueLazy projectList-Single_Image">
+    <div class="projectList-Single_Image">
       <img
         v-if="blok.image"
         :alt="blok.title"
