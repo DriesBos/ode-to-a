@@ -92,21 +92,10 @@ export default {
   &-Graphic
     display: flex
     align-self: flex-start
-    // animation: left
-    // animation-duration: 60s
-    // animation-timing-function: linear
-    // animation-direction: alternate
-    // animation-iteration-count: infinite
     overflow: visible
     > div
       margin-right: 25vmin
     svg
       height: 30vmin
       overflow: visible
-
-// @keyframes left
-//   0%
-//     transform: translateX(0)
-//   100%
-//     transform: translateX(-1000vw)
 </style>

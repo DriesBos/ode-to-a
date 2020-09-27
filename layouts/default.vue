@@ -42,7 +42,11 @@ export default {
   },
   methods: {
     setpageColor() {
-      if (this.$nuxt.nuxt.err) {
+      if (
+        this.$nuxt.nuxt.err &&
+        this.$route.path !== "/brands" &&
+        this.$route.path !== "/"
+      ) {
         this.pageColor = "black"
       } else if (
         this.$route.path === "/" ||

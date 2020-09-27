@@ -19,12 +19,6 @@ export const actions = {
 export default {
   actions: {
     async nuxtServerInit({ commit }, { app }) {
-      let getError = await app.$storyapi.get("cdn/stories/error", {
-        version: process.env.NODE_ENV === "production" ? "published" : "draft"
-      })
-      let error = getError.data.story
-      commit("error/update", error)
-
       let getGeneral = await app.$storyapi.get("cdn/stories", {
         version: process.env.NODE_ENV === "production" ? "published" : "draft",
         starts_with: "general/"
