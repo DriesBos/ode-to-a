@@ -58,9 +58,11 @@
           rel="noreferrer"
         >FOLLOW US</a>
         <h5 class="hovered" @click="toggleTerms">TERMS</h5>
+        <h5 class="hovered" @click="toggleMadeBy">MADE BY</h5>
       </div>
     </div>
     <the-more-terms :active="isOpenTerms" @clicked="toggleTerms" />
+    <the-more-madeby :active="isOpenMadeBy" @clicked="toggleMadeBy" />
   </section>
 </template>
 
@@ -75,7 +77,8 @@ export default {
   },
   data() {
     return {
-      isOpenTerms: false
+      isOpenTerms: false,
+      isOpenMadeBy: false
     }
   },
   computed: {
@@ -94,6 +97,9 @@ export default {
   methods: {
     toggleTerms() {
       this.isOpenTerms = !this.isOpenTerms
+    },
+    toggleMadeBy() {
+      this.isOpenMadeBy = !this.isOpenMadeBy
     },
     FooterCursor() {
       let cursor = document.querySelector(".cursor")
@@ -173,7 +179,7 @@ export default {
         &:hover
           @media (hover: hover)
             color: var(--second-color) !important
-      a
+      a, h5
         margin-right: var(--spacing-two)
   .markdown
     color: var(--second-color)

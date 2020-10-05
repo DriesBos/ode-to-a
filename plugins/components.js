@@ -16,6 +16,7 @@ import MessageBlok from "~/components/MessageBlok.vue"
 import GraphicBlok from "~/components/GraphicBlok.vue"
 import ImagesBlok from "~/components/ImagesBlok.vue"
 import TheMoreTerms from "~/components/TheMoreTerms.vue"
+import TheMoreMadeBy from "~/components/TheMoreMadeBy.vue"
 
 Vue.component("markdown", MarkdownItem)
 Vue.component("blok-footer-form", FooterForm)
@@ -33,3 +34,4 @@ Vue.component("blok-message-blok", MessageBlok)
 Vue.component("blok-graphic-blok", GraphicBlok)
 Vue.component("blok-images-blok", ImagesBlok)
 Vue.component("the-more-terms", TheMoreTerms)
+Vue.component("the-more-madeby", TheMoreMadeBy)
