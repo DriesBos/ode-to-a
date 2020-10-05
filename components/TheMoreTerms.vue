@@ -68,6 +68,11 @@ export default {
   will-change: transform
   transform: translate3d(0, 100%, 0)
   overflow-y: auto
+  .markdown
+    p
+      margin-bottom: 1.5rem
+      &:last-child
+        margi-bottom: 0
   &.active
     transform: translate3d(0, 0%, 0)
   p, h1, h2, h3, h4, h5, a
