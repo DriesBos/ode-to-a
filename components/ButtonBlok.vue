@@ -22,8 +22,6 @@ export default {
 </script>
 
 <style lang="sass">
-@import '~assets/styles/variables'
-
 .buttonBlok
   display: flex
   flex-direction: column

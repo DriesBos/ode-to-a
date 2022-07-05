@@ -16,8 +16,6 @@ export default {
 </script>
 
 <style lang="sass">
-@import '~assets/styles/variables'
-
 .landinggraphicitem
   position: absolute
   display: flex

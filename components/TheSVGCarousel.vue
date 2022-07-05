@@ -269,7 +269,6 @@ export default {
 </script>
 
 <style lang="sass">
-@import '~assets/styles/variables'
 
 .svg-container
   display: inline-block

@@ -46,6 +46,8 @@ module.exports = {
 
   components: true,
 
+  target: "static",
+
   /*
    ** Global CSS
    */
@@ -55,8 +57,13 @@ module.exports = {
     "@/assets/styles/body.sass",
     "@/assets/styles/transitions.sass",
     "@/assets/styles/typography.sass",
-    "@/assets/styles/variables.sass"
+    "@/assets/styles/vars/variables.sass"
   ],
+
+  // Settings for "@nuxtjs/style-resources"
+  styleResources: {
+    sass: "./assets/styles/vars/*.sass"
+  },
 
   /*
    ** Plugins to load before mounting the App
@@ -158,6 +165,7 @@ module.exports = {
           optimizeImages: true
         }
       }
-    ]
+    ],
+    "@nuxtjs/style-resources"
   ]
 }

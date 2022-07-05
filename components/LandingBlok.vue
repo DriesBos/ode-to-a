@@ -78,8 +78,6 @@ export default {
 </script>
 
 <style lang="sass">
-@import '~assets/styles/variables'
-
 .landingItem
   width: 100vw
   height: 100vh

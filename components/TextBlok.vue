@@ -56,7 +56,6 @@ export default {
 </script>
 
 <style lang="sass">
-@import '~assets/styles/variables'
 .textBlok
   display: flex
   flex-direction: column
