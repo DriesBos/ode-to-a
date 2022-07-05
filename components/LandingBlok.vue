@@ -1,7 +1,7 @@
 <template>
   <section v-editable="blok" class="landingItem" :class="{ filter: filtered }">
     <!-- prettier-ignore -->
-    <img src="/ARTWORKFOUR.jpeg" />
+    <img src="/ARTWORKTHREE.jpeg" />
     <div v-lazy-container="{ selector: 'img' }" class="vueLazy">
       <img src="/ARTWORKONE.jpeg" />
       <!-- <img
