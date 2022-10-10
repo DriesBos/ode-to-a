@@ -1,10 +1,8 @@
 <template>
   <section v-editable="blok" class="landingItem" :class="{ filter: filtered }">
     <!-- prettier-ignore -->
-    <img src="/ARTWORKTHREE.jpeg" />
     <div v-lazy-container="{ selector: 'img' }" class="vueLazy">
-      <img src="/ARTWORKONE.jpeg" />
-      <!-- <img
+      <img
         v-if="blok.image"
         :alt="blok.title"
         :srcset="
@@ -27,9 +25,15 @@
             blok.image,
             '900x0/filters:format(jpg):quality(50)'
           )} 900w`
-        " sizes="100vw"
-        :data-src="`${transformImage(blok.image, '1600x0/filters:format(jpg):quality(50)')}`"
-      > -->
+        "
+        sizes="100vw"
+        :data-src="
+          `${transformImage(
+            blok.image,
+            '1600x0/filters:format(jpg):quality(50)'
+          )}`
+        "
+      />
     </div>
     <div class="landingItem-Text">
       <h1 v-if="blok.title">{{ blok.title }}</h1>
