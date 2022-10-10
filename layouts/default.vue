@@ -5,6 +5,7 @@
     <transition name="pages" mode="out-in">
       <nuxt :class="pageColor" />
     </transition>
+    <the-footer />
     <div class="cursor" :class="pageColor">
       <div v-html="require('~/assets/images/muis.svg?include')" />
     </div>
@@ -13,6 +14,7 @@
 
 <script>
 import TheHeader from "~/components/TheHeader"
+import TheFooter from "~/components/TheFooter"
 import TheSVGCarousel from "~/components/TheSVGCarousel"
 import gsap from "gsap"
 import JQuery from "jquery"
@@ -21,6 +23,7 @@ let $ = JQuery
 export default {
   components: {
     "the-header": TheHeader,
+    "the-footer": TheFooter,
     "the-svgcarousel": TheSVGCarousel
   },
   data() {

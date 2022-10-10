@@ -40,29 +40,6 @@
         </svg>
       </button>
     </form>
-    <div class="footerform-Buttons">
-      <div class="footerform-Buttons_Links">
-        <a
-          class="hovered"
-          :href="general[0].content.google_maps_link"
-          target="_blank"
-          title="opens Google Maps"
-          rel="noreferrer"
-        >MEET US</a>
-        <a class="hovered" :href="'tel:00' + general[0].content.phonenumber" :title="'+' + general[0].content.phonenumber" rel="noreferrer">CALL US</a>
-        <a
-          class="hovered"
-          :href="general[0].content.social"
-          target="_blank"
-          title="social"
-          rel="noreferrer"
-        >FOLLOW US</a>
-        <h5 class="hovered" @click="toggleTerms">TERMS</h5>
-        <h5 class="hovered" @click="toggleMadeBy">MADE BY</h5>
-      </div>
-    </div>
-    <the-more-terms :active="isOpenTerms" @clicked="toggleTerms" />
-    <the-more-madeby :active="isOpenMadeBy" @clicked="toggleMadeBy" />
   </section>
 </template>
 
@@ -75,39 +52,27 @@ export default {
   props: {
     blok: Object
   },
-  data() {
-    return {
-      isOpenTerms: false,
-      isOpenMadeBy: false
-    }
-  },
   computed: {
     ...mapState({
       general: state => state.general.list
     })
   },
   mounted() {
-    $(".footerform").on("mouseover", this.FooterCursor)
-    $(".footerform").on("mouseleave", this.removeFooterCursor)
+    $(".footerform").on("mouseover", this.FooterFormCursor)
+    $(".footerform").on("mouseleave", this.removeFooterFormCursor)
   },
   destroyed() {
-    $(".footerform").off("mouseover", this.FooterCursor)
-    $(".footerform").off("mouseleave", this.removeFooterCursor)
+    $(".footerform").off("mouseover", this.FooterFormCursor)
+    $(".footerform").off("mouseleave", this.removeFooterFormCursor)
   },
   methods: {
-    toggleTerms() {
-      this.isOpenTerms = !this.isOpenTerms
-    },
-    toggleMadeBy() {
-      this.isOpenMadeBy = !this.isOpenMadeBy
-    },
-    FooterCursor() {
+    FooterFormCursor() {
       let cursor = document.querySelector(".cursor")
-      cursor.classList.add("footer")
+      cursor.classList.add("footerformcursor")
     },
-    removeFooterCursor() {
+    removeFooterFormCursor() {
       let cursor = document.querySelector(".cursor")
-      cursor.classList.remove("footer")
+      cursor.classList.remove("footerformcursor")
     }
   }
 }
@@ -145,6 +110,7 @@ export default {
       align-items: center
       align-self: flex-start
       margin-top: var(--spacing-two)
+      margin-top: 4vh
       svg
         height: 2em
         fill: currentColor
