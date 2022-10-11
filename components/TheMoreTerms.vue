@@ -67,6 +67,7 @@ export default {
   will-change: transform
   transform: translate3d(0, 100%, 0)
   overflow-y: auto
+  z-index: 999
   .markdown
     p
       margin-bottom: 1.5rem

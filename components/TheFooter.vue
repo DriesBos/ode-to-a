@@ -1,29 +1,46 @@
 <template>
   <!-- prettier-ignore -->
-  <section class="footer">
+  <section id="theFooter" class="footer" :class="{ visible: isVisible}">
+    <ul>
+      <li>Site</li>
+      <NuxtLink class="hovered links" tag="li" to="/">Home</NuxtLink>
+      <NuxtLink class="hovered links" tag="li" to="/brands">For Brands</NuxtLink>
+      <NuxtLink class="hovered links" tag="li" to="/art">For Art</NuxtLink>
+      <NuxtLink class="hovered links" tag="li" to="/people">For People</NuxtLink>
+    </ul>
     <ul>
       <li>Offices</li>
-      <li class="hovered links" @click="toggleMadeBy">Amsterdam</li>
-      <li class="hovered links" @click="toggleMadeBy">Ghana</li>
-      <li class="hovered links" @click="toggleMadeBy">Mexico City</li>
+      <li class="hovered links" @click="toggleAmsterdam">{{general[0].content.amsterdam}}</li>
+      <li class="hovered links" @click="toggleMexico">{{general[0].content.mexico}}</li>
+      <li class="hovered links" @click="toggleGhana">{{general[0].content.ghana}}</li>
     </ul>
-        <ul>
-      <li>Navigation</li>
-      <li class="hovered links">Home</li>
-      <li class="hovered links">For Brands</li>
-      <li class="hovered links">For Art</li>
-      <li class="hovered links">For People</li>
-    </ul>
-    <ul>
+    <ul v-if="general[0].content.instagram || general[0].content.facebook || general[0].content.linkedin">
       <li>Follow Us</li>
-      <li class="hovered links">        
-          <a
-          :href="general[0].content.social"
+      <li v-if="general[0].content.instagram" class="hovered links">        
+        <a
+          :href="general[0].content.instagram"
           target="_blank"
           title="instagram"
           rel="noreferrer"
         >Instagram</a>
       </li>
+      <li v-if="general[0].content.facebook" class="hovered links">        
+        <a
+          :href="general[0].content.facebook"
+          target="_blank"
+          title="instagram"
+          rel="noreferrer"
+        >Facebook</a>
+      </li>
+      <li v-if="general[0].content.linkedin" class="hovered links">        
+        <a
+          :href="general[0].content.linkedin"
+          target="_blank"
+          title="instagram"
+          rel="noreferrer"
+        >LinkedIn</a>
+      </li>
+      
     </ul>
     <ul>
       <li>&nbsp;</li>
@@ -33,6 +50,9 @@
 
     <the-more-terms :active="isOpenTerms" @clicked="toggleTerms" />
     <the-more-madeby :active="isOpenMadeBy" @clicked="toggleMadeBy" />
+    <the-more-amsterdam :active="isOpenAmsterdam" @clicked="toggleAmsterdam" />
+    <the-more-mexico :active="isOpenMexico" @clicked="toggleMexico" />
+    <the-more-ghana :active="isOpenGhana" @clicked="toggleGhana" />
   </section>
 </template>
 
@@ -51,7 +71,8 @@ export default {
       isOpenMadeBy: false,
       isOpenAmsterdam: false,
       isOpenGhana: false,
-      isOpenMexico: false
+      isOpenMexico: false,
+      isVisible: false
     }
   },
   computed: {
@@ -60,14 +81,30 @@ export default {
     })
   },
   mounted() {
+    console.log(this.general)
     $(".footer").on("mouseover", this.TheFooterCursor)
     $(".footer").on("mouseleave", this.removeTheFooterCursor)
+    this.setVisible()
+    window.addEventListener("scroll", this.setVisible)
   },
   destroyed() {
     $(".footer").off("mouseover", this.TheFooterCursor)
     $(".footer").off("mouseleave", this.removeTheFooterCursor)
+    window.removeEventListener("scroll", this.setVisible)
   },
   methods: {
+    setVisible() {
+      const currentScrollPosition =
+        window.pageYOffset || document.documentElement.scrollTop
+      if (
+        currentScrollPosition >
+        document.body.clientHeight - window.innerHeight
+      ) {
+        this.isVisible = true
+      } else {
+        this.isVisible = false
+      }
+    },
     toggleTerms() {
       this.isOpenTerms = !this.isOpenTerms
     },
@@ -98,8 +135,11 @@ export default {
 <style lang="sass">
 
 .footer
-  position: relative
-  z-index: 999
+  position: fixed
+  left: 0
+  right: 0
+  bottom: 0
+  z-index: 997
   display: flex
   flex-direction: row
   background: black
@@ -107,10 +147,14 @@ export default {
   justify-content: space-around
   padding: var(--spacing-three)
   overflow: hidden
+  opacity: 0
+  &.visible
+    opacity: 1
   ul
     flex-grow: 1
     display: flex
     flex-direction: column
+    align-items: flex-start
     li
       font-size: 1.33em
       line-height: 1.27
@@ -120,6 +164,8 @@ export default {
         -webkit-text-stroke: 1px white
         transition: color $transition-hover, stroke $transition-hover
         flex-shrink: 0
+        a
+          -webkit-text-stroke: 1px white
         &:hover
           @media (hover: hover)
             color: white !important
