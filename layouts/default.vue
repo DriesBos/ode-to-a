@@ -5,7 +5,13 @@
     <transition name="pages" mode="out-in">
       <nuxt :class="pageColor" />
     </transition>
-    <the-footer />
+    <the-footer @update="toggleFooterModal" />
+    <footer-modal
+      :active="footerModal"
+      :title="footerModalTitle"
+      :text="footerModalText"
+      @close="closeFooterModal"
+    />
     <div class="cursor" :class="pageColor">
       <div v-html="require('~/assets/images/muis.svg?include')" />
     </div>
@@ -15,6 +21,7 @@
 <script>
 import TheHeader from "~/components/TheHeader"
 import TheFooter from "~/components/TheFooter"
+import FooterModal from "~/components/FooterModal"
 import TheSVGCarousel from "~/components/TheSVGCarousel"
 import gsap from "gsap"
 import JQuery from "jquery"
@@ -24,11 +31,15 @@ export default {
   components: {
     "the-header": TheHeader,
     "the-footer": TheFooter,
+    "footer-modal": FooterModal,
     "the-svgcarousel": TheSVGCarousel
   },
   data() {
     return {
-      pageColor: "yellow"
+      pageColor: "yellow",
+      footerModal: false,
+      footerModalTitle: "",
+      footerModalText: ""
     }
   },
   watch: {
@@ -44,6 +55,16 @@ export default {
     this.customCursor()
   },
   methods: {
+    toggleFooterModal(options) {
+      this.footerModal = !this.footerModal
+      this.footerModalTitle = options.title
+      this.footerModalText = options.text
+      console.log("DEFAULT PAGE =", this.footerModal, options)
+    },
+    closeFooterModal() {
+      this.footerModal = false
+      console.log("DEFAULT PAGE = close modal")
+    },
     setpageColor() {
       if (
         this.$nuxt.nuxt.err &&

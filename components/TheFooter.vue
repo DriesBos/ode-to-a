@@ -10,9 +10,9 @@
     </ul>
     <ul>
       <li>Offices</li>
-      <li class="hovered links" @click="toggleAmsterdam">{{general[0].content.amsterdam}}</li>
-      <li class="hovered links" @click="toggleMexico">{{general[0].content.mexico}}</li>
-      <li class="hovered links" @click="toggleGhana">{{general[0].content.ghana}}</li>
+      <li class="hovered links" @click="toggleFooterModalAmsterdam">{{general[0].content.amsterdam}}</li>
+      <li class="hovered links" @click="toggleFooterModalMexico">{{general[0].content.mexico}}</li>
+      <li class="hovered links" @click="toggleFooterModalGhana">{{general[0].content.ghana}}</li>
     </ul>
     <ul v-if="general[0].content.instagram || general[0].content.facebook || general[0].content.linkedin">
       <li>Follow Us</li>
@@ -44,15 +44,9 @@
     </ul>
     <ul>
       <li>&nbsp;</li>
-      <li class="hovered links" @click="toggleTerms">Terms</li>
-      <li class="hovered links" @click="toggleMadeBy">Made By</li>
+      <li class="hovered links" @click="toggleFooterModalTerms">Terms</li>
+      <li class="hovered links" @click="toggleFooterModalMadeby">Made By</li>
     </ul>
-
-    <the-more-terms :active="isOpenTerms" @clicked="toggleTerms" />
-    <the-more-madeby :active="isOpenMadeBy" @clicked="toggleMadeBy" />
-    <the-more-amsterdam :active="isOpenAmsterdam" @clicked="toggleAmsterdam" />
-    <the-more-mexico :active="isOpenMexico" @clicked="toggleMexico" />
-    <the-more-ghana :active="isOpenGhana" @clicked="toggleGhana" />
   </section>
 </template>
 
@@ -67,11 +61,6 @@ export default {
   },
   data() {
     return {
-      isOpenTerms: false,
-      isOpenMadeBy: false,
-      isOpenAmsterdam: false,
-      isOpenGhana: false,
-      isOpenMexico: false,
       isVisible: false
     }
   },
@@ -81,7 +70,6 @@ export default {
     })
   },
   mounted() {
-    console.log(this.general)
     $(".footer").on("mouseover", this.TheFooterCursor)
     $(".footer").on("mouseleave", this.removeTheFooterCursor)
     this.setVisible()
@@ -93,6 +81,36 @@ export default {
     window.removeEventListener("scroll", this.setVisible)
   },
   methods: {
+    toggleFooterModalAmsterdam() {
+      this.$emit("update", {
+        title: this.general[0].content.amsterdam,
+        text: this.general[0].content.amsterdam_text
+      })
+    },
+    toggleFooterModalMexico() {
+      this.$emit("update", {
+        title: this.general[0].content.mexico,
+        text: this.general[0].content.mexico_text
+      })
+    },
+    toggleFooterModalGhana() {
+      this.$emit("update", {
+        title: this.general[0].content.ghana,
+        text: this.general[0].content.ghana_text
+      })
+    },
+    toggleFooterModalTerms() {
+      this.$emit("update", {
+        title: this.general[0].content.terms_title,
+        text: this.general[0].content.terms_text
+      })
+    },
+    toggleFooterModalMadeby() {
+      this.$emit("update", {
+        title: this.general[0].content.madeby_title,
+        text: this.general[0].content.madeby_text
+      })
+    },
     setVisible() {
       const currentScrollPosition =
         window.pageYOffset || document.documentElement.scrollTop
@@ -104,21 +122,6 @@ export default {
       } else {
         this.isVisible = false
       }
-    },
-    toggleTerms() {
-      this.isOpenTerms = !this.isOpenTerms
-    },
-    toggleMadeBy() {
-      this.isOpenMadeBy = !this.isOpenMadeBy
-    },
-    toggleAmsterdam() {
-      this.isOpenAmsterdam = !this.isOpenAmsterdam
-    },
-    toggleGhana() {
-      this.isOpenGhana = !this.isOpenGhana
-    },
-    toggleMexico() {
-      this.isOpenMexico = !this.isOpenMexico
     },
     TheFooterCursor() {
       let cursor = document.querySelector(".cursor")
@@ -148,8 +151,10 @@ export default {
   padding: var(--spacing-three)
   overflow: hidden
   opacity: 0
+  pointer-events: none
   &.visible
     opacity: 1
+    pointer-events: auto
   ul
     flex-grow: 1
     display: flex
