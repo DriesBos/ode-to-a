@@ -145,9 +145,11 @@ export default {
   z-index: 997
   display: flex
   flex-direction: row
+  flex-wrap: wrap
+  justify-content: flex-start
+  align-items: flex-start
   background: black
   color: white
-  justify-content: space-around
   padding: var(--spacing-three)
   overflow: hidden
   opacity: 0
@@ -156,10 +158,14 @@ export default {
     opacity: 1
     pointer-events: auto
   ul
-    flex-grow: 1
     display: flex
     flex-direction: column
     align-items: flex-start
+    @media screen and ( min-width: $breakpoint-mobile)
+      flex-grow: 1
+    @media screen and ( max-width: $breakpoint-mobile)
+      flex-basis: 50%
+      padding-bottom: var(--spacing-three)
     li
       font-size: 1.33em
       line-height: 1.27
