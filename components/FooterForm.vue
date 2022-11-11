@@ -58,24 +58,24 @@ export default {
     })
   },
   mounted() {
-    this.measureHeight()
-    window.addEventListener("resize", this.measureHeight)
+    // this.measureHeight()
+    // window.addEventListener("resize", this.measureHeight)
     $(".footerform").on("mouseover", this.FooterFormCursor)
     $(".footerform").on("mouseleave", this.removeFooterFormCursor)
   },
   destroyed() {
-    window.removeEventListener("resize", this.measureHeight)
+    // window.removeEventListener("resize", this.measureHeight)
     $(".footerform").off("mouseover", this.FooterFormCursor)
     $(".footerform").off("mouseleave", this.removeFooterFormCursor)
   },
   methods: {
-    measureHeight() {
-      const elementMeasured = document.getElementById("theFooter")
-      const elementSet = document.getElementById("footerForm")
-      const height = elementMeasured.offsetHeight
-      // console.log("MEASUREHEIGHT", element, image, height)
-      elementSet.style.marginBottom = `${height}px`
-    },
+    // measureHeight() {
+    //   const elementMeasured = document.getElementById("theFooter")
+    //   const elementSet = document.getElementById("footerForm")
+    //   const height = elementMeasured.offsetHeight
+    //   // console.log("MEASUREHEIGHT", element, image, height)
+    //   elementSet.style.marginBottom = `${height}px`
+    // },
     FooterFormCursor() {
       let cursor = document.querySelector(".cursor")
       cursor.classList.add("footerformcursor")
@@ -101,7 +101,7 @@ export default {
   justify-content: space-around
   padding: var(--spacing-three)
   overflow: hidden
-  margin-bottom: 200px
+  // margin-bottom: 200px
   &-Form
     margin-top: var(--spacing-two)
     display: flex

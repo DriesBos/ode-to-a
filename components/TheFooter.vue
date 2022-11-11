@@ -138,25 +138,27 @@ export default {
 <style lang="sass">
 
 .footer
-  position: fixed
-  left: 0
-  right: 0
-  bottom: 0
+  // position: fixed
+  // left: 0
+  // right: 0
+  // bottom: 0
   z-index: 997
   display: flex
   flex-direction: row
   flex-wrap: wrap
   justify-content: flex-start
   align-items: flex-start
-  background: black
-  color: white
+  // background: black
+  // color: white
+  background: var(--current-color)
+  color: var(--second-color)
   padding: var(--spacing-three)
   overflow: hidden
-  opacity: 0
-  pointer-events: none
-  &.visible
-    opacity: 1
-    pointer-events: auto
+  // opacity: 0
+  // pointer-events: none
+  // &.visible
+  //   opacity: 1
+  //   pointer-events: auto
   ul
     display: flex
     flex-direction: column
@@ -169,17 +171,17 @@ export default {
     li
       font-size: 1.33em
       line-height: 1.27
-      text-transform: uppercase
+      // text-transform: uppercase
       &.links
         color: rgba(0,0,0,0) !important
-        -webkit-text-stroke: 1px white
+        -webkit-text-stroke: 1px var(--second-color)
         transition: color $transition-hover, stroke $transition-hover
         flex-shrink: 0
         a
-          -webkit-text-stroke: 1px white
+          -webkit-text-stroke: 1px var(--second-color)
         &:hover
           @media (hover: hover)
-            color: white !important
+            color: var(--second-color) !important
 
 
   &-Form
