@@ -7,6 +7,9 @@
       <NuxtLink class="hovered links" tag="li" to="/brands">For Brands</NuxtLink>
       <NuxtLink class="hovered links" tag="li" to="/art">For Art</NuxtLink>
       <NuxtLink class="hovered links" tag="li" to="/people">For People</NuxtLink>
+      <li class="hovered links" target="_blank">
+        <a href="https://shop.odetoa.com/collections/frontpage">Shop</a>
+      </li>
     </ul>
     <ul>
       <li>Offices</li>
