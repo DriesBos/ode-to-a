@@ -7,7 +7,7 @@
   >
     <div class="buttonBlok-Item" :title="blok.text">
       <a :href="blok.hyperlink.cached_url" target="_blank" rel="noreferrer">
-        <h5>{{ blok.text }}</h5>
+        <h3>{{ blok.text }}</h3>
       </a>
     </div>
   </section>
@@ -41,7 +41,8 @@ export default {
     &:hover
       background: var(--second-color)
       color: var(--current-color)
-    h5
+    h3
       text-align: center
       transform: translateY(-0.1rem)
+      font-size: 1.66em !important
 </style>
