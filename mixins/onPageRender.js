@@ -1,11 +1,11 @@
 export default {
   watch: {
     $route() {
-      this.changeFavicon()
+      // this.changeFavicon()
     }
   },
   mounted() {
-    this.changeFavicon()
+    // this.changeFavicon()
   },
 
   methods: {
