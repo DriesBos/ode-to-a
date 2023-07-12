@@ -38,6 +38,7 @@ export default {
     border-radius: 1000px
     color: var(--second-color)
     transition: color $transition-hover, background $transition-hover
+    min-width: 14rem
     &:hover
       background: var(--second-color)
       color: var(--current-color)
